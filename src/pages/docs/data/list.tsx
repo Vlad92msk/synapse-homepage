@@ -1,0 +1,40 @@
+import { ReactNode } from 'react'
+
+import {
+  ApiClient,
+  Changelog,
+  CreateDispatchers,
+  CreateEffects,
+  CreateEffectsModule,
+  CreateStorages,
+  CreateSynapse,
+  CustomMiddlewares,
+  CustomPlugins,
+  Description,
+  Installation,
+  Middlewares,
+  QuickStart,
+  ReduxSelectors,
+  Subscriptions,
+  UpdateValues,
+} from '../sections'
+
+export const sectionsList: Record<string, ReactNode> = {
+  'nav.sections.gettingStarted.description': <Description />,
+  'nav.sections.gettingStarted.installation': <Installation />,
+  'nav.sections.gettingStarted.quick-start': <QuickStart />,
+  'nav.sections.core.create-storages': <CreateStorages />,
+  'nav.sections.core.value-updates': <UpdateValues />,
+  'nav.sections.core.subscriptions': <Subscriptions />,
+  'nav.sections.core.redux-selectors': <ReduxSelectors />,
+  'nav.sections.core.middlewares': <Middlewares />,
+  'nav.sections.advanced.api-client': <ApiClient />,
+  'nav.sections.advanced.create-dispatcher': <CreateDispatchers />,
+  'nav.sections.advanced.create-effects': <CreateEffects />,
+  'nav.sections.advanced.create-effects-module': <CreateEffectsModule />,
+  'nav.sections.utilities.create-synapse': <CreateSynapse />,
+  'nav.sections.utilities.custom-plugins': <CustomPlugins />,
+  'nav.sections.utilities.custom-middlewares': <CustomMiddlewares />,
+  'nav.sections.utilities.additional': undefined,
+  'nav.sections.changelog.changelog': <Changelog />,
+}

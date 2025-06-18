@@ -1,3 +1,50 @@
 # https://www.robotstxt.org/robotstxt.html
+
+# Allow all search engines to index the site
 User-agent: *
-Disallow:
+Allow: /
+
+# Priority pages for indexing
+Allow: /
+Allow: /docs
+
+# Popular documentation sections
+Allow: /docs#description
+Allow: /docs#installation
+Allow: /docs#quick-start
+Allow: /docs#create-storages
+Allow: /docs#value-updates
+Allow: /docs#subscriptions
+Allow: /docs#redux-selectors
+Allow: /docs#middlewares
+Allow: /docs#api-client
+Allow: /docs#create-dispatcher
+Allow: /docs#create-effects
+Allow: /docs#create-synapse
+Allow: /docs#changelog
+
+# Sitemap location (if you have one)
+# Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl delay (optional - 1 second between requests)
+Crawl-delay: 1
+
+# Block specific paths if needed (examples below)
+# Disallow: /private/
+# Disallow: /admin/
+# Disallow: /*.json$
+# Disallow: /api/
+
+# Allow GitHub and other development tools
+User-agent: GitHubBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Block aggressive crawlers (optional)
+# User-agent: MJ12bot
+# Disallow: /
+
+# User-agent: SemrushBot
+# Disallow: /

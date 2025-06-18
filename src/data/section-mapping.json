@@ -1,0 +1,79 @@
+{
+  "CHANGELOG": {
+    "0": "changelog",
+    "1": "3013-2024-12-xx",
+    "2": "3012-2024-12-27"
+  },
+  "README": {
+    "0": "synapse-storage",
+    "1": "key-features",
+    "2": "author",
+    "3": "ps-not-recommended-for-production-use-yet-as-i-develop-this-in-my-free-time-the-library-works-in-general-but-i-can-provide-guarantees-only-after-full-integration-into-my-pet-project-social-network-this-wont-happen-before-changing-my-current-workplace-and-country-of-residence",
+    "4": "installation",
+    "5": "requirements",
+    "6": "documentation",
+    "7": "examples",
+    "8": "modular-usage"
+  },
+  "additional": {
+    "0": "additional",
+    "1": "navigation"
+  },
+  "api-client": {
+    "0": "api-client",
+    "1": "navigation"
+  },
+  "basic-usage": {
+    "0": "basic-usage",
+    "1": "creating-storage",
+    "2": "ways-to-change-values-main",
+    "3": "creating-subscriptions",
+    "4": "navigation"
+  },
+  "create-dispatcher": {
+    "0": "creating-dispatcher",
+    "1": "navigation"
+  },
+  "create-effects-module": {
+    "0": "creating-effects-module",
+    "1": "prerequisites",
+    "2": "creating-effects-module",
+    "3": "linking-modules",
+    "4": "usage-in-effects",
+    "5": "lifecycle-management",
+    "6": "when-to-use",
+    "7": "navigation"
+  },
+  "create-effects": {
+    "0": "creating-effects",
+    "1": "navigation"
+  },
+  "create-synapse": {
+    "0": "code-organization-example-and-createsynapse-utility-usage",
+    "1": "connecting-synapse-to-each-other",
+    "2": "-eventbus-pattern-advanced",
+    "3": "-eventbus-pattern-code",
+    "4": "advantages-of-each-approach",
+    "5": "navigation"
+  },
+  "custom-middlewares": {
+    "0": "creating-custom-middlewares",
+    "1": "navigation"
+  },
+  "custom-plugins": {
+    "0": "creating-custom-plugins",
+    "1": "navigation"
+  },
+  "middlewares": {
+    "0": "middlewares",
+    "1": "navigation"
+  },
+  "redux-selectors": {
+    "0": "creating-redux-style-computed-subscriptions",
+    "1": "getting-values-from-computed-selectors",
+    "2": "navigation"
+  },
+  "storage-creation": {
+    "0": "creating-storage"
+  }
+}

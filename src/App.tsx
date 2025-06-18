@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Header } from '@shared/components/layout/header'
 
-function App() {
+import './i18n/config'
+
+import { DocsPage, HomePage } from './pages'
+
+import style from './App.module.css'
+
+const App = () => {
+  useEffect(() => {
+    // Восстанавливаем сохраненный язык
+    const savedLocale = localStorage.getItem('preferred-locale')
+    if (savedLocale && (savedLocale === 'ru' || savedLocale === 'en')) {
+      import('./i18n/config').then(({ default: i18n }) => {
+        i18n.changeLanguage(savedLocale)
+      })
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Header />
+      <div className={style.app}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/docs" element={<DocsPage />} />
+          <Route path="/docs/:section" element={<DocsPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
