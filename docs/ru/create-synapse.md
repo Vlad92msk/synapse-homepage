@@ -375,13 +375,7 @@ classDiagram
         +updateProfile()
     }
     
-    class PostsSynapse {
-        +Storage~PostsState~ storage
-        +Dispatcher dispatcher
-        +Effects effects
-        +loadPosts()
-        +createPost()
-    }
+
     
     class NotificationsSynapse {
         +Storage~NotificationsState~ storage
@@ -400,10 +394,6 @@ classDiagram
         +handleUpdate()
     }
     
-    class PostsComponent {
-        +render()
-        +handleCreate()
-    }
     
     class NotificationsComponent {
         +render()
@@ -412,12 +402,10 @@ classDiagram
     
     EventBusSynapse ..> AuthSynapse : publish/subscribe
     EventBusSynapse ..> UserSynapse : publish/subscribe
-    EventBusSynapse ..> PostsSynapse : publish/subscribe
     EventBusSynapse ..> NotificationsSynapse : publish/subscribe
     
     AuthSynapse --> LoginComponent : uses
     UserSynapse --> ProfileComponent : uses
-    PostsSynapse --> PostsComponent : uses
     NotificationsSynapse --> NotificationsComponent : uses
 ```
 

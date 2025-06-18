@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 // Простое решение - используем @ts-ignore для обхода проблем с типами
 // @ts-ignore
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -13,7 +13,7 @@ import json from 'react-syntax-highlighter/dist/esm/languages/hljs/json'
 // @ts-ignore
 import typescript from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript'
 // @ts-ignore
-import { a11yDark, atomOneDark, github, lightfair, ocean } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 import style from './CodeBlock.module.css'
 
@@ -33,19 +33,60 @@ export interface CodeBlockProps {
   filename?: string
   showLineNumbers?: boolean
   className?: string
+  maxHeight?: string
 }
 
 export const CodeBlock = (props: CodeBlockProps) => {
-  const { children, language = 'typescript', filename, showLineNumbers = true, className = '' } = props
-  const [copied, setCopied] = useState(false)
+  const { children, language = 'typescript', filename, showLineNumbers = true, className = '', maxHeight } = props
 
+  const [copied, setCopied] = useState(false)
+  const [copyError, setCopyError] = useState(false)
+
+  // Улучшенная функция копирования с fallback
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(children)
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(children)
+      } else {
+        // Fallback для старых браузеров
+        const textArea = document.createElement('textarea')
+        textArea.value = children
+        textArea.style.position = 'absolute'
+        textArea.style.left = '-999999px'
+        document.body.prepend(textArea)
+        textArea.select()
+        document.execCommand('copy')
+        textArea.remove()
+      }
+
       setCopied(true)
+      setCopyError(false)
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
       console.error('Failed to copy text: ', err)
+      setCopyError(true)
+      setTimeout(() => setCopyError(false), 2000)
+    }
+  }
+
+  // Определяем иконку файла по языку
+  const getFileIcon = (lang: string) => {
+    switch (lang) {
+      case 'typescript':
+      case 'tsx':
+        return '🔷'
+      case 'javascript':
+      case 'jsx':
+        return '🟨'
+      case 'css':
+        return '🎨'
+      case 'json':
+        return '📋'
+      case 'bash':
+      case 'shell':
+        return '⚡'
+      default:
+        return '📄'
     }
   }
 
@@ -66,16 +107,25 @@ export const CodeBlock = (props: CodeBlockProps) => {
       {/* Заголовок */}
       <div className={style.header}>
         <div className={style.info}>
-          {filename && <span className={style.filename}>📄 {filename}</span>}
+          {filename && (
+            <span className={style.filename}>
+              {getFileIcon(language)} {filename}
+            </span>
+          )}
           <span className={style.language}>{language}</span>
         </div>
-        <button className={style.copyButton} onClick={handleCopy} title="Копировать код">
-          {copied ? <span className={style.copiedIcon}>✓</span> : <span className={style.copyIcon}>📋</span>}
+        <button
+          className={`${style.copyButton} ${copied ? style.copied : ''} ${copyError ? style.error : ''}`}
+          onClick={handleCopy}
+          title={copied ? 'Скопировано!' : copyError ? 'Ошибка копирования' : 'Копировать код'}
+          aria-label="Копировать код"
+        >
+          {copied ? <span className={style.copiedIcon}>✓</span> : copyError ? <span className={style.errorIcon}>✗</span> : <span className={style.copyIcon}>📋</span>}
         </button>
       </div>
 
       {/* Код */}
-      <div className={style.codeContent}>
+      <div className={style.codeContent} style={{ maxHeight }}>
         {/* @ts-ignore */}
         <SyntaxHighlighter
           language={language}

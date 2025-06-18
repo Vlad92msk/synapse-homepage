@@ -54,6 +54,10 @@
 }
 
 /* Переопределяем цвета для темной темы */
+.diagramContainer :global(.node path){
+  fill: transparent!important;
+  stroke: rgba(255, 255, 255, 0.3) !important;
+}
 .diagramContainer :global(.node rect),
 .diagramContainer :global(.node circle),
 .diagramContainer :global(.node ellipse),

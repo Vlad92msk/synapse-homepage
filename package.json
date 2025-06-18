@@ -40,7 +40,9 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "type-check": "tsc --noEmit",
-    "analyze": "vite build --mode analyze"
+    "analyze": "ANALYZE=true vite build --mode analyze",
+    "analyze:simple": "vite build --mode analyze",
+    "build:size": "vite build && du -sh build/"
   },
   "browserslist": {
     "production": [
