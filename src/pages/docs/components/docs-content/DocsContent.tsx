@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '@shared/components/ui/button/Button.tsx'
 import { useDocumentation } from '@shared/hooks/useDocumentation'
 
 import style from './DocsContent.module.css'
@@ -17,14 +16,6 @@ export const DocsContent = (props: DocsContentProps) => {
   const { sectionKey, section, isSidebarOpen, isMobile } = props
   const { t } = useDocumentation()
   const navigate = useNavigate()
-
-  const handleHomeClick = () => {
-    navigate('/')
-  }
-
-  const handleDocsClick = () => {
-    navigate('/docs#description') // или просто '/docs'
-  }
 
   return (
     <div className={`${style.docsContent} ${isSidebarOpen && !isMobile ? style.withSidebar : style.fullWidth}`}>

@@ -2,12 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { MarkdownParser } from './markdown-parser'
-import type {
-    ContentBlock,
-    DocSection,
-    DocContent,
-    DocsData
-} from './types'
+import type { DocContent, DocsData } from './types'
 
 interface SectionIdMapping {
     [filename: string]: {
@@ -31,6 +26,7 @@ class DocsGenerator {
             doc.sections.forEach((section, index) => {
                 // Очищаем заголовок от эмодзи и создаем стабильный ID
                 const cleanTitle = section.title
+                    //@ts-ignore
                     .replace(/[🏠📚📖🧮⚙️🛠️💡⚡🚀💾🌐⚛️🔌✨🎨📦🔧⭐🎯]/g, '')
                     .trim()
 

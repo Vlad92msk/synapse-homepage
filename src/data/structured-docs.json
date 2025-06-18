@@ -522,15 +522,7 @@
           }
         }
       ],
-      "features": [
-        "Added",
-        "\udee0 Improved",
-        "\udcd6 Usage Examples",
-        "\udea8 Breaking Changes",
-        "Added",
-        "\udee0 Improved",
-        "\udcd6 Usage Examples"
-      ],
+      "features": ["Added", "\udee0 Improved", "\udcd6 Usage Examples", "\udea8 Breaking Changes", "Added", "\udee0 Improved", "\udcd6 Usage Examples"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T17:14:16.631Z",
@@ -1051,58 +1043,30 @@
             {
               "type": "table",
               "data": {
-                "headers": [
-                  "Module",
-                  "Description",
-                  "Dependencies"
-                ],
+                "headers": ["Module", "Description", "Dependencies"],
                 "rows": [
                   {
-                    "cells": [
-                      "Module",
-                      "Description",
-                      "Dependencies"
-                    ],
+                    "cells": ["Module", "Description", "Dependencies"],
                     "type": "header"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/core",
-                      "base",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/core", "base", "-"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/react",
-                      "React",
-                      "React 18+"
-                    ],
+                    "cells": ["synapse-storage/react", "React", "React 18+"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/reactive",
-                      "RxJS",
-                      "RxJS 7.8.2+"
-                    ],
+                    "cells": ["synapse-storage/reactive", "RxJS", "RxJS 7.8.2+"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/api",
-                      "HTTP client",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/api", "HTTP client", "-"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/utils",
-                      "Utils",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/utils", "Utils", "-"],
                     "type": "data"
                   }
                 ]
@@ -1604,65 +1568,30 @@
             {
               "type": "table",
               "data": {
-                "headers": [
-                  "Use Case",
-                  "Import",
-                  "Size",
-                  "Comparison"
-                ],
+                "headers": ["Use Case", "Import", "Size", "Comparison"],
                 "rows": [
                   {
-                    "cells": [
-                      "Use Case",
-                      "Import",
-                      "Size",
-                      "Comparison"
-                    ],
+                    "cells": ["Use Case", "Import", "Size", "Comparison"],
                     "type": "header"
                   },
                   {
-                    "cells": [
-                      "Basic state",
-                      "synapse-storage/core",
-                      "~42KB",
-                      "vs Redux: 45KB"
-                    ],
+                    "cells": ["Basic state", "synapse-storage/core", "~42KB", "vs Redux: 45KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ HTTP client",
-                      "+ /api",
-                      "+13KB",
-                      "vs React Query: 39KB"
-                    ],
+                    "cells": ["+ HTTP client", "+ /api", "+13KB", "vs React Query: 39KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ Reactive",
-                      "+ /reactive",
-                      "+8KB",
-                      "vs Redux-Observable: 25KB"
-                    ],
+                    "cells": ["+ Reactive", "+ /reactive", "+8KB", "vs Redux-Observable: 25KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ React hooks",
-                      "+ /react",
-                      "+5KB",
-                      "vs Custom hooks"
-                    ],
+                    "cells": ["+ React hooks", "+ /react", "+5KB", "vs Custom hooks"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "Full package",
-                      "all modules",
-                      "~171KB",
-                      "vs 109KB stack + custom"
-                    ],
+                    "cells": ["Full package", "all modules", "~171KB", "vs 109KB stack + custom"],
                     "type": "data"
                   }
                 ]
@@ -2281,9 +2210,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-08T12:12:09.578Z",
@@ -2496,9 +2423,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:30:28.819Z",
@@ -2824,9 +2749,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T06:21:31.196Z",
@@ -3064,9 +2987,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:50:46.304Z",
@@ -3652,9 +3573,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:34:00.917Z",
@@ -3880,9 +3799,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:34:08.098Z",
@@ -5010,9 +4927,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:14:51.133Z",
@@ -5605,9 +5520,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:08:46.592Z",
@@ -5994,9 +5907,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:09:38.268Z",
@@ -6196,9 +6107,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:24:49.671Z",
@@ -6822,15 +6731,7 @@
           }
         }
       ],
-      "features": [
-        "Добавлено",
-        "\udee0 Улучшено",
-        "\udcd6 Примеры использования",
-        "\udea8 Критические изменения",
-        "Добавлено",
-        "\udee0 Улучшено",
-        "\udcd6 Примеры использования"
-      ],
+      "features": ["Добавлено", "\udee0 Улучшено", "\udcd6 Примеры использования", "\udea8 Критические изменения", "Добавлено", "\udee0 Улучшено", "\udcd6 Примеры использования"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T17:12:56.201Z",
@@ -7351,58 +7252,30 @@
             {
               "type": "table",
               "data": {
-                "headers": [
-                  "Модуль",
-                  "Описание",
-                  "Зависимости"
-                ],
+                "headers": ["Модуль", "Описание", "Зависимости"],
                 "rows": [
                   {
-                    "cells": [
-                      "Модуль",
-                      "Описание",
-                      "Зависимости"
-                    ],
+                    "cells": ["Модуль", "Описание", "Зависимости"],
                     "type": "header"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/core",
-                      "base",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/core", "base", "-"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/react",
-                      "React",
-                      "React 18+"
-                    ],
+                    "cells": ["synapse-storage/react", "React", "React 18+"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/reactive",
-                      "RxJS",
-                      "RxJS 7.8.2+"
-                    ],
+                    "cells": ["synapse-storage/reactive", "RxJS", "RxJS 7.8.2+"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/api",
-                      "HTTP client",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/api", "HTTP client", "-"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/utils",
-                      "Utils",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/utils", "Utils", "-"],
                     "type": "data"
                   }
                 ]
@@ -7904,65 +7777,30 @@
             {
               "type": "table",
               "data": {
-                "headers": [
-                  "Сценарий использования",
-                  "Импорт",
-                  "Размер",
-                  "Сравнение"
-                ],
+                "headers": ["Сценарий использования", "Импорт", "Размер", "Сравнение"],
                 "rows": [
                   {
-                    "cells": [
-                      "Сценарий использования",
-                      "Импорт",
-                      "Размер",
-                      "Сравнение"
-                    ],
+                    "cells": ["Сценарий использования", "Импорт", "Размер", "Сравнение"],
                     "type": "header"
                   },
                   {
-                    "cells": [
-                      "Базовое состояние",
-                      "synapse-storage/core",
-                      "~42KB",
-                      "vs Redux: 45KB"
-                    ],
+                    "cells": ["Базовое состояние", "synapse-storage/core", "~42KB", "vs Redux: 45KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ HTTP клиент",
-                      "+ /api",
-                      "+13KB",
-                      "vs React Query: 39KB"
-                    ],
+                    "cells": ["+ HTTP клиент", "+ /api", "+13KB", "vs React Query: 39KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ Реактивность",
-                      "+ /reactive",
-                      "+8KB",
-                      "vs Redux-Observable: 25KB"
-                    ],
+                    "cells": ["+ Реактивность", "+ /reactive", "+8KB", "vs Redux-Observable: 25KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ React хуки",
-                      "+ /react",
-                      "+5KB",
-                      "vs кастомные хуки"
-                    ],
+                    "cells": ["+ React хуки", "+ /react", "+5KB", "vs кастомные хуки"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "Полный комплект",
-                      "все модули",
-                      "~171KB",
-                      "vs 109KB стек + кастом"
-                    ],
+                    "cells": ["Полный комплект", "все модули", "~171KB", "vs 109KB стек + кастом"],
                     "type": "data"
                   }
                 ]
@@ -8581,9 +8419,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-08T12:10:53.549Z",
@@ -8796,9 +8632,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:30:25.398Z",
@@ -9124,9 +8958,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T06:21:16.245Z",
@@ -9364,9 +9196,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:50:54.145Z",
@@ -9930,9 +9760,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T08:42:59.450Z",
@@ -10158,9 +9986,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:33:23.025Z",
@@ -11288,9 +11114,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:13:14.461Z",
@@ -11883,9 +11707,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:07:23.205Z",
@@ -12272,9 +12094,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:13:22.599Z",
@@ -12474,9 +12294,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:24:46.205Z",

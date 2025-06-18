@@ -10,7 +10,7 @@ export const ApiClient = () => {
     <div>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
-        ?.map(({ content, id, level, title, metadata }) => {
+        ?.map(({ content, id, title }) => {
           return (
             <Fragment key={id}>
               <h1>{title}</h1>

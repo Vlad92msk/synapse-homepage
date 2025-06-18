@@ -2,8 +2,6 @@
 import { initReactI18next } from 'react-i18next'
 import i18n from 'i18next'
 
-import { QuickStart } from '../pages/docs/sections'
-
 // Переводы для UI элементов (не для документации!)
 const resources = {
   ru: {

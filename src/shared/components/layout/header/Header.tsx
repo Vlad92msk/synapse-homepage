@@ -71,7 +71,7 @@ export const Header = () => {
       {isMenuOpen && <div className={style.overlay} onClick={() => toggleMenu(false)} />}
       <nav className={style.nav}>
         <Button onClick={() => handleNavClick('/')} className={style.logo}>
-          <img src={logo} />
+          <img src={logo} alt="Synapse" width={40} />
           Synapse Storage
         </Button>
 

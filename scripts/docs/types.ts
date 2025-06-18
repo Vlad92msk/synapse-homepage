@@ -67,8 +67,8 @@ export type ContentBlock =
     | { type: 'table'; data: Table }
     | { type: 'code'; data: CodeBlock }
     | { type: 'blockquote'; data: Blockquote }
-    | { type: 'divider'; data: {} }
-    | { type: 'break'; data: {} }
+    | { type: 'divider'; data: object }
+    | { type: 'break'; data: object }
     | { type: 'html'; data: { content: string } }
 
 export interface DocSection {
