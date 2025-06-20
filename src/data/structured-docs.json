@@ -522,7 +522,15 @@
           }
         }
       ],
-      "features": ["Added", "\udee0 Improved", "\udcd6 Usage Examples", "\udea8 Breaking Changes", "Added", "\udee0 Improved", "\udcd6 Usage Examples"],
+      "features": [
+        "Added",
+        "\udee0 Improved",
+        "\udcd6 Usage Examples",
+        "\udea8 Breaking Changes",
+        "Added",
+        "\udee0 Improved",
+        "\udcd6 Usage Examples"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T17:14:16.631Z",
@@ -1043,30 +1051,58 @@
             {
               "type": "table",
               "data": {
-                "headers": ["Module", "Description", "Dependencies"],
+                "headers": [
+                  "Module",
+                  "Description",
+                  "Dependencies"
+                ],
                 "rows": [
                   {
-                    "cells": ["Module", "Description", "Dependencies"],
+                    "cells": [
+                      "Module",
+                      "Description",
+                      "Dependencies"
+                    ],
                     "type": "header"
                   },
                   {
-                    "cells": ["synapse-storage/core", "base", "-"],
+                    "cells": [
+                      "synapse-storage/core",
+                      "base",
+                      "-"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["synapse-storage/react", "React", "React 18+"],
+                    "cells": [
+                      "synapse-storage/react",
+                      "React",
+                      "React 18+"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["synapse-storage/reactive", "RxJS", "RxJS 7.8.2+"],
+                    "cells": [
+                      "synapse-storage/reactive",
+                      "RxJS",
+                      "RxJS 7.8.2+"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["synapse-storage/api", "HTTP client", "-"],
+                    "cells": [
+                      "synapse-storage/api",
+                      "HTTP client",
+                      "-"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["synapse-storage/utils", "Utils", "-"],
+                    "cells": [
+                      "synapse-storage/utils",
+                      "Utils",
+                      "-"
+                    ],
                     "type": "data"
                   }
                 ]
@@ -1568,30 +1604,65 @@
             {
               "type": "table",
               "data": {
-                "headers": ["Use Case", "Import", "Size", "Comparison"],
+                "headers": [
+                  "Use Case",
+                  "Import",
+                  "Size",
+                  "Comparison"
+                ],
                 "rows": [
                   {
-                    "cells": ["Use Case", "Import", "Size", "Comparison"],
+                    "cells": [
+                      "Use Case",
+                      "Import",
+                      "Size",
+                      "Comparison"
+                    ],
                     "type": "header"
                   },
                   {
-                    "cells": ["Basic state", "synapse-storage/core", "~42KB", "vs Redux: 45KB"],
+                    "cells": [
+                      "Basic state",
+                      "synapse-storage/core",
+                      "~42KB",
+                      "vs Redux: 45KB"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["+ HTTP client", "+ /api", "+13KB", "vs React Query: 39KB"],
+                    "cells": [
+                      "+ HTTP client",
+                      "+ /api",
+                      "+13KB",
+                      "vs React Query: 39KB"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["+ Reactive", "+ /reactive", "+8KB", "vs Redux-Observable: 25KB"],
+                    "cells": [
+                      "+ Reactive",
+                      "+ /reactive",
+                      "+8KB",
+                      "vs Redux-Observable: 25KB"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["+ React hooks", "+ /react", "+5KB", "vs Custom hooks"],
+                    "cells": [
+                      "+ React hooks",
+                      "+ /react",
+                      "+5KB",
+                      "vs Custom hooks"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["Full package", "all modules", "~171KB", "vs 109KB stack + custom"],
+                    "cells": [
+                      "Full package",
+                      "all modules",
+                      "~171KB",
+                      "vs 109KB stack + custom"
+                    ],
                     "type": "data"
                   }
                 ]
@@ -2210,7 +2281,9 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-08T12:12:09.578Z",
@@ -2423,11 +2496,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:30:28.819Z",
-        "wordCount": 348,
+        "lastModified": "2025-06-20T07:53:10.598Z",
+        "wordCount": 347,
         "readingTime": 2,
         "sectionsCount": 2,
         "codeBlocksCount": 1
@@ -2749,11 +2824,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T06:21:31.196Z",
-        "wordCount": 432,
+        "lastModified": "2025-06-20T07:54:29.826Z",
+        "wordCount": 431,
         "readingTime": 3,
         "sectionsCount": 5,
         "codeBlocksCount": 6
@@ -2783,7 +2860,7 @@
               "type": "code",
               "data": {
                 "language": "typescript",
-                "code": "import { createDispatcher, loggerDispatcherMiddleware } from 'synapse-storage/reactive'\nimport { PokemonStorage } from '../storages/pokemon.storage'\nimport { createPokemonAlertMiddleware } from '../middlewares/pokenon.middlewares'\nimport { Pokemon } from '../types'\n\n// const myWorker = new Worker('path-to-my-worker')\n\nexport interface AlertPayload {\n  message: string\n  type: 'info' | 'warning' | 'error' | 'success'\n  duration?: number // Display duration in milliseconds\n}\n\n// Function to create dispatcher\nexport function createPokemonDispatcher(storage: PokemonStorage) {\n  // Create middleware: logger\n    const loggerMiddleware = loggerDispatcherMiddleware({\n        collapsed: true, // Collapse groups in consoles for compactness\n        colors: {\n            title: '#3498db', // Custom blue color for header\n        },\n        duration: true,      // lead time\n        diff: true,          // Show full status\n        showFullState: true, // Показывать полное состояние\n        // Custom interface translations\n        translations: {\n            action: '',\n            changesCount: '',\n            diff: '',\n            duration: '',\n            error: '',\n            //...\n        }\n    })\n\n  // Create middleware: alertM (just for example)\n  const alertM = createPokemonAlertMiddleware()\n\n  return createDispatcher({\n    storage,\n    middlewares: [loggerMiddleware, alertM],\n  }, (storage, { createWatcher, createAction }) => ({\n    // watchers\n    watchCurrentId: createWatcher({\n      type: 'watchCurrentId',\n      selector: (state) => state.currentId,\n      shouldTrigger: (prev, curr) => prev !== curr,\n      notifyAfterSubscribe: false, // Only changes (default)\n      meta: { description: 'Track current Pokemon changes' },\n    }),\n\n    // Watches user profile for synchronization\n    watchUserProfile: createWatcher({\n      type: 'watchUserProfile',\n      selector: (state) => state.userProfile,\n      shouldTrigger: (prev, curr) => JSON.stringify(prev) !== JSON.stringify(curr),\n      notifyAfterSubscribe: true, // Emit on subscription for sync\n      meta: { description: 'Synchronize profile between modules' },\n    }),\n    // Events\n    loadPokemon: createAction<number, { id: number }>({...}),\n    loadPokemonRequest: createAction<number, { id: number }>({...}),\n    // Successful data retrieval\n    success: createAction<{ data?: Pokemon}, { data?: Pokemon }>({...}, {\n      // Memoization function (not tested yet)\n      // memoize: (currentArgs: any[], previousArgs: any[], previousResult: any) => true,\n      // Web worker for action execution (not tested yet)\n      // worker: myWorker,\n    }),\n    failure: createAction<Error, { err: Error }>({...}),\n    next: createAction<void, { id: number }>({...}),\n    prev: createAction<void, { id: number }>({...}),\n    showAlert: createAction<AlertPayload, void>({...}),\n  }))\n  // Alternative way to add:\n  // .use(logger)\n  // .use(alertM)\n}\n\n// Export dispatcher type\nexport type PokemonDispatcher = ReturnType<typeof createPokemonDispatcher>",
+                "code": "import { createDispatcher, loggerDispatcherMiddleware } from 'synapse-storage/reactive'\nimport { PokemonStorage } from '../storages/pokemon.storage'\nimport { createPokemonAlertMiddleware } from '../middlewares/pokenon.middlewares'\nimport { Pokemon } from '../types'\n\n// const myWorker = new Worker('path-to-my-worker')\n\nexport interface AlertPayload {\n  message: string\n  type: 'info' | 'warning' | 'error' | 'success'\n  duration?: number // Display duration in milliseconds\n}\n\n// Function to create dispatcher\nexport function createPokemonDispatcher(storage: PokemonStorage) {\n  // Create middleware: logger\n    const loggerMiddleware = loggerDispatcherMiddleware({\n        collapsed: true, // Collapse groups in consoles for compactness\n        colors: {\n            title: '#3498db', // Custom blue color for header\n        },\n        duration: true,      // Execution time\n        diff: true,          // Show full status\n        showFullState: true, // Show full state\n        // Custom interface translations\n        translations: {\n            action: '',\n            changesCount: '',\n            diff: '',\n            duration: '',\n            error: '',\n            //...\n        }\n    })\n\n  // Create middleware: alertM (just for example)\n  const alertM = createPokemonAlertMiddleware()\n\n  return createDispatcher({\n    storage,\n    middlewares: [loggerMiddleware, alertM],\n  }, (storage, { createWatcher, createAction }) => ({\n    // watchers\n    watchCurrentId: createWatcher({\n      type: 'watchCurrentId',\n      selector: (state) => state.currentId,\n      shouldTrigger: (prev, curr) => prev !== curr,\n      notifyAfterSubscribe: false, // Only changes (default)\n      meta: { description: 'Track current Pokemon changes' },\n    }),\n\n    // Watches user profile for synchronization\n    watchUserProfile: createWatcher({\n      type: 'watchUserProfile',\n      selector: (state) => state.userProfile,\n      shouldTrigger: (prev, curr) => JSON.stringify(prev) !== JSON.stringify(curr),\n      notifyAfterSubscribe: true, // Emit on subscription for sync\n      meta: { description: 'Synchronize profile between modules' },\n    }),\n    // Events\n    loadPokemon: createAction<number, { id: number }>({...}),\n    loadPokemonRequest: createAction<number, { id: number }>({...}),\n    // Successful data retrieval\n    success: createAction<{ data?: Pokemon}, { data?: Pokemon }>({...}, {\n      // Memoization function (not tested yet)\n      // memoize: (currentArgs: any[], previousArgs: any[], previousResult: any) => true,\n      // Web worker for action execution (not tested yet)\n      // worker: myWorker,\n    }),\n    failure: createAction<Error, { err: Error }>({...}),\n    next: createAction<void, { id: number }>({...}),\n    prev: createAction<void, { id: number }>({...}),\n    showAlert: createAction<AlertPayload, void>({...}),\n  }))\n  // Alternative way to add:\n  // .use(logger)\n  // .use(alertM)\n}\n\n// Export dispatcher type\nexport type PokemonDispatcher = ReturnType<typeof createPokemonDispatcher>",
                 "meta": null
               }
             },
@@ -2987,11 +3064,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:50:46.304Z",
-        "wordCount": 374,
+        "lastModified": "2025-06-20T07:58:13.089Z",
+        "wordCount": 373,
         "readingTime": 2,
         "sectionsCount": 2,
         "codeBlocksCount": 1
@@ -3573,11 +3652,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:34:00.917Z",
-        "wordCount": 411,
+        "lastModified": "2025-06-20T07:55:40.146Z",
+        "wordCount": 410,
         "readingTime": 3,
         "sectionsCount": 8,
         "codeBlocksCount": 4
@@ -3799,11 +3880,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:34:08.098Z",
-        "wordCount": 541,
+        "lastModified": "2025-06-20T07:55:36.313Z",
+        "wordCount": 540,
         "readingTime": 3,
         "sectionsCount": 2,
         "codeBlocksCount": 1
@@ -5148,11 +5231,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T13:14:51.133Z",
-        "wordCount": 295,
+        "lastModified": "2025-06-20T07:55:49.310Z",
+        "wordCount": 294,
         "readingTime": 2,
         "sectionsCount": 2,
         "codeBlocksCount": 2
@@ -5741,11 +5826,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T13:08:46.592Z",
-        "wordCount": 387,
+        "lastModified": "2025-06-20T07:55:53.973Z",
+        "wordCount": 386,
         "readingTime": 2,
         "sectionsCount": 2,
         "codeBlocksCount": 1
@@ -6128,11 +6215,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T13:09:38.268Z",
-        "wordCount": 417,
+        "lastModified": "2025-06-20T07:55:59.779Z",
+        "wordCount": 416,
         "readingTime": 3,
         "sectionsCount": 2,
         "codeBlocksCount": 3
@@ -6328,11 +6417,13 @@
           }
         }
       ],
-      "features": ["\udcda Navigation"],
+      "features": [
+        "\udcda Navigation"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:24:49.671Z",
-        "wordCount": 196,
+        "lastModified": "2025-06-20T07:56:12.883Z",
+        "wordCount": 195,
         "readingTime": 1,
         "sectionsCount": 3,
         "codeBlocksCount": 2
@@ -6421,8 +6512,8 @@
       "features": [],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:14:27.450Z",
-        "wordCount": 105,
+        "lastModified": "2025-06-20T07:56:18.312Z",
+        "wordCount": 104,
         "readingTime": 1,
         "sectionsCount": 1,
         "codeBlocksCount": 3
@@ -6952,7 +7043,15 @@
           }
         }
       ],
-      "features": ["Добавлено", "\udee0 Улучшено", "\udcd6 Примеры использования", "\udea8 Критические изменения", "Добавлено", "\udee0 Улучшено", "\udcd6 Примеры использования"],
+      "features": [
+        "Добавлено",
+        "\udee0 Улучшено",
+        "\udcd6 Примеры использования",
+        "\udea8 Критические изменения",
+        "Добавлено",
+        "\udee0 Улучшено",
+        "\udcd6 Примеры использования"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T17:12:56.201Z",
@@ -7473,30 +7572,58 @@
             {
               "type": "table",
               "data": {
-                "headers": ["Модуль", "Описание", "Зависимости"],
+                "headers": [
+                  "Модуль",
+                  "Описание",
+                  "Зависимости"
+                ],
                 "rows": [
                   {
-                    "cells": ["Модуль", "Описание", "Зависимости"],
+                    "cells": [
+                      "Модуль",
+                      "Описание",
+                      "Зависимости"
+                    ],
                     "type": "header"
                   },
                   {
-                    "cells": ["synapse-storage/core", "base", "-"],
+                    "cells": [
+                      "synapse-storage/core",
+                      "base",
+                      "-"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["synapse-storage/react", "React", "React 18+"],
+                    "cells": [
+                      "synapse-storage/react",
+                      "React",
+                      "React 18+"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["synapse-storage/reactive", "RxJS", "RxJS 7.8.2+"],
+                    "cells": [
+                      "synapse-storage/reactive",
+                      "RxJS",
+                      "RxJS 7.8.2+"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["synapse-storage/api", "HTTP client", "-"],
+                    "cells": [
+                      "synapse-storage/api",
+                      "HTTP client",
+                      "-"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["synapse-storage/utils", "Utils", "-"],
+                    "cells": [
+                      "synapse-storage/utils",
+                      "Utils",
+                      "-"
+                    ],
                     "type": "data"
                   }
                 ]
@@ -7998,30 +8125,65 @@
             {
               "type": "table",
               "data": {
-                "headers": ["Сценарий использования", "Импорт", "Размер", "Сравнение"],
+                "headers": [
+                  "Сценарий использования",
+                  "Импорт",
+                  "Размер",
+                  "Сравнение"
+                ],
                 "rows": [
                   {
-                    "cells": ["Сценарий использования", "Импорт", "Размер", "Сравнение"],
+                    "cells": [
+                      "Сценарий использования",
+                      "Импорт",
+                      "Размер",
+                      "Сравнение"
+                    ],
                     "type": "header"
                   },
                   {
-                    "cells": ["Базовое состояние", "synapse-storage/core", "~42KB", "vs Redux: 45KB"],
+                    "cells": [
+                      "Базовое состояние",
+                      "synapse-storage/core",
+                      "~42KB",
+                      "vs Redux: 45KB"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["+ HTTP клиент", "+ /api", "+13KB", "vs React Query: 39KB"],
+                    "cells": [
+                      "+ HTTP клиент",
+                      "+ /api",
+                      "+13KB",
+                      "vs React Query: 39KB"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["+ Реактивность", "+ /reactive", "+8KB", "vs Redux-Observable: 25KB"],
+                    "cells": [
+                      "+ Реактивность",
+                      "+ /reactive",
+                      "+8KB",
+                      "vs Redux-Observable: 25KB"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["+ React хуки", "+ /react", "+5KB", "vs кастомные хуки"],
+                    "cells": [
+                      "+ React хуки",
+                      "+ /react",
+                      "+5KB",
+                      "vs кастомные хуки"
+                    ],
                     "type": "data"
                   },
                   {
-                    "cells": ["Полный комплект", "все модули", "~171KB", "vs 109KB стек + кастом"],
+                    "cells": [
+                      "Полный комплект",
+                      "все модули",
+                      "~171KB",
+                      "vs 109KB стек + кастом"
+                    ],
                     "type": "data"
                   }
                 ]
@@ -8640,7 +8802,9 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-08T12:10:53.549Z",
@@ -8674,7 +8838,7 @@
               "type": "code",
               "data": {
                 "language": "typescript",
-                "code": "const api = new ApiClient({\n  // Настройка кеширования запросов\n  cacheableHeaderKeys: ['X-Auth-Token'],\n  storage: API, // Передаем готовое экземпляр готового хранилища\n  // Настройки кеша\n  cache: {\n    ttl: 5 * 60 * 1000, // Время жизни кеша: 5 минут\n    invalidateOnError: true, // Инвалидация кеша при ошибке\n    cleanup: {\n      enabled: true, // Периодическая очистка кеша\n      interval: 10 * 60 * 1000, // Интервал очистки: 10 минут\n    },\n  },\n  // Базовые настройки запроса\n  baseQuery: {\n    baseUrl: 'https://api.example.com',\n    timeout: 10000, // 10 секунд\n    prepareHeaders: async (headers, context) => {\n      // Установка заголовков\n      headers.set('X-Auth-Token', 'some-token');\n      // Получение данных из хранилища или cookies\n      const token = context.getCookie('token');\n      if (token) {\n        headers.set('Authorization', `Bearer ${token}`);\n      }\n      return headers;\n    },\n    credentials: 'same-origin',\n  },\n  // Определение эндпоинтов\n  endpoints: async (create) => ({\n    getData: create({\n      request: (params, context) => ({\n        path: '/data',\n        method: 'GET',\n        query: params,\n      }),\n      // Можно указать специфичные настройки кеша для эндпоинта\n      cache: {\n        ttl: 60 * 1000, // 1 минута для этого эндпоинта\n      },\n    }),\n  }),\n});\n\n// Инициализация\nconst myApi = await api.init();\n\n// Использование с подпиской на состояние запроса\nconst request = myApi.getEndpoints().getData.request({ id: 1 }, {\n  // Можно передать дополнительные свойства в контекст\n  context: {\n    someKey: 'someValue',\n  },\n  // Можно отключить кэш для конкретного вызова\n  // disableCache: true,\n  // Можно указать заголовки которые будут участвовать в формирование ключа (перетирают все остальные настройки)\n  // cacheableHeaderKeys: ['header-key'],\n  // и тд...\n  // Некоторые аспекты еще буду дорабатывать\n});\n\n// Вариант 1: Подписка на изменения состояния запроса\nrequest.subscribe((state) => {\n  switch (state.status) {\n    case 'idle':\n      console.log('Запрос неактивен');\n      break;\n    case 'loading':\n      console.log('Загрузка данных...');\n      break;\n    case 'success':\n      console.log('Данные получены:', state.data);\n      break;\n    case 'error':\n      console.log('Ошибка:', state.error);\n      break;\n  }\n});\n\n// Вариант 2: Ожидание результата запроса\nconst response = await request.wait();\n\n// Вариант 3: Ожидание с колбеками для разных состояний\nawait request.waitWithCallbacks({\n  loading: () => console.log('Загрузка...'),\n  success: (data) => console.log('Данные:', data),\n  error: (error) => console.error('Ошибка:', error),\n});",
+                "code": "const api = new ApiClient({\n  // Настройка кеширования запросов\n  cacheableHeaderKeys: ['X-Auth-Token'],\n  storage: API, // Передаем экземпляр готового хранилища\n  // Настройки кеша\n  cache: {\n    ttl: 5 * 60 * 1000, // Время жизни кеша: 5 минут\n    invalidateOnError: true, // Инвалидация кеша при ошибке\n    cleanup: {\n      enabled: true, // Периодическая очистка кеша\n      interval: 10 * 60 * 1000, // Интервал очистки: 10 минут\n    },\n  },\n  // Базовые настройки запроса\n  baseQuery: {\n    baseUrl: 'https://api.example.com',\n    timeout: 10000, // 10 секунд\n    prepareHeaders: async (headers, context) => {\n      // Установка заголовков\n      headers.set('X-Auth-Token', 'some-token');\n      // Получение данных из хранилища или cookies\n      const token = context.getCookie('token');\n      if (token) {\n        headers.set('Authorization', `Bearer ${token}`);\n      }\n      return headers;\n    },\n    credentials: 'same-origin',\n  },\n  // Определение эндпоинтов\n  endpoints: async (create) => ({\n    getData: create({\n      request: (params, context) => ({\n        path: '/data',\n        method: 'GET',\n        query: params,\n      }),\n      // Можно указать специфичные настройки кеша для эндпоинта\n      cache: {\n        ttl: 60 * 1000, // 1 минута для этого эндпоинта\n      },\n    }),\n  }),\n});\n\n// Инициализация\nconst myApi = await api.init();\n\n// Использование с подпиской на состояние запроса\nconst request = myApi.getEndpoints().getData.request({ id: 1 }, {\n  // Можно передать дополнительные свойства в контекст\n  context: {\n    someKey: 'someValue',\n  },\n  // Можно отключить кэш для конкретного вызова\n  // disableCache: true,\n  // Можно указать заголовки, которые будут участвовать в формировании ключа (перетирают все остальные настройки)\n  // cacheableHeaderKeys: ['header-key'],\n  // и тд...\n  // Некоторые аспекты еще будут дорабатываться\n});\n\n// Вариант 1: Подписка на изменения состояния запроса\nrequest.subscribe((state) => {\n  switch (state.status) {\n    case 'idle':\n      console.log('Запрос неактивен');\n      break;\n    case 'loading':\n      console.log('Загрузка данных...');\n      break;\n    case 'success':\n      console.log('Данные получены:', state.data);\n      break;\n    case 'error':\n      console.log('Ошибка:', state.error);\n      break;\n  }\n});\n\n// Вариант 2: Ожидание результата запроса\nconst response = await request.wait();\n\n// Вариант 3: Ожидание с колбеками для разных состояний\nawait request.waitWithCallbacks({\n  loading: () => console.log('Загрузка...'),\n  success: (data) => console.log('Данные:', data),\n  error: (error) => console.error('Ошибка:', error),\n});",
                 "meta": null
               }
             },
@@ -8853,11 +9017,13 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:30:25.398Z",
-        "wordCount": 349,
+        "lastModified": "2025-06-20T07:52:49.645Z",
+        "wordCount": 348,
         "readingTime": 2,
         "sectionsCount": 2,
         "codeBlocksCount": 1
@@ -8975,7 +9141,7 @@
               "type": "code",
               "data": {
                 "language": "jsx",
-                "code": "const [counter1Value, setCounter1Value] = useState(0)\nconst [counter2Value, setCounter2Value] = useState(0)\n\n\nuseEffect(() => {\n  // Подписка через колбэк\n  counter1.subscribe((state) => state.value, (value) => {\n    setCounter1Value(value)\n  })\n  // Подписка через путь (может быть типа 'user.settings.theme')\n  counter2.subscribe('value', (value) => {\n    setCounter2Value(value)\n  })\n\n  // Подписка на все события\n  counter1.subscribeToAll((event) => {\n    console.log('event', event)\n    // Здесь мы получим объект:\n    // changedPaths:['value'] // все пути по которым были вызваны изменения (['prop1.prop2', 'prop44.prop.555.prop.666'])\n    // key:['value'] // Корневые ключи в хранилище которые вкоторых были изменения\n    // type:\"storage:update\" // Тип операции\n    // value: {value: 101} // Новый state\n  })\n}, [])\n// Для React через специальный селектор\nconst counter3Value = useStorageSubscribe(counter3, (state) => state.value)",
+                "code": "const [counter1Value, setCounter1Value] = useState(0)\nconst [counter2Value, setCounter2Value] = useState(0)\n\n\nuseEffect(() => {\n  // Подписка через колбэк\n  counter1.subscribe((state) => state.value, (value) => {\n    setCounter1Value(value)\n  })\n  // Подписка через путь (может быть типа 'user.settings.theme')\n  counter2.subscribe('value', (value) => {\n    setCounter2Value(value)\n  })\n\n  // Подписка на все события\n  counter1.subscribeToAll((event) => {\n    console.log('event', event)\n    // Здесь мы получим объект:\n    // changedPaths:['value'] // все пути, по которым были вызваны изменения (['prop1.prop2', 'prop44.prop.555.prop.666'])\n    // key:['value'] // Корневые ключи в хранилище, в которых были изменения\n    // type:\"storage:update\" // Тип операции\n    // value: {value: 101} // Новый state\n  })\n}, [])\n// Для React через специальный селектор\nconst counter3Value = useStorageSubscribe(counter3, (state) => state.value)",
                 "meta": null
               }
             },
@@ -9179,10 +9345,12 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T06:21:16.245Z",
+        "lastModified": "2025-06-20T07:54:16.547Z",
         "wordCount": 434,
         "readingTime": 3,
         "sectionsCount": 5,
@@ -9213,7 +9381,7 @@
               "type": "code",
               "data": {
                 "language": "typescript",
-                "code": "import { createDispatcher, loggerDispatcherMiddleware } from 'synapse-storage/reactive'\nimport { PokemonStorage } from '../storages/pokemon.storage'\nimport { createPokemonAlertMiddleware } from '../middlewares/pokenon.middlewares'\nimport { Pokemon } from '../types'\n\n// const myWorker = new Worker('path-to-my-worker')\n\nexport interface AlertPayload {\n  message: string\n  type: 'info' | 'warning' | 'error' | 'success'\n  duration?: number // Длительность показа в миллисекундах\n}\n\n// Функция для создания диспетчера\nexport function createPokemonDispatcher(storage: PokemonStorage) {\n  // Создаем middleware: логгер\n    const loggerMiddleware = loggerDispatcherMiddleware({\n        collapsed: true, // Сворачиваем группы в консоли для компактности\n        colors: {\n            title: '#3498db', // Кастомный синий цвет для заголовка\n        },\n        duration: true,      // Время выполнения\n        diff: true,          // Показывать разницу\n        showFullState: true, // Показывать полное состояние\n        // Кастомные переводы интерфейса\n        translations: {\n            action: '',\n            changesCount: '',\n            diff: '',\n            duration: '',\n            error: '',\n            //...\n        }\n    })\n\n  // Создаем middleware: alertM (просто для примера)\n  const alertM = createPokemonAlertMiddleware()\n\n  return createDispatcher({\n    storage,\n    middlewares: [loggerMiddleware, alertM],\n  }, (storage, { createWatcher, createAction }) => ({\n    // watcher`s\n    watchCurrentId: createWatcher({\n      type: 'watchCurrentId',\n      selector: (state) => state.currentId,\n      shouldTrigger: (prev, curr) => prev !== curr,\n      notifyAfterSubscribe: false, // Только изменения (по умолчанию)\n      meta: { description: 'Отслеживание смены текущего покемона' },\n    }),\n\n    // Следит за профилем пользователя для синхронизации\n    watchUserProfile: createWatcher({\n      type: 'watchUserProfile',\n      selector: (state) => state.userProfile,\n      shouldTrigger: (prev, curr) => JSON.stringify(prev) !== JSON.stringify(curr),\n      notifyAfterSubscribe: true, // Эмитим при подписке для синхронизации\n      meta: { description: 'Синхронизация профиля между модулями' },\n    }),\n    // сСобытия\n    loadPokemon: createAction<number, { id: number }>({...}),\n    loadPokemonRequest: createAction<number, { id: number }>({...}),\n    // Успешное получение данных\n    success: createAction<{ data?: Pokemon}, { data?: Pokemon }>({...}, {\n      // Функция мемоизации (пока не тестировал)\n      // memoize: (currentArgs: any[], previousArgs: any[], previousResult: any) => true,\n      // Веб-воркер для выполнения действия (пока не тестировал)\n      // worker: myWorker,\n    }),\n    failure: createAction<Error, { err: Error }>({...}),\n    next: createAction<void, { id: number }>({...}),\n    prev: createAction<void, { id: number }>({...}),\n    showAlert: createAction<AlertPayload, void>({...}),\n  }))\n  // Альтернативный вариант добавления:\n  // .use(logger)\n  // .use(alertM)\n}\n\n// Экспортируем тип диспетчера\nexport type PokemonDispatcher = ReturnType<typeof createPokemonDispatcher>",
+                "code": "import { createDispatcher, loggerDispatcherMiddleware } from 'synapse-storage/reactive'\nimport { PokemonStorage } from '../storages/pokemon.storage'\nimport { createPokemonAlertMiddleware } from '../middlewares/pokenon.middlewares'\nimport { Pokemon } from '../types'\n\n// const myWorker = new Worker('path-to-my-worker')\n\nexport interface AlertPayload {\n  message: string\n  type: 'info' | 'warning' | 'error' | 'success'\n  duration?: number // Длительность показа в миллисекундах\n}\n\n// Функция для создания диспетчера\nexport function createPokemonDispatcher(storage: PokemonStorage) {\n  // Создаем middleware: логгер\n    const loggerMiddleware = loggerDispatcherMiddleware({\n        collapsed: true, // Сворачиваем группы в консоли для компактности\n        colors: {\n            title: '#3498db', // Кастомный синий цвет для заголовка\n        },\n        duration: true,      // Время выполнения\n        diff: true,          // Показывать полное состояние\n        showFullState: true, // Показывать полное состояние\n        // Кастомные переводы интерфейса\n        translations: {\n            action: '',\n            changesCount: '',\n            diff: '',\n            duration: '',\n            error: '',\n            //...\n        }\n    })\n\n  // Создаем middleware: alertM (просто для примера)\n  const alertM = createPokemonAlertMiddleware()\n\n  return createDispatcher({\n    storage,\n    middlewares: [loggerMiddleware, alertM],\n  }, (storage, { createWatcher, createAction }) => ({\n    // watcher`s\n    watchCurrentId: createWatcher({\n      type: 'watchCurrentId',\n      selector: (state) => state.currentId,\n      shouldTrigger: (prev, curr) => prev !== curr,\n      notifyAfterSubscribe: false, // Только изменения (по умолчанию)\n      meta: { description: 'Отслеживание смены текущего покемона' },\n    }),\n\n    // Следит за профилем пользователя для синхронизации\n    watchUserProfile: createWatcher({\n      type: 'watchUserProfile',\n      selector: (state) => state.userProfile,\n      shouldTrigger: (prev, curr) => JSON.stringify(prev) !== JSON.stringify(curr),\n      notifyAfterSubscribe: true, // Эмитим при подписке для синхронизации\n      meta: { description: 'Синхронизация профиля между модулями' },\n    }),\n    // События\n    loadPokemon: createAction<number, { id: number }>({...}),\n    loadPokemonRequest: createAction<number, { id: number }>({...}),\n    // Успешное получение данных\n    success: createAction<{ data?: Pokemon}, { data?: Pokemon }>({...}, {\n      // Функция мемоизации (пока не тестировал)\n      // memoize: (currentArgs: any[], previousArgs: any[], previousResult: any) => true,\n      // Веб-воркер для выполнения действия (пока не тестировал)\n      // worker: myWorker,\n    }),\n    failure: createAction<Error, { err: Error }>({...}),\n    next: createAction<void, { id: number }>({...}),\n    prev: createAction<void, { id: number }>({...}),\n    showAlert: createAction<AlertPayload, void>({...}),\n  }))\n  // Альтернативный вариант добавления:\n  // .use(logger)\n  // .use(alertM)\n}\n\n// Экспортируем тип диспетчера\nexport type PokemonDispatcher = ReturnType<typeof createPokemonDispatcher>",
                 "meta": null
               }
             },
@@ -9417,11 +9585,13 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:50:54.145Z",
-        "wordCount": 371,
+        "lastModified": "2025-06-20T07:57:31.603Z",
+        "wordCount": 372,
         "readingTime": 2,
         "sectionsCount": 2,
         "codeBlocksCount": 1
@@ -9981,7 +10151,9 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T08:42:59.450Z",
@@ -10207,7 +10379,9 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:33:23.025Z",
@@ -10293,7 +10467,7 @@
               "type": "code",
               "data": {
                 "language": "typescript",
-                "code": "// user-info.synapse.ts\n// === СОЗДАНИЕ Synapse ===\nimport { createSynapse } from 'synapse-storage/utils'\nimport { createUserInfoDispatcher } from './user-info.dispatcher'\nimport { userInfoEffects } from './user-info.effects'\nimport { createUserInfoSelectors } from './user-info.selectors'\nimport { createUserInfoStorage } from './user-info.store'\nimport { userInfoEndpoints } from '../../api/user-info.api'\nimport { coreSynapseIDB } from '../core/core.synapse'\n\nexport const userInfoSynapse = await createSynapse({\n  dependencies: [coreSynapseIDB], // Дождется инициализации coreSynapseIDB\n  // Передаем хранилище\n  // Это может быть \n  // 1 - Функция, которая фозвращает готовое ранилище\n  createStorageFn: createUserInfoStorage,\n  // 2 - Класс для создания хранилища (initialize() убдет вызван внутри)\n  // storage: new MemoryStorage<AboutUserUserInfo>({\n  //   name: 'user-info',\n  //   initialState: {\n  //     userInfoInit: undefined,\n  //     isChangeActive: false,\n  //     fieldsInit: {},\n  //     fields: {},\n  //   },\n  // }),\n  // Функция создания диспетчеров (Опционально)\n  createDispatcherFn: createUserInfoDispatcher,\n  // Функция создания селекторов (Опционально)\n  createSelectorsFn: createUserInfoSelectors,\n  // Внешние селекторы (Опционально)\n  externalSelectors: {\n    // externalSelectors1: ...\n  },\n  // Конфигурация для эффектов (Опционально)\n  createEffectConfig: (userInfoDispatcher) => ({\n    // Диспетчеры для эффектов\n    dispatchers: {\n      userInfoDispatcher,                           // Текущий, для управления соственных хранилищем\n      coreIdbDispatcher: coreSynapseIDB.dispatcher, // Внешний, для взаиможействия с внешними хранилищами\n      //...\n    },\n    // Дополнительное АПИ по вашему усмотрения (у меня это API Clients)\n    api: {\n      userInfoAPi: userInfoEndpoints,\n    },\n    // Внешние состояния ввиде потоков, которые хотим использовать в эффектах\n    externalStates: {\n      pokemonState$: pokemon1State$,\n      core$: coreSynapseIDB.state$,\n    },\n  }),\n  // Эффекты которые будут запущены для этого synapse\n  effects: [userInfoEffects],\n})",
+                "code": "// user-info.synapse.ts\n// === СОЗДАНИЕ Synapse ===\nimport { createSynapse } from 'synapse-storage/utils'\nimport { createUserInfoDispatcher } from './user-info.dispatcher'\nimport { userInfoEffects } from './user-info.effects'\nimport { createUserInfoSelectors } from './user-info.selectors'\nimport { createUserInfoStorage } from './user-info.store'\nimport { userInfoEndpoints } from '../../api/user-info.api'\nimport { coreSynapseIDB } from '../core/core.synapse'\n\nexport const userInfoSynapse = await createSynapse({\n  dependencies: [coreSynapseIDB], // Дождется инициализации coreSynapseIDB\n  // Передаем хранилище\n  // Это может быть \n  // 1 - Функция, которая возвращает готовое хранилище\n  createStorageFn: createUserInfoStorage,\n  // 2 - Класс для создания хранилища (initialize() убдет вызван внутри)\n  // storage: new MemoryStorage<AboutUserUserInfo>({\n  //   name: 'user-info',\n  //   initialState: {\n  //     userInfoInit: undefined,\n  //     isChangeActive: false,\n  //     fieldsInit: {},\n  //     fields: {},\n  //   },\n  // }),\n  // Функция создания диспетчеров (Опционально)\n  createDispatcherFn: createUserInfoDispatcher,\n  // Функция создания селекторов (Опционально)\n  createSelectorsFn: createUserInfoSelectors,\n  // Внешние селекторы (Опционально)\n  externalSelectors: {\n    // externalSelectors1: ...\n  },\n  // Конфигурация для эффектов (Опционально)\n  createEffectConfig: (userInfoDispatcher) => ({\n    // Диспетчеры для эффектов\n    dispatchers: {\n      userInfoDispatcher,                           // Текущий, для управления соственных хранилищем\n      coreIdbDispatcher: coreSynapseIDB.dispatcher, // Внешний, для взаиможействия с внешними хранилищами\n      //...\n    },\n    // Дополнительное АПИ по вашему усмотрения (у меня это API Clients)\n    api: {\n      userInfoAPi: userInfoEndpoints,\n    },\n    // Внешние состояния ввиде потоков, которые хотим использовать в эффектах\n    externalStates: {\n      pokemonState$: pokemon1State$,\n      core$: coreSynapseIDB.state$,\n    },\n  }),\n  // Эффекты которые будут запущены для этого synapse\n  effects: [userInfoEffects],\n})",
                 "meta": null
               }
             },
@@ -10380,7 +10554,7 @@
             {
               "type": "diagram",
               "data": {
-                "code": "graph TD\n    Core((Core<br/>Synapse))\n    UserInfo((UserInfo<br/>Synapse))\n    Posts((Posts<br/>Synapse))\n    Settings((Settings<br/>Synapse))\n    \n    Core --> UserInfo\n    Core --> Posts\n    Core --> Settings\n    \n    style Settings fontSize:1em"
+                "code": "graph TD\n    Core((Core<br/>Synapse))\n    UserInfo((UserInfo<br/>Synapse))\n    Posts((Posts<br/>Synapse))\n    Settings((Settings<br/>Synapse))\n    \n    Core --> UserInfo\n    Core --> Posts\n    Core --> Settings\n    "
               }
             },
             {
@@ -11148,8 +11322,8 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-20T07:39:26.208Z",
-        "wordCount": 1553,
+        "lastModified": "2025-06-20T08:02:04.201Z",
+        "wordCount": 1550,
         "readingTime": 8,
         "sectionsCount": 3,
         "codeBlocksCount": 10
@@ -11556,7 +11730,9 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:13:14.461Z",
@@ -12149,7 +12325,9 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:07:23.205Z",
@@ -12536,7 +12714,9 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:13:22.599Z",
@@ -12736,7 +12916,9 @@
           }
         }
       ],
-      "features": ["\udcda Навигация"],
+      "features": [
+        "\udcda Навигация"
+      ],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:24:46.205Z",
