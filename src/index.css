@@ -186,8 +186,8 @@ p {
 
 /* Блокквоты */
 blockquote {
+  position: relative;
   font-family: var(--font-sans);
-  border-left: 4px solid var(--accent-blue);
   background: var(--bg-blockquote);
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
@@ -195,8 +195,21 @@ blockquote {
   color: var(--text-secondary);
   font-style: italic;
   line-height: var(--leading-relaxed);
+  overflow: hidden;
 }
 
+blockquote:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  border-radius: 5px;
+  background: var(--accent-blue);
+  align-self: center;
+}
 /* Таблицы */
 table {
   width: 100%;
