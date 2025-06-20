@@ -11,8 +11,6 @@ Disallow: /*&lang=*
 # Priority pages for indexing
 Allow: /docs
 Allow: /docs/
-Allow: /?lang=ru
-Allow: /docs?lang=ru
 
 # Sitemap location
 Sitemap: https://synapse-homepage.web.app/sitemap.xml
@@ -24,10 +22,9 @@ Disallow: /static/css/
 Disallow: /node_modules/
 Disallow: /*.json$
 Disallow: /src/
-Disallow: /public/
 
 # Allow important static files
-Allow: /public/logo.webp
+Allow: /logo.webp
 Allow: /manifest.json
 
 # GitHub and development tools
