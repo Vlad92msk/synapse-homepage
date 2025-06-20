@@ -1,5 +1,5 @@
 > [🏠 Home](../../README.md)
-> [🏠 Журнал изменений](../../CHANGELOG.md)
+> [🏠 Changelog](../../CHANGELOG.md)
 
 # Creating dispatcher
 
@@ -27,9 +27,9 @@ export function createPokemonDispatcher(storage: PokemonStorage) {
         colors: {
             title: '#3498db', // Custom blue color for header
         },
-        duration: true,      // lead time
+        duration: true,      // Execution time
         diff: true,          // Show full status
-        showFullState: true, // Показывать полное состояние
+        showFullState: true, // Show full state
         // Custom interface translations
         translations: {
             action: '',

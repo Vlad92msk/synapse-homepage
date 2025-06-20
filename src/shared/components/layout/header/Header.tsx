@@ -115,10 +115,8 @@ export const Header = () => {
               GitHub
             </a>
           </li>
-          <li className={style.languageSwitcherWrapper}>
-            <LanguageSwitcher />
-          </li>
         </ul>
+        <LanguageSwitcher />
       </nav>
     </header>
   )

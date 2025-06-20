@@ -26,6 +26,10 @@
   z-index: 1000;
 }
 
+.navLinks li {
+  margin: 0;
+}
+
 .navLinks button {
   padding-top: 10px;
   padding-bottom: 10px;

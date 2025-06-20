@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "firebase": "^11.9.1",
     "gray-matter": "^4.0.3",
     "i18next": "^25.2.1",
     "mermaid": "^11.6.0",

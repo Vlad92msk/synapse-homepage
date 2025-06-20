@@ -28,7 +28,7 @@ export function createPokemonDispatcher(storage: PokemonStorage) {
             title: '#3498db', // Кастомный синий цвет для заголовка
         },
         duration: true,      // Время выполнения
-        diff: true,          // Показывать разницу
+        diff: true,          // Показывать полное состояние
         showFullState: true, // Показывать полное состояние
         // Кастомные переводы интерфейса
         translations: {
@@ -65,7 +65,7 @@ export function createPokemonDispatcher(storage: PokemonStorage) {
       notifyAfterSubscribe: true, // Эмитим при подписке для синхронизации
       meta: { description: 'Синхронизация профиля между модулями' },
     }),
-    // сСобытия
+    // События
     loadPokemon: createAction<number, { id: number }>({...}),
     loadPokemonRequest: createAction<number, { id: number }>({...}),
     // Успешное получение данных

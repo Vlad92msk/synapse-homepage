@@ -51,10 +51,7 @@
   "create-synapse": {
     "0": "code-organization-example-and-createsynapse-utility-usage",
     "1": "connecting-synapse-to-each-other",
-    "2": "-eventbus-pattern-advanced",
-    "3": "-eventbus-pattern-code",
-    "4": "advantages-of-each-approach",
-    "5": "navigation"
+    "2": "navigation"
   },
   "custom-middlewares": {
     "0": "creating-custom-middlewares",

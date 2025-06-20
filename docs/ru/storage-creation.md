@@ -3,7 +3,7 @@
 
 # Создание хранилищ
 
-IndexedDBStorage
+MemoryStorage
 ```typescript
 import { IndexedDBStorage, LocalStorage, MemoryStorage } from "synapse-storage/core";
 
@@ -15,7 +15,7 @@ const counter1 = await new MemoryStorage<Counter>({
 }).initialize()
 ```
 
-IndexedDBStorage
+LocalStorage
 ```typescript
 const counter2 = await new LocalStorage<Counter>({
   name: 'counter2',

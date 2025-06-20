@@ -522,15 +522,7 @@
           }
         }
       ],
-      "features": [
-        "Added",
-        "\udee0 Improved",
-        "\udcd6 Usage Examples",
-        "\udea8 Breaking Changes",
-        "Added",
-        "\udee0 Improved",
-        "\udcd6 Usage Examples"
-      ],
+      "features": ["Added", "\udee0 Improved", "\udcd6 Usage Examples", "\udea8 Breaking Changes", "Added", "\udee0 Improved", "\udcd6 Usage Examples"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T17:14:16.631Z",
@@ -1051,58 +1043,30 @@
             {
               "type": "table",
               "data": {
-                "headers": [
-                  "Module",
-                  "Description",
-                  "Dependencies"
-                ],
+                "headers": ["Module", "Description", "Dependencies"],
                 "rows": [
                   {
-                    "cells": [
-                      "Module",
-                      "Description",
-                      "Dependencies"
-                    ],
+                    "cells": ["Module", "Description", "Dependencies"],
                     "type": "header"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/core",
-                      "base",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/core", "base", "-"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/react",
-                      "React",
-                      "React 18+"
-                    ],
+                    "cells": ["synapse-storage/react", "React", "React 18+"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/reactive",
-                      "RxJS",
-                      "RxJS 7.8.2+"
-                    ],
+                    "cells": ["synapse-storage/reactive", "RxJS", "RxJS 7.8.2+"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/api",
-                      "HTTP client",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/api", "HTTP client", "-"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/utils",
-                      "Utils",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/utils", "Utils", "-"],
                     "type": "data"
                   }
                 ]
@@ -1604,65 +1568,30 @@
             {
               "type": "table",
               "data": {
-                "headers": [
-                  "Use Case",
-                  "Import",
-                  "Size",
-                  "Comparison"
-                ],
+                "headers": ["Use Case", "Import", "Size", "Comparison"],
                 "rows": [
                   {
-                    "cells": [
-                      "Use Case",
-                      "Import",
-                      "Size",
-                      "Comparison"
-                    ],
+                    "cells": ["Use Case", "Import", "Size", "Comparison"],
                     "type": "header"
                   },
                   {
-                    "cells": [
-                      "Basic state",
-                      "synapse-storage/core",
-                      "~42KB",
-                      "vs Redux: 45KB"
-                    ],
+                    "cells": ["Basic state", "synapse-storage/core", "~42KB", "vs Redux: 45KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ HTTP client",
-                      "+ /api",
-                      "+13KB",
-                      "vs React Query: 39KB"
-                    ],
+                    "cells": ["+ HTTP client", "+ /api", "+13KB", "vs React Query: 39KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ Reactive",
-                      "+ /reactive",
-                      "+8KB",
-                      "vs Redux-Observable: 25KB"
-                    ],
+                    "cells": ["+ Reactive", "+ /reactive", "+8KB", "vs Redux-Observable: 25KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ React hooks",
-                      "+ /react",
-                      "+5KB",
-                      "vs Custom hooks"
-                    ],
+                    "cells": ["+ React hooks", "+ /react", "+5KB", "vs Custom hooks"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "Full package",
-                      "all modules",
-                      "~171KB",
-                      "vs 109KB stack + custom"
-                    ],
+                    "cells": ["Full package", "all modules", "~171KB", "vs 109KB stack + custom"],
                     "type": "data"
                   }
                 ]
@@ -2281,9 +2210,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-08T12:12:09.578Z",
@@ -2496,9 +2423,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:30:28.819Z",
@@ -2824,9 +2749,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T06:21:31.196Z",
@@ -3064,9 +2987,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:50:46.304Z",
@@ -3652,9 +3573,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:34:00.917Z",
@@ -3880,9 +3799,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:34:08.098Z",
@@ -4023,7 +3940,7 @@
             {
               "type": "paragraph",
               "data": {
-                "text": "As shown in the example above - you can connect synapses simply by passing them into the dependencies array",
+                "text": "As shown in the example above - you can connect synapses simply by passing them in the dependencies array",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -4043,7 +3960,7 @@
             {
               "type": "paragraph",
               "data": {
-                "text": "In this case, the general scheme will look like this:",
+                "text": "In this case, the overall schema will look like this:",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -4055,29 +3972,21 @@
             {
               "type": "diagram",
               "data": {
-                "code": "classDiagram\n    class CoreSynapse {\n        +Storage storage\n        +Dispatcher dispatcher\n        +Selectors selectors\n        +Effects effects\n        +initialize()\n    }\n    \n    class UserInfoSynapse {\n        +Storage storage\n        +Dispatcher dispatcher\n        +Selectors selectors\n        +Effects effects\n        +initialize()\n    }\n    \n    class PostsSynapse {\n        +Storage storage\n        +Dispatcher dispatcher\n        +Selectors selectors\n        +Effects effects\n        +initialize()\n    }\n    \n    class SettingsSynapse {\n        +Storage storage\n        +Dispatcher dispatcher\n        +Selectors selectors\n        +Effects effects\n        +initialize()\n    }\n    \n    class ProfileComponent {\n        +render()\n        +useSelectors()\n        +useActions()\n    }\n    \n    class PostsComponent {\n        +render()\n        +useSelectors()\n        +useActions()\n    }\n    \n    class SettingsComponent {\n        +render()\n        +useSelectors()\n        +useActions()\n    }\n    \n    CoreSynapse <|-- UserInfoSynapse : dependencies\n    CoreSynapse <|-- PostsSynapse : dependencies\n    CoreSynapse <|-- SettingsSynapse : dependencies\n    \n    UserInfoSynapse --> ProfileComponent : uses\n    PostsSynapse --> PostsComponent : uses\n    SettingsSynapse --> SettingsComponent : uses"
+                "code": "graph TD\n    Core((Core<br/>Synapse))\n    UserInfo((UserInfo<br/>Synapse))\n    Posts((Posts<br/>Synapse))\n    Settings((Settings<br/>Synapse))\n\n    Core --> UserInfo\n    Core --> Posts\n    Core --> Settings\n"
               }
-            }
-          ],
-          "metadata": {
-            "wordCount": 34,
-            "codeBlocksCount": 1,
-            "diagramsCount": 1,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "-eventbus-pattern-advanced",
-          "title": "📡 EventBus Pattern (Advanced)",
-          "level": 2,
-          "content": [
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "📡 EventBus Pattern (Advanced)",
+                "level": 3,
+                "id": "-eventbus-pattern-advanced"
+              }
+            },
             {
               "type": "paragraph",
               "data": {
-                "text": "EventBus pattern is an alternative way to connect synapses to each other.\nIts main advantages are reducing coupling between modules and eliminating the problem of circular dependencies if you need to connect two modules to each other in both directions.",
+                "text": "EventBus pattern is an alternative way to connect synapses to each other\nIts main advantages are reducing coupling between modules and avoiding circular dependency problems when you need to connect two modules in both directions",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -4089,7 +3998,7 @@
             {
               "type": "paragraph",
               "data": {
-                "text": "In this case, the general scheme will look like this:",
+                "text": "In this case, the overall schema will look like this:",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -4101,54 +4010,226 @@
             {
               "type": "diagram",
               "data": {
-                "code": "classDiagram\n    class EventBusSynapse {\n        +Storage~EventBusState~ storage\n        +Dispatcher dispatcher\n        +publish(eventType, payload)\n        +subscribe(eventType, callback)\n        +unsubscribe(eventType, callback)\n    }\n\n    class AuthSynapse {\n        +Storage~AuthState~ storage\n        +Dispatcher dispatcher\n        +Effects effects\n        +login()\n        +logout()\n    }\n\n    class UserSynapse {\n        +Storage~UserState~ storage\n        +Dispatcher dispatcher\n        +Effects effects\n        +loadProfile()\n        +updateProfile()\n    }\n\n\n\n    class NotificationsSynapse {\n        +Storage~NotificationsState~ storage\n        +Dispatcher dispatcher\n        +Effects effects\n        +showNotification()\n    }\n\n    class LoginComponent {\n        +render()\n        +handleLogin()\n    }\n\n    class ProfileComponent {\n        +render()\n        +handleUpdate()\n    }\n\n\n    class NotificationsComponent {\n        +render()\n        +handleDismiss()\n    }\n\n    EventBusSynapse ..> AuthSynapse : publish/subscribe\n    EventBusSynapse ..> UserSynapse : publish/subscribe\n    EventBusSynapse ..> NotificationsSynapse : publish/subscribe\n\n    AuthSynapse --> LoginComponent : uses\n    UserSynapse --> ProfileComponent : uses\n    NotificationsSynapse --> NotificationsComponent : uses"
+                "code": "graph TD\n    EventBus((EventBus<br/>Synapse))\n    Auth((Auth<br/>Synapse))\n    User((User<br/>Synapse))\n    Notifications((Notifications<br/>Synapse))\n\n    Auth -.-> EventBus\n    User -.-> EventBus\n    Notifications -.-> EventBus\n    EventBus -.-> Auth\n    EventBus -.-> User\n    EventBus -.-> Notifications\n"
               }
-            }
-          ],
-          "metadata": {
-            "wordCount": 50,
-            "codeBlocksCount": 0,
-            "diagramsCount": 1,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "-eventbus-pattern-code",
-          "title": "📋 EventBus Pattern Code",
-          "level": 2,
-          "content": [
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "⚙️ EventBus Configuration",
+                "level": 3,
+                "id": "-eventbus-configuration"
+              }
+            },
             {
               "type": "code",
               "data": {
                 "language": "typescript",
-                "code": "// event-bus.synapse.ts\ninterface EventBusState {\n  events: Record<string, any[]>\n  subscribers: Record<string, Function[]>\n}\n\nexport const eventBusSynapse = await createSynapse({\n  createStorageFn: () => new MemoryStorage<EventBusState>({\n    name: 'event-bus',\n    initialState: {\n      events: {},\n      subscribers: {}\n    }\n  }).initialize(),\n  \n  createDispatcherFn: (store) => createDispatcher({ storage: store }, \n    (storage, { createAction }) => ({\n      publish: createAction<{eventType: string, payload: any}>({\n        type: 'publish',\n        action: async (payload) => {\n          // Notify all subscribers\n          const subscribers = storage.getValue().subscribers[payload.eventType] || []\n          subscribers.forEach(callback => callback(payload.payload))\n        }\n      }),\n      \n      subscribe: createAction<{eventType: string, callback: Function}>({\n        type: 'subscribe',\n        action: async (payload) => {\n          const current = storage.getValue()\n          const subscribers = current.subscribers[payload.eventType] || []\n          subscribers.push(payload.callback)\n          \n          storage.setValue({\n            ...current,\n            subscribers: {\n              ...current.subscribers,\n              [payload.eventType]: subscribers\n            }\n          })\n        }\n      })\n    })\n  )\n})\n\n// auth.synapse.ts\nexport const authSynapse = await createSynapse({\n  // ... regular configuration\n  createEffectConfig: (authDispatcher) => ({\n    dispatchers: {\n      authDispatcher,\n      eventBusDispatcher: eventBusSynapse.dispatcher\n    }\n  }),\n  effects: [\n    // Effect for publishing events\n    createEffect((action$, state$, { authDispatcher, eventBusDispatcher }) => \n      action$.pipe(\n        ofType(authDispatcher.dispatch.loginSuccess),\n        map(action => \n          eventBusDispatcher.dispatch.publish({\n            eventType: 'USER_LOGGED_IN',\n            payload: action.payload\n          })\n        )\n      )\n    )\n  ]\n})\n\n// user.synapse.ts\nexport const userSynapse = await createSynapse({\n  dependencies: [eventBusSynapse], // Connect EventBus\n  // ... rest of configuration\n  effects: [\n    // Effect for subscribing to events\n    createEffect((action$, state$, { userDispatcher }) => {\n      // Subscribe to user login event\n      eventBusSynapse.dispatcher.dispatch.subscribe({\n        eventType: 'USER_LOGGED_IN',\n        callback: (userData) => {\n          userDispatcher.dispatch.loadUserProfile(userData.id)\n        }\n      })\n      \n      return EMPTY // This effect only sets up subscription\n    })\n  ]\n})",
+                "code": "const appEventBus = await createEventBus({\n  name: 'app-events',        // Name for debugging and logging\n  autoCleanup: true,         // Automatic cleanup of old events\n  maxEvents: 500            // Maximum number of events in memory\n})",
                 "meta": null
               }
-            }
-          ],
-          "metadata": {
-            "wordCount": 0,
-            "codeBlocksCount": 1,
-            "diagramsCount": 0,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "advantages-of-each-approach",
-          "title": "🎯 Advantages of Each Approach",
-          "level": 2,
-          "content": [
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🔧 Main Methods",
+                "level": 4,
+                "id": "-main-methods"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "publish() - publish event with data and metadata",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "subscribe() - subscribe to events with pattern support ('USER_', '')",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [
+                            {
+                              "start": 62,
+                              "end": 66
+                            }
+                          ],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "getEventHistory() - get event history for specific event type",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "clearEvents() - clear events (all or older than specific time)",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "getActiveSubscriptions() - list of active subscriptions",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "💡 Practical Tips",
+                "level": 4,
+                "id": "-practical-tips"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Event naming: use 'MODULE_ACTION' format (e.g., 'USER_LOGGED_IN', 'ORDER_CREATED')",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Patterns: 'USER_' for all user events, '' for global monitoring",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [
+                            {
+                              "start": 16,
+                              "end": 40
+                            }
+                          ],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Priorities: 'high' for critical events, 'normal' for regular, 'low' for logging",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// Creating EventBus using utility\nimport { createEventBus } from 'synapse-storage/utils'\n\nexport const appEventBus = await createEventBus({\n  name: 'app-events',\n  autoCleanup: true,\n  maxEvents: 500\n})\n\n// auth.synapse.ts\nexport const authSynapse = await createSynapse({\n  dependencies: [appEventBus], // Connect EventBus\n  createEffectConfig: (authDispatcher) => ({\n    dispatchers: {\n      authDispatcher,\n      eventBus: appEventBus.dispatcher\n    }\n  }),\n  effects: [\n    // Effect to publish events on successful authentication\n    createEffect((action$, state$, _, { authDispatcher, eventBus }) => \n      action$.pipe(\n        ofType(authDispatcher.dispatch.loginSuccess),\n        map(action => \n          eventBus.dispatch.publish({\n            event: 'USER_LOGGED_IN',\n            data: action.payload,\n            metadata: { priority: 'high' }\n          })\n        )\n      )\n    )\n  ]\n})\n\n// user.synapse.ts\nexport const userSynapse = await createSynapse({\n  dependencies: [appEventBus], // Connect EventBus\n  createEffectConfig: (userDispatcher) => ({\n    dispatchers: {\n      userDispatcher,\n      eventBus: appEventBus.dispatcher\n    }\n  }),\n  effects: [\n    // Effect to subscribe to auth events\n    createEffect((action$, state$, _, { userDispatcher, eventBus }) => {\n      // Subscribe to user login events\n      eventBus.dispatch.subscribe({\n        eventPattern: 'USER_*', // Pattern support\n        handler: (userData, event) => {\n          if (event.event === 'USER_LOGGED_IN') {\n            userDispatcher.dispatch.loadUserProfile(userData.id)\n          }\n        },\n        options: { priority: 'high' } // Priority filtering\n      })\n      \n      return EMPTY // This effect only sets up subscription\n    })\n  ]\n})\n\n// notifications.synapse.ts\nexport const notificationsSynapse = await createSynapse({\n  dependencies: [appEventBus],\n  createEffectConfig: (notificationsDispatcher) => ({\n    dispatchers: {\n      notificationsDispatcher,\n      eventBus: appEventBus.dispatcher\n    }\n  }),\n  effects: [\n    // Subscribe to all events to show notifications\n    createEffect((action$, state$, _, { notificationsDispatcher, eventBus }) => {\n      eventBus.dispatch.subscribe({\n        eventPattern: '*', // Listen to all events\n        handler: (data, event) => {\n          notificationsDispatcher.dispatch.showNotification({\n            message: `Event: ${event.event}`,\n            data\n          })\n        }\n      })\n      \n      return EMPTY\n    })\n  ]\n})",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🎯 Advantages of Each Approach",
+                "level": 3,
+                "id": "-advantages-of-each-approach"
+              }
+            },
             {
               "type": "heading",
               "data": {
                 "text": "Dependencies (Regular)",
-                "level": 3,
+                "level": 4,
                 "id": "dependencies-regular"
               }
             },
@@ -4251,7 +4332,7 @@
               "type": "heading",
               "data": {
                 "text": "EventBus (Advanced)",
-                "level": 3,
+                "level": 4,
                 "id": "eventbus-advanced"
               }
             },
@@ -4281,7 +4362,7 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "✅ Easy addition of new modules",
+                        "text": "✅ Easy to add new modules",
                         "formatting": {
                           "bold": [],
                           "italic": [],
@@ -4335,6 +4416,65 @@
                     {
                       "type": "paragraph",
                       "data": {
+                        "text": "✅ Event pattern support ('USER_', '')",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [
+                            {
+                              "start": 31,
+                              "end": 35
+                            }
+                          ],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "✅ Filtering by priority and metadata",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "✅ Automatic cleanup of old events",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
                         "text": "❌ Complexity in tracking data flow",
                         "formatting": {
                           "bold": [],
@@ -4367,16 +4507,12 @@
                   "type": "unordered"
                 }
               ]
-            },
-            {
-              "type": "divider",
-              "data": {}
             }
           ],
           "metadata": {
-            "wordCount": 68,
-            "codeBlocksCount": 0,
-            "diagramsCount": 0,
+            "wordCount": 255,
+            "codeBlocksCount": 3,
+            "diagramsCount": 2,
             "tasksCount": 0,
             "hasTable": false,
             "hasBlockquotes": false,
@@ -4596,17 +4732,19 @@
       "features": [
         "\udcca Regular Connection via Dependencies",
         "\udce1 EventBus Pattern (Advanced)",
-        "\udccb EventBus Pattern Code",
+        "️ EventBus Configuration",
+        "\udd27 Main Methods",
+        "\udca1 Practical Tips",
         "\udfaf Advantages of Each Approach",
         "\udcda Navigation"
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T18:07:23.195Z",
-        "wordCount": 1615,
+        "lastModified": "2025-06-20T07:46:02.701Z",
+        "wordCount": 1604,
         "readingTime": 9,
-        "sectionsCount": 6,
-        "codeBlocksCount": 9
+        "sectionsCount": 3,
+        "codeBlocksCount": 10
       }
     },
     "custom-middlewares": {
@@ -5010,9 +5148,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:14:51.133Z",
@@ -5605,9 +5741,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:08:46.592Z",
@@ -5994,9 +6128,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:09:38.268Z",
@@ -6196,9 +6328,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Navigation"
-      ],
+      "features": ["\udcda Navigation"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:24:49.671Z",
@@ -6822,15 +6952,7 @@
           }
         }
       ],
-      "features": [
-        "Добавлено",
-        "\udee0 Улучшено",
-        "\udcd6 Примеры использования",
-        "\udea8 Критические изменения",
-        "Добавлено",
-        "\udee0 Улучшено",
-        "\udcd6 Примеры использования"
-      ],
+      "features": ["Добавлено", "\udee0 Улучшено", "\udcd6 Примеры использования", "\udea8 Критические изменения", "Добавлено", "\udee0 Улучшено", "\udcd6 Примеры использования"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T17:12:56.201Z",
@@ -7351,58 +7473,30 @@
             {
               "type": "table",
               "data": {
-                "headers": [
-                  "Модуль",
-                  "Описание",
-                  "Зависимости"
-                ],
+                "headers": ["Модуль", "Описание", "Зависимости"],
                 "rows": [
                   {
-                    "cells": [
-                      "Модуль",
-                      "Описание",
-                      "Зависимости"
-                    ],
+                    "cells": ["Модуль", "Описание", "Зависимости"],
                     "type": "header"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/core",
-                      "base",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/core", "base", "-"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/react",
-                      "React",
-                      "React 18+"
-                    ],
+                    "cells": ["synapse-storage/react", "React", "React 18+"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/reactive",
-                      "RxJS",
-                      "RxJS 7.8.2+"
-                    ],
+                    "cells": ["synapse-storage/reactive", "RxJS", "RxJS 7.8.2+"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/api",
-                      "HTTP client",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/api", "HTTP client", "-"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "synapse-storage/utils",
-                      "Utils",
-                      "-"
-                    ],
+                    "cells": ["synapse-storage/utils", "Utils", "-"],
                     "type": "data"
                   }
                 ]
@@ -7904,65 +7998,30 @@
             {
               "type": "table",
               "data": {
-                "headers": [
-                  "Сценарий использования",
-                  "Импорт",
-                  "Размер",
-                  "Сравнение"
-                ],
+                "headers": ["Сценарий использования", "Импорт", "Размер", "Сравнение"],
                 "rows": [
                   {
-                    "cells": [
-                      "Сценарий использования",
-                      "Импорт",
-                      "Размер",
-                      "Сравнение"
-                    ],
+                    "cells": ["Сценарий использования", "Импорт", "Размер", "Сравнение"],
                     "type": "header"
                   },
                   {
-                    "cells": [
-                      "Базовое состояние",
-                      "synapse-storage/core",
-                      "~42KB",
-                      "vs Redux: 45KB"
-                    ],
+                    "cells": ["Базовое состояние", "synapse-storage/core", "~42KB", "vs Redux: 45KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ HTTP клиент",
-                      "+ /api",
-                      "+13KB",
-                      "vs React Query: 39KB"
-                    ],
+                    "cells": ["+ HTTP клиент", "+ /api", "+13KB", "vs React Query: 39KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ Реактивность",
-                      "+ /reactive",
-                      "+8KB",
-                      "vs Redux-Observable: 25KB"
-                    ],
+                    "cells": ["+ Реактивность", "+ /reactive", "+8KB", "vs Redux-Observable: 25KB"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "+ React хуки",
-                      "+ /react",
-                      "+5KB",
-                      "vs кастомные хуки"
-                    ],
+                    "cells": ["+ React хуки", "+ /react", "+5KB", "vs кастомные хуки"],
                     "type": "data"
                   },
                   {
-                    "cells": [
-                      "Полный комплект",
-                      "все модули",
-                      "~171KB",
-                      "vs 109KB стек + кастом"
-                    ],
+                    "cells": ["Полный комплект", "все модули", "~171KB", "vs 109KB стек + кастом"],
                     "type": "data"
                   }
                 ]
@@ -8581,9 +8640,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-08T12:10:53.549Z",
@@ -8796,9 +8853,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:30:25.398Z",
@@ -9124,9 +9179,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T06:21:16.245Z",
@@ -9364,9 +9417,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:50:54.145Z",
@@ -9930,9 +9981,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T08:42:59.450Z",
@@ -10158,9 +10207,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:33:23.025Z",
@@ -10333,29 +10380,21 @@
             {
               "type": "diagram",
               "data": {
-                "code": "classDiagram\n    class CoreSynapse {\n        +Storage storage\n        +Dispatcher dispatcher\n        +Selectors selectors\n        +Effects effects\n        +initialize()\n    }\n    \n    class UserInfoSynapse {\n        +Storage storage\n        +Dispatcher dispatcher\n        +Selectors selectors\n        +Effects effects\n        +initialize()\n    }\n    \n    class PostsSynapse {\n        +Storage storage\n        +Dispatcher dispatcher\n        +Selectors selectors\n        +Effects effects\n        +initialize()\n    }\n    \n    class SettingsSynapse {\n        +Storage storage\n        +Dispatcher dispatcher\n        +Selectors selectors\n        +Effects effects\n        +initialize()\n    }\n    \n    class ProfileComponent {\n        +render()\n        +useSelectors()\n        +useActions()\n    }\n    \n    class PostsComponent {\n        +render()\n        +useSelectors()\n        +useActions()\n    }\n    \n    class SettingsComponent {\n        +render()\n        +useSelectors()\n        +useActions()\n    }\n    \n    CoreSynapse <|-- UserInfoSynapse : dependencies\n    CoreSynapse <|-- PostsSynapse : dependencies\n    CoreSynapse <|-- SettingsSynapse : dependencies\n    \n    UserInfoSynapse --> ProfileComponent : uses\n    PostsSynapse --> PostsComponent : uses\n    SettingsSynapse --> SettingsComponent : uses"
+                "code": "graph TD\n    Core((Core<br/>Synapse))\n    UserInfo((UserInfo<br/>Synapse))\n    Posts((Posts<br/>Synapse))\n    Settings((Settings<br/>Synapse))\n    \n    Core --> UserInfo\n    Core --> Posts\n    Core --> Settings\n    \n    style Settings fontSize:1em"
               }
-            }
-          ],
-          "metadata": {
-            "wordCount": 29,
-            "codeBlocksCount": 1,
-            "diagramsCount": 1,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "-eventbus-pattern-advanced",
-          "title": "📡 EventBus паттерн (продвинутый)",
-          "level": 2,
-          "content": [
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "📡 EventBus паттерн (продвинутый)",
+                "level": 3,
+                "id": "-eventbus-"
+              }
+            },
             {
               "type": "paragraph",
               "data": {
-                "text": "EventBus паттерн - альтернативный способ связи синопсов между собой\nЕго главные преимущество - уменьшение связи между модулями и отсутствие проблемы циклических зависимостей, если нужно связать два модуля между собой в обоих направлениях",
+                "text": "EventBus паттерн - альтернативный способ связи синопсов между собой\nЕго главные преимущества - уменьшение связи между модулями и отсутствие проблемы циклических зависимостей, если нужно связать два модуля между собой в обоих направлениях",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -10379,54 +10418,226 @@
             {
               "type": "diagram",
               "data": {
-                "code": "classDiagram\n    class EventBusSynapse {\n        +Storage~EventBusState~ storage\n        +Dispatcher dispatcher\n        +publish(eventType, payload)\n        +subscribe(eventType, callback)\n        +unsubscribe(eventType, callback)\n    }\n    \n    class AuthSynapse {\n        +Storage~AuthState~ storage\n        +Dispatcher dispatcher\n        +Effects effects\n        +login()\n        +logout()\n    }\n    \n    class UserSynapse {\n        +Storage~UserState~ storage\n        +Dispatcher dispatcher\n        +Effects effects\n        +loadProfile()\n        +updateProfile()\n    }\n    \n\n    \n    class NotificationsSynapse {\n        +Storage~NotificationsState~ storage\n        +Dispatcher dispatcher\n        +Effects effects\n        +showNotification()\n    }\n    \n    class LoginComponent {\n        +render()\n        +handleLogin()\n    }\n    \n    class ProfileComponent {\n        +render()\n        +handleUpdate()\n    }\n    \n    \n    class NotificationsComponent {\n        +render()\n        +handleDismiss()\n    }\n    \n    EventBusSynapse ..> AuthSynapse : publish/subscribe\n    EventBusSynapse ..> UserSynapse : publish/subscribe\n    EventBusSynapse ..> NotificationsSynapse : publish/subscribe\n    \n    AuthSynapse --> LoginComponent : uses\n    UserSynapse --> ProfileComponent : uses\n    NotificationsSynapse --> NotificationsComponent : uses"
+                "code": "graph TD\n    EventBus((EventBus<br/>Synapse))\n    Auth((Auth<br/>Synapse))\n    User((User<br/>Synapse))\n    Notifications((Notifications<br/>Synapse))\n    \n    Auth -.-> EventBus\n    User -.-> EventBus\n    Notifications -.-> EventBus\n    EventBus -.-> Auth\n    EventBus -.-> User\n    EventBus -.-> Notifications\n    "
               }
-            }
-          ],
-          "metadata": {
-            "wordCount": 40,
-            "codeBlocksCount": 0,
-            "diagramsCount": 1,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "-eventbus-pattern-code",
-          "title": "📋 Код EventBus паттерна",
-          "level": 2,
-          "content": [
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "⚙️ Конфигурация EventBus",
+                "level": 3,
+                "id": "-eventbus"
+              }
+            },
             {
               "type": "code",
               "data": {
                 "language": "typescript",
-                "code": "// event-bus.synapse.ts\ninterface EventBusState {\n  events: Record<string, any[]>\n  subscribers: Record<string, Function[]>\n}\n\nexport const eventBusSynapse = await createSynapse({\n  createStorageFn: () => new MemoryStorage<EventBusState>({\n    name: 'event-bus',\n    initialState: {\n      events: {},\n      subscribers: {}\n    }\n  }).initialize(),\n  \n  createDispatcherFn: (store) => createDispatcher({ storage: store }, \n    (storage, { createAction }) => ({\n      publish: createAction<{eventType: string, payload: any}>({\n        type: 'publish',\n        action: async (payload) => {\n          // Уведомляем всех подписчиков\n          const subscribers = storage.getValue().subscribers[payload.eventType] || []\n          subscribers.forEach(callback => callback(payload.payload))\n        }\n      }),\n      \n      subscribe: createAction<{eventType: string, callback: Function}>({\n        type: 'subscribe',\n        action: async (payload) => {\n          const current = storage.getValue()\n          const subscribers = current.subscribers[payload.eventType] || []\n          subscribers.push(payload.callback)\n          \n          storage.setValue({\n            ...current,\n            subscribers: {\n              ...current.subscribers,\n              [payload.eventType]: subscribers\n            }\n          })\n        }\n      })\n    })\n  )\n})\n\n// auth.synapse.ts\nexport const authSynapse = await createSynapse({\n  // ... обычная конфигурация\n  createEffectConfig: (authDispatcher) => ({\n    dispatchers: {\n      authDispatcher,\n      eventBusDispatcher: eventBusSynapse.dispatcher\n    }\n  }),\n  effects: [\n    // Effect для публикации событий\n    createEffect((action$, state$, { authDispatcher, eventBusDispatcher }) => \n      action$.pipe(\n        ofType(authDispatcher.dispatch.loginSuccess),\n        map(action => \n          eventBusDispatcher.dispatch.publish({\n            eventType: 'USER_LOGGED_IN',\n            payload: action.payload\n          })\n        )\n      )\n    )\n  ]\n})\n\n// user.synapse.ts\nexport const userSynapse = await createSynapse({\n  dependencies: [eventBusSynapse], // Подключаем EventBus\n  // ... остальная конфигурация\n  effects: [\n    // Effect для подписки на события\n    createEffect((action$, state$, { userDispatcher }) => {\n      // Подписываемся на событие входа пользователя\n      eventBusSynapse.dispatcher.dispatch.subscribe({\n        eventType: 'USER_LOGGED_IN',\n        callback: (userData) => {\n          userDispatcher.dispatch.loadUserProfile(userData.id)\n        }\n      })\n      \n      return EMPTY // Этот effect только устанавливает подписку\n    })\n  ]\n})",
+                "code": "const appEventBus = await createEventBus({\n  name: 'app-events',        // Имя для отладки и логирования\n  autoCleanup: true,         // Автоматическая очистка старых событий\n  maxEvents: 500            // Максимальное количество событий в памяти\n})",
                 "meta": null
               }
-            }
-          ],
-          "metadata": {
-            "wordCount": 0,
-            "codeBlocksCount": 1,
-            "diagramsCount": 0,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "advantages-of-each-approach",
-          "title": "🎯 Преимущества каждого подхода",
-          "level": 2,
-          "content": [
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🔧 Основные методы",
+                "level": 4,
+                "id": "-"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "publish() - публикация события с данными и метаданными",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "subscribe() - подписка на события с поддержкой паттернов ('USER_', '')",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [
+                            {
+                              "start": 64,
+                              "end": 68
+                            }
+                          ],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "getEventHistory() - получение истории событий определенного типа",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "clearEvents() - очистка событий (всех или старше определенного времени)",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "getActiveSubscriptions() - список активных подписок",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "💡 Практические советы",
+                "level": 4,
+                "id": "-"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Именование событий: используйте формат 'MODULE_ACTION' (например, 'USER_LOGGED_IN', 'ORDER_CREATED')",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Паттерны: 'USER_' для всех пользовательских событий, '' для глобального мониторинга",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [
+                            {
+                              "start": 16,
+                              "end": 54
+                            }
+                          ],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Приоритеты: 'high' для критичных событий, 'normal' для обычных, 'low' для логирования",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// Создание EventBus с помощью утилиты\nimport { createEventBus } from 'synapse-storage/utils'\n\nexport const appEventBus = await createEventBus({\n  name: 'app-events',\n  autoCleanup: true,\n  maxEvents: 500\n})\n\n// auth.synapse.ts\nexport const authSynapse = await createSynapse({\n  dependencies: [appEventBus], // Подключаем EventBus\n  createEffectConfig: (authDispatcher) => ({\n    dispatchers: {\n      authDispatcher,\n      eventBus: appEventBus.dispatcher\n    }\n  }),\n  effects: [\n    // Effect для публикации событий при успешной авторизации\n    createEffect((action$, state$, _, { authDispatcher, eventBus }) => \n      action$.pipe(\n        ofType(authDispatcher.dispatch.loginSuccess),\n        map(action => \n          eventBus.dispatch.publish({\n            event: 'USER_LOGGED_IN',\n            data: action.payload,\n            metadata: { priority: 'high' }\n          })\n        )\n      )\n    )\n  ]\n})\n\n// user.synapse.ts\nexport const userSynapse = await createSynapse({\n  dependencies: [appEventBus], // Подключаем EventBus\n  createEffectConfig: (userDispatcher) => ({\n    dispatchers: {\n      userDispatcher,\n      eventBus: appEventBus.dispatcher\n    }\n  }),\n  effects: [\n    // Effect для подписки на события авторизации\n    createEffect((action$, state$, _, { userDispatcher, eventBus }) => {\n      // Подписываемся на события входa пользователя\n      eventBus.dispatch.subscribe({\n        eventPattern: 'USER_*', // Поддержка паттернов\n        handler: (userData, event) => {\n          if (event.event === 'USER_LOGGED_IN') {\n            userDispatcher.dispatch.loadUserProfile(userData.id)\n          }\n        },\n        options: { priority: 'high' } // Фильтрация по приоритету\n      })\n      \n      return EMPTY // Этот effect только устанавливает подписку\n    })\n  ]\n})\n\n// notifications.synapse.ts\nexport const notificationsSynapse = await createSynapse({\n  dependencies: [appEventBus],\n  createEffectConfig: (notificationsDispatcher) => ({\n    dispatchers: {\n      notificationsDispatcher,\n      eventBus: appEventBus.dispatcher\n    }\n  }),\n  effects: [\n    // Подписка на все события для показа уведомлений\n    createEffect((action$, state$, _, { notificationsDispatcher, eventBus }) => {\n      eventBus.dispatch.subscribe({\n        eventPattern: '*', // Слушаем все события\n        handler: (data, event) => {\n          notificationsDispatcher.dispatch.showNotification({\n            message: `Событие: ${event.event}`,\n            data\n          })\n        }\n      })\n      \n      return EMPTY\n    })\n  ]\n})",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🎯 Преимущества каждого подхода",
+                "level": 3,
+                "id": "-"
+              }
+            },
             {
               "type": "heading",
               "data": {
                 "text": "Dependencies (Обычный)",
-                "level": 3,
+                "level": 4,
                 "id": "dependencies-"
               }
             },
@@ -10529,7 +10740,7 @@
               "type": "heading",
               "data": {
                 "text": "EventBus (Продвинутый)",
-                "level": 3,
+                "level": 4,
                 "id": "eventbus-"
               }
             },
@@ -10613,6 +10824,65 @@
                     {
                       "type": "paragraph",
                       "data": {
+                        "text": "✅ Поддержка паттернов событий ('USER_', '')",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [
+                            {
+                              "start": 37,
+                              "end": 41
+                            }
+                          ],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "✅ Фильтрация по приоритету и метаданным",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "✅ Автоматическая очистка старых событий",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
                         "text": "❌ Сложность отслеживания потока данных",
                         "formatting": {
                           "bold": [],
@@ -10645,16 +10915,12 @@
                   "type": "unordered"
                 }
               ]
-            },
-            {
-              "type": "divider",
-              "data": {}
             }
           ],
           "metadata": {
-            "wordCount": 58,
-            "codeBlocksCount": 0,
-            "diagramsCount": 0,
+            "wordCount": 229,
+            "codeBlocksCount": 3,
+            "diagramsCount": 2,
             "tasksCount": 0,
             "hasTable": false,
             "hasBlockquotes": false,
@@ -10874,17 +11140,19 @@
       "features": [
         "\udcca Обычная связь через dependencies",
         "\udce1 EventBus паттерн (продвинутый)",
-        "\udccb Код EventBus паттерна",
+        "️ Конфигурация EventBus",
+        "\udd27 Основные методы",
+        "\udca1 Практические советы",
         "\udfaf Преимущества каждого подхода",
         "\udcda Навигация"
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T18:06:55.805Z",
-        "wordCount": 1561,
+        "lastModified": "2025-06-20T07:39:26.208Z",
+        "wordCount": 1553,
         "readingTime": 8,
-        "sectionsCount": 6,
-        "codeBlocksCount": 9
+        "sectionsCount": 3,
+        "codeBlocksCount": 10
       }
     },
     "custom-middlewares": {
@@ -11288,9 +11556,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:13:14.461Z",
@@ -11883,9 +12149,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:07:23.205Z",
@@ -12272,9 +12536,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T13:13:22.599Z",
@@ -12474,9 +12736,7 @@
           }
         }
       ],
-      "features": [
-        "\udcda Навигация"
-      ],
+      "features": ["\udcda Навигация"],
       "frontMatter": {},
       "metadata": {
         "lastModified": "2025-06-18T07:24:46.205Z",
@@ -12497,7 +12757,7 @@
             {
               "type": "paragraph",
               "data": {
-                "text": "IndexedDBStorage",
+                "text": "MemoryStorage",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -12517,7 +12777,7 @@
             {
               "type": "paragraph",
               "data": {
-                "text": "IndexedDBStorage",
+                "text": "LocalStorage",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -12569,7 +12829,7 @@
       "features": [],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T07:14:29.105Z",
+        "lastModified": "2025-06-20T06:41:09.504Z",
         "wordCount": 107,
         "readingTime": 1,
         "sectionsCount": 1,

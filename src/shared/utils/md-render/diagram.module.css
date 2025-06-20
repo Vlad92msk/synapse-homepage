@@ -54,8 +54,8 @@
 }
 
 /* Переопределяем цвета для темной темы */
-.diagramContainer :global(.node path){
-  fill: transparent!important;
+.diagramContainer :global(.node path) {
+  fill: transparent !important;
   stroke: rgba(255, 255, 255, 0.3) !important;
 }
 .diagramContainer :global(.node rect),
@@ -73,7 +73,13 @@
   color: inherit !important;
   fill: currentColor !important;
   font-family: inherit !important;
-  font-size: 13px !important;
+  font-size: 1.2cqh !important;
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  align-self: center;
 }
 
 .diagramContainer :global(.edgePath path) {
@@ -83,6 +89,10 @@
 
 .diagramContainer :global(.arrowheadPath) {
   fill: rgba(255, 255, 255, 0.4) !important;
+}
+
+.diagramContainer :global(.flowchart-link) {
+  stroke: #797474 !important;
 }
 
 .errorContainer {

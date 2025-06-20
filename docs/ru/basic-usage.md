@@ -137,8 +137,8 @@ useEffect(() => {
   counter1.subscribeToAll((event) => {
     console.log('event', event)
     // Здесь мы получим объект:
-    // changedPaths:['value'] // все пути по которым были вызваны изменения (['prop1.prop2', 'prop44.prop.555.prop.666'])
-    // key:['value'] // Корневые ключи в хранилище которые вкоторых были изменения
+    // changedPaths:['value'] // все пути, по которым были вызваны изменения (['prop1.prop2', 'prop44.prop.555.prop.666'])
+    // key:['value'] // Корневые ключи в хранилище, в которых были изменения
     // type:"storage:update" // Тип операции
     // value: {value: 101} // Новый state
   })

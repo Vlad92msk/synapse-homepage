@@ -6,7 +6,6 @@ import i18n from 'i18next'
 const resources = {
   ru: {
     translation: {
-      installation: 'dwe',
       // Навигация
       'nav.home': 'Главная',
       'nav.docs': 'Документация',
@@ -17,7 +16,7 @@ const resources = {
       'homepage.hero.title': 'Synapse Storage',
       'homepage.hero.subtitle': 'Управление состоянием нового поколения',
       'homepage.hero.getStarted': 'Документация',
-      'homepage.hero.learnMore': 'Ключевые особености',
+      'homepage.hero.learnMore': 'Ключевые особенности',
 
       'homepage.features.title': 'Почему Synapse Storage?',
 
@@ -26,7 +25,7 @@ const resources = {
       'homepage.features.modular.description': 'Используйте только нужные модули. Начните с core (~42KB), добавляйте функциональность по мере необходимости',
 
       'homepage.features.frameworkAgnostic.title': 'Не привязан к фреймворку',
-      'homepage.features.frameworkAgnostic.description': 'Можно использовать с любом фреймворком или без него',
+      'homepage.features.frameworkAgnostic.description': 'Можно использовать с любым фреймворком или без него',
 
       'homepage.features.universalStorage.title': 'Универсальные хранилища',
       'homepage.features.universalStorage.description': 'Memory, LocalStorage, IndexedDB - единый API для работы с любым типом хранилища с поддержкой middleware',
@@ -152,7 +151,7 @@ const resources = {
       'homepage.features.selectors.title': 'Computed Selectors',
       'homepage.features.selectors.description': 'Memoized selectors in Reselect style with automatic recalculation optimization',
 
-      'homepage.features.react.title': 'React ready',
+      'homepage.features.react.title': 'React Ready',
       'homepage.features.react.description': 'Ready-to-use React hooks with optimized re-renders and Suspense support',
 
       // Documentation sections
@@ -218,7 +217,10 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'ru', // Язык по умолчанию
+  lng: localStorage.getItem('preferred-locale') || 'en',
+  react: {
+    useSuspense: false,
+  },
   fallbackLng: 'en',
 
   interpolation: {
@@ -228,6 +230,23 @@ i18n.use(initReactI18next).init({
   // Настройки для корректной работы с проверкой существования переводов
   returnEmptyString: false,
   returnNull: false,
+})
+
+// Обновляем lang атрибут при каждой смене языка
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.lang = lng
+
+  // Обновляем мета-теги
+  const description = document.querySelector('meta[name="description"]')
+  const ogDescription = document.querySelector('meta[property="og:description"]')
+
+  if (lng === 'ru') {
+    description?.setAttribute('content', 'Мощный TypeScript инструмент для управления состоянием с API клиентом, адаптерами хранения и реактивными возможностями.')
+    ogDescription?.setAttribute('content', 'Мощный TypeScript инструмент для управления состоянием с API клиентом, адаптерами хранения и реактивными возможностями.')
+  } else {
+    description?.setAttribute('content', 'Powerful TypeScript state management toolkit with API client, storage adapters, and reactive capabilities.')
+    ogDescription?.setAttribute('content', 'Powerful TypeScript state management toolkit with API client, storage adapters, and reactive capabilities.')
+  }
 })
 
 export default i18n

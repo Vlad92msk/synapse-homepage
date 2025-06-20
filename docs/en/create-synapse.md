@@ -258,12 +258,11 @@ export const {
 This way you can separate functionality into layers
 
 ---
-
 ## Connecting Synapse to Each Other
 
 ### 📊 Regular Connection via Dependencies
 
-As shown in the example above - you can connect synapses simply by passing them into the dependencies array
+As shown in the example above - you can connect synapses simply by passing them in the dependencies array
 ```typescript
 // user-info.synapse.ts
 // === CREATING Synapse ===
@@ -281,201 +280,96 @@ export const currentSynapse = await createSynapse({
 })
 ```
 
-In this case, the general scheme will look like this:
+In this case, the overall schema will look like this:
 ```mermaid
-classDiagram
-    class CoreSynapse {
-        +Storage storage
-        +Dispatcher dispatcher
-        +Selectors selectors
-        +Effects effects
-        +initialize()
-    }
-    
-    class UserInfoSynapse {
-        +Storage storage
-        +Dispatcher dispatcher
-        +Selectors selectors
-        +Effects effects
-        +initialize()
-    }
-    
-    class PostsSynapse {
-        +Storage storage
-        +Dispatcher dispatcher
-        +Selectors selectors
-        +Effects effects
-        +initialize()
-    }
-    
-    class SettingsSynapse {
-        +Storage storage
-        +Dispatcher dispatcher
-        +Selectors selectors
-        +Effects effects
-        +initialize()
-    }
-    
-    class ProfileComponent {
-        +render()
-        +useSelectors()
-        +useActions()
-    }
-    
-    class PostsComponent {
-        +render()
-        +useSelectors()
-        +useActions()
-    }
-    
-    class SettingsComponent {
-        +render()
-        +useSelectors()
-        +useActions()
-    }
-    
-    CoreSynapse <|-- UserInfoSynapse : dependencies
-    CoreSynapse <|-- PostsSynapse : dependencies
-    CoreSynapse <|-- SettingsSynapse : dependencies
-    
-    UserInfoSynapse --> ProfileComponent : uses
-    PostsSynapse --> PostsComponent : uses
-    SettingsSynapse --> SettingsComponent : uses
+graph TD
+    Core((Core<br/>Synapse))
+    UserInfo((UserInfo<br/>Synapse))
+    Posts((Posts<br/>Synapse))
+    Settings((Settings<br/>Synapse))
+
+    Core --> UserInfo
+    Core --> Posts
+    Core --> Settings
+
 ```
 
-## 📡 EventBus Pattern (Advanced)
+### 📡 EventBus Pattern (Advanced)
 
-EventBus pattern is an alternative way to connect synapses to each other.
-Its main advantages are reducing coupling between modules and eliminating the problem of circular dependencies if you need to connect two modules to each other in both directions.
+EventBus pattern is an alternative way to connect synapses to each other
+Its main advantages are reducing coupling between modules and avoiding circular dependency problems when you need to connect two modules in both directions
 
-In this case, the general scheme will look like this:
+In this case, the overall schema will look like this:
 ```mermaid
-classDiagram
-    class EventBusSynapse {
-        +Storage~EventBusState~ storage
-        +Dispatcher dispatcher
-        +publish(eventType, payload)
-        +subscribe(eventType, callback)
-        +unsubscribe(eventType, callback)
-    }
+graph TD
+    EventBus((EventBus<br/>Synapse))
+    Auth((Auth<br/>Synapse))
+    User((User<br/>Synapse))
+    Notifications((Notifications<br/>Synapse))
 
-    class AuthSynapse {
-        +Storage~AuthState~ storage
-        +Dispatcher dispatcher
-        +Effects effects
-        +login()
-        +logout()
-    }
+    Auth -.-> EventBus
+    User -.-> EventBus
+    Notifications -.-> EventBus
+    EventBus -.-> Auth
+    EventBus -.-> User
+    EventBus -.-> Notifications
 
-    class UserSynapse {
-        +Storage~UserState~ storage
-        +Dispatcher dispatcher
-        +Effects effects
-        +loadProfile()
-        +updateProfile()
-    }
-
-
-
-    class NotificationsSynapse {
-        +Storage~NotificationsState~ storage
-        +Dispatcher dispatcher
-        +Effects effects
-        +showNotification()
-    }
-
-    class LoginComponent {
-        +render()
-        +handleLogin()
-    }
-
-    class ProfileComponent {
-        +render()
-        +handleUpdate()
-    }
-
-
-    class NotificationsComponent {
-        +render()
-        +handleDismiss()
-    }
-
-    EventBusSynapse ..> AuthSynapse : publish/subscribe
-    EventBusSynapse ..> UserSynapse : publish/subscribe
-    EventBusSynapse ..> NotificationsSynapse : publish/subscribe
-
-    AuthSynapse --> LoginComponent : uses
-    UserSynapse --> ProfileComponent : uses
-    NotificationsSynapse --> NotificationsComponent : uses
 ```
 
-## 📋 EventBus Pattern Code
+
+### ⚙️ EventBus Configuration
 
 ```typescript
-// event-bus.synapse.ts
-interface EventBusState {
-  events: Record<string, any[]>
-  subscribers: Record<string, Function[]>
-}
+const appEventBus = await createEventBus({
+  name: 'app-events',        // Name for debugging and logging
+  autoCleanup: true,         // Automatic cleanup of old events
+  maxEvents: 500            // Maximum number of events in memory
+})
+```
 
-export const eventBusSynapse = await createSynapse({
-  createStorageFn: () => new MemoryStorage<EventBusState>({
-    name: 'event-bus',
-    initialState: {
-      events: {},
-      subscribers: {}
-    }
-  }).initialize(),
-  
-  createDispatcherFn: (store) => createDispatcher({ storage: store }, 
-    (storage, { createAction }) => ({
-      publish: createAction<{eventType: string, payload: any}>({
-        type: 'publish',
-        action: async (payload) => {
-          // Notify all subscribers
-          const subscribers = storage.getValue().subscribers[payload.eventType] || []
-          subscribers.forEach(callback => callback(payload.payload))
-        }
-      }),
-      
-      subscribe: createAction<{eventType: string, callback: Function}>({
-        type: 'subscribe',
-        action: async (payload) => {
-          const current = storage.getValue()
-          const subscribers = current.subscribers[payload.eventType] || []
-          subscribers.push(payload.callback)
-          
-          storage.setValue({
-            ...current,
-            subscribers: {
-              ...current.subscribers,
-              [payload.eventType]: subscribers
-            }
-          })
-        }
-      })
-    })
-  )
+#### 🔧 Main Methods
+
+- publish() - publish event with data and metadata
+- subscribe() - subscribe to events with pattern support ('USER_*', '*')
+- getEventHistory() - get event history for specific event type
+- clearEvents() - clear events (all or older than specific time)
+- getActiveSubscriptions() - list of active subscriptions
+
+#### 💡 Practical Tips
+
+- Event naming: use 'MODULE_ACTION' format (e.g., 'USER_LOGGED_IN', 'ORDER_CREATED')
+- Patterns: 'USER_*' for all user events, '*' for global monitoring
+- Priorities: 'high' for critical events, 'normal' for regular, 'low' for logging
+
+```typescript
+// Creating EventBus using utility
+import { createEventBus } from 'synapse-storage/utils'
+
+export const appEventBus = await createEventBus({
+  name: 'app-events',
+  autoCleanup: true,
+  maxEvents: 500
 })
 
 // auth.synapse.ts
 export const authSynapse = await createSynapse({
-  // ... regular configuration
+  dependencies: [appEventBus], // Connect EventBus
   createEffectConfig: (authDispatcher) => ({
     dispatchers: {
       authDispatcher,
-      eventBusDispatcher: eventBusSynapse.dispatcher
+      eventBus: appEventBus.dispatcher
     }
   }),
   effects: [
-    // Effect for publishing events
-    createEffect((action$, state$, { authDispatcher, eventBusDispatcher }) => 
+    // Effect to publish events on successful authentication
+    createEffect((action$, state$, _, { authDispatcher, eventBus }) => 
       action$.pipe(
         ofType(authDispatcher.dispatch.loginSuccess),
         map(action => 
-          eventBusDispatcher.dispatch.publish({
-            eventType: 'USER_LOGGED_IN',
-            payload: action.payload
+          eventBus.dispatch.publish({
+            event: 'USER_LOGGED_IN',
+            data: action.payload,
+            metadata: { priority: 'high' }
           })
         )
       )
@@ -485,42 +379,79 @@ export const authSynapse = await createSynapse({
 
 // user.synapse.ts
 export const userSynapse = await createSynapse({
-  dependencies: [eventBusSynapse], // Connect EventBus
-  // ... rest of configuration
+  dependencies: [appEventBus], // Connect EventBus
+  createEffectConfig: (userDispatcher) => ({
+    dispatchers: {
+      userDispatcher,
+      eventBus: appEventBus.dispatcher
+    }
+  }),
   effects: [
-    // Effect for subscribing to events
-    createEffect((action$, state$, { userDispatcher }) => {
-      // Subscribe to user login event
-      eventBusSynapse.dispatcher.dispatch.subscribe({
-        eventType: 'USER_LOGGED_IN',
-        callback: (userData) => {
-          userDispatcher.dispatch.loadUserProfile(userData.id)
-        }
+    // Effect to subscribe to auth events
+    createEffect((action$, state$, _, { userDispatcher, eventBus }) => {
+      // Subscribe to user login events
+      eventBus.dispatch.subscribe({
+        eventPattern: 'USER_*', // Pattern support
+        handler: (userData, event) => {
+          if (event.event === 'USER_LOGGED_IN') {
+            userDispatcher.dispatch.loadUserProfile(userData.id)
+          }
+        },
+        options: { priority: 'high' } // Priority filtering
       })
       
       return EMPTY // This effect only sets up subscription
     })
   ]
 })
+
+// notifications.synapse.ts
+export const notificationsSynapse = await createSynapse({
+  dependencies: [appEventBus],
+  createEffectConfig: (notificationsDispatcher) => ({
+    dispatchers: {
+      notificationsDispatcher,
+      eventBus: appEventBus.dispatcher
+    }
+  }),
+  effects: [
+    // Subscribe to all events to show notifications
+    createEffect((action$, state$, _, { notificationsDispatcher, eventBus }) => {
+      eventBus.dispatch.subscribe({
+        eventPattern: '*', // Listen to all events
+        handler: (data, event) => {
+          notificationsDispatcher.dispatch.showNotification({
+            message: `Event: ${event.event}`,
+            data
+          })
+        }
+      })
+      
+      return EMPTY
+    })
+  ]
+})
 ```
 
-## 🎯 Advantages of Each Approach
+### 🎯 Advantages of Each Approach
 
-### Dependencies (Regular)
+#### Dependencies (Regular)
 - ✅ Easy to understand
 - ✅ Direct connections between modules
 - ✅ TypeScript typing out of the box
 - ❌ Tight coupling between modules
 - ❌ Complexity with large number of connections
 
-### EventBus (Advanced)
+#### EventBus (Advanced)
 - ✅ Loose coupling between modules
-- ✅ Easy addition of new modules
+- ✅ Easy to add new modules
 - ✅ Centralized event management
 - ✅ Ability to debug all events in one place
+- ✅ Event pattern support ('USER_*', '*')
+- ✅ Filtering by priority and metadata
+- ✅ Automatic cleanup of old events
 - ❌ Complexity in tracking data flow
 - ❌ Need for manual event typing
-___
 
 ## 📚 Navigation
 

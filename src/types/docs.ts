@@ -1,5 +1,5 @@
 // Auto-generated types for structured documentation
-// Generated at: 2025-06-18T18:07:35.701Z
+// Generated at: 2025-06-20T07:46:07.416Z
 // Master locale: en
 
 export type Locale = 'en' | 'ru'
@@ -47,13 +47,7 @@ export interface DocSectionIds {
     | 'when-to-use'
     | 'navigation'
   'create-effects': 'creating-effects' | 'navigation'
-  'create-synapse':
-    | 'code-organization-example-and-createsynapse-utility-usage'
-    | 'connecting-synapse-to-each-other'
-    | '-eventbus-pattern-advanced'
-    | '-eventbus-pattern-code'
-    | 'advantages-of-each-approach'
-    | 'navigation'
+  'create-synapse': 'code-organization-example-and-createsynapse-utility-usage' | 'connecting-synapse-to-each-other' | 'navigation'
   'custom-middlewares': 'creating-custom-middlewares' | 'navigation'
   'custom-plugins': 'creating-custom-plugins' | 'navigation'
   middlewares: 'middlewares' | 'navigation'
