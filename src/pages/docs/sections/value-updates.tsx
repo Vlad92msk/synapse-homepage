@@ -7,7 +7,7 @@ export const UpdateValues = () => {
   const createStorages = getSection('basic-usage', 'ways-to-change-values-main')
 
   return (
-    <div>
+    <>
       {createStorages && (
         <>
           <h1>{createStorages.title}</h1>
@@ -16,6 +16,6 @@ export const UpdateValues = () => {
           ))}
         </>
       )}
-    </div>
+    </>
   )
 }

@@ -7,7 +7,7 @@ export const Middlewares = () => {
   const doc = getDoc('middlewares')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, level, title, metadata }) => {
@@ -20,6 +20,6 @@ export const Middlewares = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

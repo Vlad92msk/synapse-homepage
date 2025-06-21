@@ -7,7 +7,7 @@ export const CreateSynapse = () => {
   const doc = getDoc('create-synapse')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, level, title, metadata }) => {
@@ -20,6 +20,6 @@ export const CreateSynapse = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

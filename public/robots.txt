@@ -4,10 +4,6 @@ User-agent: *
 Allow: /
 Crawl-delay: 1
 
-# Block duplicate content with language parameters
-Disallow: /*?lang=*&
-Disallow: /*&lang=*
-
 # Priority pages for indexing
 Allow: /docs
 Allow: /docs/

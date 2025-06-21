@@ -9,7 +9,7 @@ export const Description = () => {
   const modularArchitecture = getSection('README', 'modular-usage')
 
   return (
-    <div>
+    <>
       {requirements && (
         <>
           <h1>{requirements.title}</h1>
@@ -34,6 +34,6 @@ export const Description = () => {
           ))}
         </>
       )}
-    </div>
+    </>
   )
 }

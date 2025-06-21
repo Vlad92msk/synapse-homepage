@@ -6,7 +6,7 @@ export const Installation = () => {
   const installation = getSection('README', 'installation')
 
   return (
-    <div>
+    <>
       {installation && (
         <>
           <h1>{installation.title}</h1>
@@ -15,6 +15,6 @@ export const Installation = () => {
           ))}
         </>
       )}
-    </div>
+    </>
   )
 }

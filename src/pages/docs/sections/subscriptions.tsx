@@ -7,7 +7,7 @@ export const Subscriptions = () => {
   const createStorages = getSection('basic-usage', 'creating-subscriptions')
 
   return (
-    <div>
+    <>
       {createStorages && (
         <>
           <h1>{createStorages.title}</h1>
@@ -16,6 +16,6 @@ export const Subscriptions = () => {
           ))}
         </>
       )}
-    </div>
+    </>
   )
 }

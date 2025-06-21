@@ -7,7 +7,7 @@ export const CustomMiddlewares = () => {
   const doc = getDoc('custom-middlewares')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, level, title, metadata }) => {
@@ -20,6 +20,6 @@ export const CustomMiddlewares = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

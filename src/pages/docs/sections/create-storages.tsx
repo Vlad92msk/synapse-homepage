@@ -7,7 +7,7 @@ export const CreateStorages = () => {
   const createStorages = getSection('storage-creation', 'creating-storage')
 
   return (
-    <div>
+    <>
       {createStorages && (
         <>
           <h1>{createStorages.title}</h1>
@@ -16,6 +16,6 @@ export const CreateStorages = () => {
           ))}
         </>
       )}
-    </div>
+    </>
   )
 }

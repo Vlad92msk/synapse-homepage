@@ -7,7 +7,7 @@ export const CustomPlugins = () => {
   const doc = getDoc('custom-plugins')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, level, title, metadata }) => {
@@ -20,6 +20,6 @@ export const CustomPlugins = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

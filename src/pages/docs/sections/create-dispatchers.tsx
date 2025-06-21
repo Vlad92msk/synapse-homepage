@@ -7,7 +7,7 @@ export const CreateDispatchers = () => {
   const doc = getDoc('create-dispatcher')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, level, title, metadata }) => {
@@ -20,6 +20,6 @@ export const CreateDispatchers = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

@@ -7,7 +7,7 @@ export const ApiClient = () => {
   const doc = getDoc('api-client')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, title }) => {
@@ -20,6 +20,6 @@ export const ApiClient = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

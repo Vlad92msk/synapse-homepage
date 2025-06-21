@@ -3,7 +3,7 @@
   backdrop-filter: blur(8px);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
-  height: calc(100vh - 69px);
+  height: calc(100dvh - 69px);
   overflow-y: auto;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
@@ -179,7 +179,7 @@
     top: 0;
     left: 0;
     width: 280px;
-    height: 100vh;
+    height: 100dvh;
     backdrop-filter: blur(12px);
     border-right: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDocumentation } from '@shared/hooks/useDocumentation'
 
@@ -11,20 +11,26 @@ interface DocsContentProps {
   isMobile: boolean
 }
 
-// Компонент контента документации
 export const DocsContent = (props: DocsContentProps) => {
   const { sectionKey, section, isSidebarOpen, isMobile } = props
   const { t } = useDocumentation()
   const navigate = useNavigate()
 
+  const contentRef = useRef<HTMLDivElement>(null)
+  console.log('contentRef', contentRef)
+  useEffect(() => {
+    console.log('contentRef', contentRef)
+    contentRef.current?.scrollTo({
+      behavior: 'smooth',
+      top: 0,
+    })
+  }, [sectionKey])
+
   return (
     <div className={`${style.docsContent} ${isSidebarOpen && !isMobile ? style.withSidebar : style.fullWidth}`}>
-      <div className={style.container}>
-        {/* Breadcrumb навигация */}
-        <nav className={style.breadcrumb} aria-label="Breadcrumb navigation">
-          <span className={style.breadcrumbLink} aria-label="Перейти к документации">
-            {t('nav.docs')}
-          </span>
+      <div className={style.container} ref={contentRef}>
+        <nav className={style.breadcrumb}>
+          <span className={style.breadcrumbLink}>{t('nav.docs')}</span>
           <span className={style.breadcrumbSeparator} aria-hidden="true">
             /
           </span>
@@ -33,18 +39,17 @@ export const DocsContent = (props: DocsContentProps) => {
           </span>
         </nav>
 
-        {/* Основной контент */}
         <main className={style.content}>
           {section || (
             <div className={style.placeholder}>
               <div className={style.placeholderIcon} aria-hidden="true">
                 📝
               </div>
-              <h2>Раздел в разработке</h2>
-              <p>Этот раздел документации еще не готов. Мы работаем над его созданием.</p>
+              <h2>{t('docs.placeholder.title')}</h2>
+              <p>{t('docs.placeholder.description')}</p>
               <div className={style.placeholderActions}>
                 <button onClick={() => navigate('/docs#description')} className={style.placeholderButton}>
-                  Вернуться к началу
+                  {t('docs.placeholder.backToStart')}
                 </button>
               </div>
             </div>

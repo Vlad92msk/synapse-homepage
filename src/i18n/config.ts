@@ -78,6 +78,10 @@ const resources = {
       'nav.sections.changelog': '___',
       'nav.sections.changelog.changelog': 'Журнал изменений',
 
+      'docs.placeholder.title': 'Раздел в разработке',
+      'docs.placeholder.description': 'Этот раздел документации еще не готов. Я работаю над его созданием.',
+      'docs.placeholder.backToStart': 'Вернуться к началу',
+
       // Общие элементы
       'common.readingTime': '{{time}} мин чтения',
       'common.wordCount': '{{count}} слов',
@@ -181,6 +185,10 @@ const resources = {
 
       'nav.sections.changelog': '___',
       'nav.sections.changelog.changelog': 'Changelog',
+
+      'docs.placeholder.title': 'Section under development',
+      'docs.placeholder.description': "This documentation section is not ready yet. I'm working on creating it.",
+      'docs.placeholder.backToStart': 'Back to start',
 
       // Common elements
       'common.readingTime': '{{time}} min read',

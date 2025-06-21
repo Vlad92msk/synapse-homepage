@@ -7,7 +7,7 @@ export const Changelog = () => {
   const doc = getDoc('CHANGELOG')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, title }) => {
@@ -20,6 +20,6 @@ export const Changelog = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

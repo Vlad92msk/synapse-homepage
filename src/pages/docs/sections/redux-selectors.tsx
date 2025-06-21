@@ -8,7 +8,7 @@ export const ReduxSelectors = () => {
   const doc = getDoc('redux-selectors')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, level, title, metadata }) => {
@@ -21,6 +21,6 @@ export const ReduxSelectors = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

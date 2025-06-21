@@ -8,7 +8,7 @@ export const QuickStart = () => {
   const basicUsage = getSection('basic-usage', 'basic-usage')
 
   return (
-    <div>
+    <>
       <Paragraph
         //@ts-ignore
         data={{ text: t('quickStart.createStorage') }}
@@ -36,6 +36,6 @@ export const QuickStart = () => {
           ))}
         </>
       )}
-    </div>
+    </>
   )
 }

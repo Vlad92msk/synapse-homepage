@@ -6,7 +6,7 @@ export const CreateEffectsModule = () => {
   const { getDoc } = useDocumentation()
   const doc = getDoc('create-effects-module')
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => !['navigation', 'prerequisites'].includes(id))
         ?.map(({ content, id, level, title, metadata }) => {
@@ -19,6 +19,6 @@ export const CreateEffectsModule = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }

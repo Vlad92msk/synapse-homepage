@@ -7,7 +7,7 @@ export const CreateEffects = () => {
   const doc = getDoc('create-effects')
 
   return (
-    <div>
+    <>
       {doc?.sections
         .filter(({ id }) => id !== 'navigation')
         ?.map(({ content, id, level, title, metadata }) => {
@@ -20,6 +20,6 @@ export const CreateEffects = () => {
             </Fragment>
           )
         })}
-    </div>
+    </>
   )
 }
