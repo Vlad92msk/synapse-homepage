@@ -1,5 +1,5 @@
 // Auto-generated types for structured documentation
-// Generated at: 2025-06-26T05:37:43.515Z
+// Generated at: 2025-06-26T05:46:23.363Z
 // Master locale: en
 
 export type Locale = 'en' | 'ru'
@@ -9,7 +9,7 @@ export type DocKey = 'CHANGELOG' | 'README' | 'additional' | 'api-client' | 'bas
 
 // ✅ ТОЧНЫЕ ТИПЫ ДЛЯ SECTION ID
 export interface DocSectionIds {
-  'CHANGELOG': 'changelog' | '3014-2025-06-21' | '3013-2024-12-xx' | '3012-2024-12-27'
+  'CHANGELOG': 'changelog' | '3014-2025-06-26' | '3013-2025-06-08' | '3012-2025-06-01'
   'README': 'synapse-storage' | 'key-features' | 'author' | 'ps-not-recommended-for-production-use-yet-as-i-develop-this-in-my-free-time-the-library-works-in-general-but-i-can-provide-guarantees-only-after-full-integration-into-my-pet-project-social-network-this-wont-happen-before-changing-my-current-workplace-and-country-of-residence' | 'installation' | 'requirements' | 'documentation' | 'examples' | 'modular-usage'
   'additional': 'additional' | 'navigation'
   'api-client': 'api-client' | 'navigation'
