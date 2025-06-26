@@ -19,6 +19,57 @@
           }
         },
         {
+          "id": "3014-2025-06-21",
+          "title": "[3.0.14] - 2025-06-21",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "🐛 Fixed",
+                "level": 3,
+                "id": "-fixed"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Logger Middleware: Fixed issue with dispatcher logger not displaying properly formatted output",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 14,
+            "codeBlocksCount": 0,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
           "id": "3013-2024-12-xx",
           "title": "[3.0.13] - 2024-12-XX",
           "level": 2,
@@ -523,6 +574,7 @@
         }
       ],
       "features": [
+        "\udc1b Fixed",
         "Added",
         "\udee0 Improved",
         "\udcd6 Usage Examples",
@@ -533,10 +585,10 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T17:14:16.631Z",
-        "wordCount": 347,
+        "lastModified": "2025-06-26T05:25:01.416Z",
+        "wordCount": 368,
         "readingTime": 2,
-        "sectionsCount": 3,
+        "sectionsCount": 4,
         "codeBlocksCount": 2
       }
     },
@@ -6540,6 +6592,57 @@
           }
         },
         {
+          "id": "3014-2025-06-21",
+          "title": "[3.0.14] - 2025-06-21",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "🐛 Исправлено",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Логгер Middleware: Исправлена проблема с некорректным отображением логов в диспетчере",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 12,
+            "codeBlocksCount": 0,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
           "id": "3013-2024-12-xx",
           "title": "[3.0.13] - 2024-12-XX",
           "level": 2,
@@ -7044,6 +7147,7 @@
         }
       ],
       "features": [
+        "\udc1b Исправлено",
         "Добавлено",
         "\udee0 Улучшено",
         "\udcd6 Примеры использования",
@@ -7054,10 +7158,10 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-18T17:12:56.201Z",
-        "wordCount": 358,
+        "lastModified": "2025-06-26T05:24:30.358Z",
+        "wordCount": 377,
         "readingTime": 2,
-        "sectionsCount": 3,
+        "sectionsCount": 4,
         "codeBlocksCount": 2
       }
     },

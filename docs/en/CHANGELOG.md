@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.14] - 2025-06-21
+
+### 🐛 Fixed
+
+- Logger Middleware: Fixed issue with dispatcher logger not displaying properly formatted output
+
+---
+
 ## [3.0.13] - 2024-12-XX
 
 ### ✨ Added
