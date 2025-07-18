@@ -6768,21 +6768,6 @@
         },
         {
           "id": "3016-2025-07-18",
-          "title": "История изменений",
-          "level": 1,
-          "content": [],
-          "metadata": {
-            "wordCount": 0,
-            "codeBlocksCount": 0,
-            "diagramsCount": 0,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "3014-2025-06-26",
           "title": "[3.0.16] - 2025-07-18",
           "level": 2,
           "content": [
@@ -6954,7 +6939,7 @@
           }
         },
         {
-          "id": "3013-2025-06-08",
+          "id": "3014-2025-06-26",
           "title": "[3.0.14] - 2025-06-26",
           "level": 2,
           "content": [
@@ -7009,7 +6994,7 @@
           }
         },
         {
-          "id": "3012-2025-06-01",
+          "id": "3013-2025-06-08",
           "title": "[3.0.13] - 2025-06-08",
           "level": 2,
           "content": [
@@ -7328,7 +7313,7 @@
           }
         },
         {
-          "id": "section-5",
+          "id": "3012-2025-06-01",
           "title": "[3.0.12] - 2025-06-01",
           "level": 2,
           "content": [
@@ -7531,10 +7516,10 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-07-18T07:43:41.371Z",
-        "wordCount": 558,
+        "lastModified": "2025-07-18T07:45:05.870Z",
+        "wordCount": 555,
         "readingTime": 3,
-        "sectionsCount": 6,
+        "sectionsCount": 5,
         "codeBlocksCount": 3
       }
     },
