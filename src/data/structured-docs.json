@@ -19,6 +19,178 @@
           }
         },
         {
+          "id": "3016-2025-07-18",
+          "title": "[3.0.16] - 2025-07-18",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "🚨 Breaking Changes",
+                "level": 3,
+                "id": "-breaking-changes"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "createSynapseCtx: Removed contextProps parameter from contextSynapse function",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered",
+                  "children": [
+                    {
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "data": {
+                            "text": "Use actions within components to set initial state instead",
+                            "formatting": {
+                              "bold": [],
+                              "italic": [],
+                              "code": [],
+                              "links": []
+                            }
+                          }
+                        }
+                      ],
+                      "level": 1,
+                      "type": "unordered"
+                    },
+                    {
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "data": {
+                            "text": "Simplified component wrapper signature",
+                            "formatting": {
+                              "bold": [],
+                              "italic": [],
+                              "code": [],
+                              "links": []
+                            }
+                          }
+                        }
+                      ],
+                      "level": 1,
+                      "type": "unordered"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🐛 Fixed",
+                "level": 3,
+                "id": "-fixed"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Storage Delete Logic: Fixed plugin validation in delete operations",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Cache Invalidation: Fixed cache invalidation for non-cached API endpoints",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Memory Leaks: Improved cleanup in awaiter utilities and context providers",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "📖 Usage Examples",
+                "level": 3,
+                "id": "-usage-examples"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "// Framework-agnostic usage\nimport { createSynapseAwaiter } from 'synapse-storage/core'\n\nconst awaiter = createSynapseAwaiter(userMediaSynapse)\nawaiter.onReady(store => console.log('Ready!', store))\nconst store = await awaiter.waitForReady()\n\n// React usage\nimport { awaitSynapse } from 'synapse-storage/react'\n\nconst userMediaReady = awaitSynapse(userMediaSynapse, {\n  loadingComponent: <Spinner />,\n  errorComponent: (error) => <ErrorBoundary error={error} />\n})\n\nconst MediaComponent = userMediaReady.withSynapseReady(() => {\n  // Synapse guaranteed to be ready here\n  return <div>Content</div>\n})\n\n// Simplified context (no contextProps)\nconst userMediaCtx = createSynapseCtx(userMediaSynapse, {\n  loadingComponent: <div>Loading...</div>\n})\n\nconst Component = userMediaCtx.contextSynapse(() => {\n  const actions = userMediaCtx.useSynapseActions()\n  \n  useEffect(() => {\n    // Set initial state via actions instead of contextProps\n    actions.moduleEnter({ selectedType: 'image' })\n  }, [])\n  \n  return <div>Ready!</div>\n})",
+                "meta": null
+              }
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 56,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
           "id": "3014-2025-06-26",
           "title": "[3.0.14] - 2025-06-26",
           "level": 2,
@@ -574,6 +746,9 @@
         }
       ],
       "features": [
+        "\udea8 Breaking Changes",
+        "\udc1b Fixed",
+        "\udcd6 Usage Examples",
         "\udc1b Fixed",
         "Added",
         "\udee0 Improved",
@@ -585,11 +760,11 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-26T05:45:14.334Z",
-        "wordCount": 368,
-        "readingTime": 2,
-        "sectionsCount": 4,
-        "codeBlocksCount": 2
+        "lastModified": "2025-07-18T07:43:25.191Z",
+        "wordCount": 546,
+        "readingTime": 3,
+        "sectionsCount": 5,
+        "codeBlocksCount": 3
       }
     },
     "README": {
@@ -6592,7 +6767,194 @@
           }
         },
         {
+          "id": "3016-2025-07-18",
+          "title": "История изменений",
+          "level": 1,
+          "content": [],
+          "metadata": {
+            "wordCount": 0,
+            "codeBlocksCount": 0,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
           "id": "3014-2025-06-26",
+          "title": "[3.0.16] - 2025-07-18",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "🚨 Критические изменения",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "createSynapseCtx: Удален параметр contextProps из функции contextSynapse",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered",
+                  "children": [
+                    {
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "data": {
+                            "text": "Используйте actions внутри компонентов для установки начального состояния",
+                            "formatting": {
+                              "bold": [],
+                              "italic": [],
+                              "code": [],
+                              "links": []
+                            }
+                          }
+                        }
+                      ],
+                      "level": 1,
+                      "type": "unordered"
+                    },
+                    {
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "data": {
+                            "text": "Упрощенная сигнатура обертки компонента",
+                            "formatting": {
+                              "bold": [],
+                              "italic": [],
+                              "code": [],
+                              "links": []
+                            }
+                          }
+                        }
+                      ],
+                      "level": 1,
+                      "type": "unordered"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🐛 Исправлено",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Логика удаления в хранилище: Исправлена валидация плагинов в операциях удаления",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Инвалидация кэша: Исправлена инвалидация кэша для некэшируемых API эндпоинтов",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Утечки памяти: Улучшена очистка в утилитах awaiter и провайдерах контекста",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "📖 Примеры использования",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "// Фреймворк-независимое использование\nimport { createSynapseAwaiter } from 'synapse-storage/core'\n\nconst awaiter = createSynapseAwaiter(userMediaSynapse)\nawaiter.onReady(store => console.log('Готов!', store))\nconst store = await awaiter.waitForReady()\n\n// Использование в React\nimport { awaitSynapse } from 'synapse-storage/react'\n\nconst userMediaReady = awaitSynapse(userMediaSynapse, {\n  loadingComponent: <Spinner />,\n  errorComponent: (error) => <ErrorBoundary error={error} />\n})\n\nconst MediaComponent = userMediaReady.withSynapseReady(() => {\n  // Здесь Synapse гарантированно готов\n  return <div>Контент</div>\n})\n\n// Упрощенный контекст (без contextProps)\nconst userMediaCtx = createSynapseCtx(userMediaSynapse, {\n  loadingComponent: <div>Загрузка...</div>\n})\n\nconst Component = userMediaCtx.contextSynapse(() => {\n  const actions = userMediaCtx.useSynapseActions()\n\n  useEffect(() => {\n    // Устанавливаем начальное состояние через actions вместо contextProps\n    actions.moduleEnter({ selectedType: 'image' })\n  }, [])\n\n  return <div>Готово!</div>\n})",
+                "meta": null
+              }
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 56,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "3013-2025-06-08",
           "title": "[3.0.14] - 2025-06-26",
           "level": 2,
           "content": [
@@ -6630,6 +6992,10 @@
             {
               "type": "divider",
               "data": {}
+            },
+            {
+              "type": "divider",
+              "data": {}
             }
           ],
           "metadata": {
@@ -6643,7 +7009,7 @@
           }
         },
         {
-          "id": "3013-2025-06-08",
+          "id": "3012-2025-06-01",
           "title": "[3.0.13] - 2025-06-08",
           "level": 2,
           "content": [
@@ -6945,6 +7311,10 @@
             {
               "type": "divider",
               "data": {}
+            },
+            {
+              "type": "divider",
+              "data": {}
             }
           ],
           "metadata": {
@@ -6958,7 +7328,7 @@
           }
         },
         {
-          "id": "3012-2025-06-01",
+          "id": "section-5",
           "title": "[3.0.12] - 2025-06-01",
           "level": 2,
           "content": [
@@ -7147,6 +7517,9 @@
         }
       ],
       "features": [
+        "\udea8 Критические изменения",
+        "\udc1b Исправлено",
+        "\udcd6 Примеры использования",
         "\udc1b Исправлено",
         "Добавлено",
         "\udee0 Улучшено",
@@ -7158,11 +7531,11 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-26T05:45:07.808Z",
-        "wordCount": 377,
-        "readingTime": 2,
-        "sectionsCount": 4,
-        "codeBlocksCount": 2
+        "lastModified": "2025-07-18T07:43:41.371Z",
+        "wordCount": 558,
+        "readingTime": 3,
+        "sectionsCount": 6,
+        "codeBlocksCount": 3
       }
     },
     "README": {

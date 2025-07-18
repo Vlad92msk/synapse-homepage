@@ -1,5 +1,63 @@
 # Журнал изменений
 
+# История изменений
+
+## [3.0.16] - 2025-07-18
+
+### 🚨 Критические изменения
+
+- createSynapseCtx: Удален параметр contextProps из функции contextSynapse
+  - Используйте actions внутри компонентов для установки начального состояния
+  - Упрощенная сигнатура обертки компонента
+
+### 🐛 Исправлено
+
+- Логика удаления в хранилище: Исправлена валидация плагинов в операциях удаления
+- Инвалидация кэша: Исправлена инвалидация кэша для некэшируемых API эндпоинтов
+- Утечки памяти: Улучшена очистка в утилитах awaiter и провайдерах контекста
+
+### 📖 Примеры использования
+
+```tsx
+// Фреймворк-независимое использование
+import { createSynapseAwaiter } from 'synapse-storage/core'
+
+const awaiter = createSynapseAwaiter(userMediaSynapse)
+awaiter.onReady(store => console.log('Готов!', store))
+const store = await awaiter.waitForReady()
+
+// Использование в React
+import { awaitSynapse } from 'synapse-storage/react'
+
+const userMediaReady = awaitSynapse(userMediaSynapse, {
+  loadingComponent: <Spinner />,
+  errorComponent: (error) => <ErrorBoundary error={error} />
+})
+
+const MediaComponent = userMediaReady.withSynapseReady(() => {
+  // Здесь Synapse гарантированно готов
+  return <div>Контент</div>
+})
+
+// Упрощенный контекст (без contextProps)
+const userMediaCtx = createSynapseCtx(userMediaSynapse, {
+  loadingComponent: <div>Загрузка...</div>
+})
+
+const Component = userMediaCtx.contextSynapse(() => {
+  const actions = userMediaCtx.useSynapseActions()
+
+  useEffect(() => {
+    // Устанавливаем начальное состояние через actions вместо contextProps
+    actions.moduleEnter({ selectedType: 'image' })
+  }, [])
+
+  return <div>Готово!</div>
+})
+```
+
+---
+
 ## [3.0.14] - 2025-06-26
 
 ### 🐛 Исправлено
@@ -7,7 +65,7 @@
 - Логгер Middleware: Исправлена проблема с некорректным отображением логов в диспетчере
 
 ---
-
+---
 ## [3.0.13] - 2025-06-08
 
 ### ✨ Добавлено
@@ -55,7 +113,7 @@ watchUserActions: createWatcher({
   - Обновите ваш package.json, добавив "type": "module"
 
 ---
-
+---
 ## [3.0.12] - 2025-06-01
 
 ### ✨ Добавлено

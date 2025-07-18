@@ -1,5 +1,60 @@
 # Changelog
 
+## [3.0.16] - 2025-07-18
+
+### 🚨 Breaking Changes
+
+- createSynapseCtx: Removed contextProps parameter from contextSynapse function
+  - Use actions within components to set initial state instead
+  - Simplified component wrapper signature
+
+### 🐛 Fixed
+
+- Storage Delete Logic: Fixed plugin validation in delete operations
+- Cache Invalidation: Fixed cache invalidation for non-cached API endpoints
+- Memory Leaks: Improved cleanup in awaiter utilities and context providers
+
+### 📖 Usage Examples
+
+```tsx
+// Framework-agnostic usage
+import { createSynapseAwaiter } from 'synapse-storage/core'
+
+const awaiter = createSynapseAwaiter(userMediaSynapse)
+awaiter.onReady(store => console.log('Ready!', store))
+const store = await awaiter.waitForReady()
+
+// React usage
+import { awaitSynapse } from 'synapse-storage/react'
+
+const userMediaReady = awaitSynapse(userMediaSynapse, {
+  loadingComponent: <Spinner />,
+  errorComponent: (error) => <ErrorBoundary error={error} />
+})
+
+const MediaComponent = userMediaReady.withSynapseReady(() => {
+  // Synapse guaranteed to be ready here
+  return <div>Content</div>
+})
+
+// Simplified context (no contextProps)
+const userMediaCtx = createSynapseCtx(userMediaSynapse, {
+  loadingComponent: <div>Loading...</div>
+})
+
+const Component = userMediaCtx.contextSynapse(() => {
+  const actions = userMediaCtx.useSynapseActions()
+  
+  useEffect(() => {
+    // Set initial state via actions instead of contextProps
+    actions.moduleEnter({ selectedType: 'image' })
+  }, [])
+  
+  return <div>Ready!</div>
+})
+```
+---
+
 ## [3.0.14] - 2025-06-26
 
 ### 🐛 Fixed
