@@ -1,10 +1,11 @@
 {
   "CHANGELOG": {
     "0": "changelog",
-    "1": "3016-2025-07-18",
-    "2": "3014-2025-06-26",
-    "3": "3013-2025-06-08",
-    "4": "3012-2025-06-01"
+    "1": "3016-2025-07-25",
+    "2": "3016-2025-07-18",
+    "3": "3014-2025-06-26",
+    "4": "3013-2025-06-08",
+    "5": "3012-2025-06-01"
   },
   "README": {
     "0": "synapse-storage",
@@ -18,8 +19,10 @@
     "8": "modular-usage"
   },
   "additional": {
-    "0": "additional",
-    "1": "navigation"
+    "0": "-storage-factory",
+    "1": "-common-utilities",
+    "2": "react-utilities",
+    "3": "utility-selection-recommendations"
   },
   "api-client": {
     "0": "api-client",

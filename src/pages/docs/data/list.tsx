@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Additional } from '@pages/docs/sections/additional.tsx'
 
 import {
   ApiClient,
@@ -35,6 +36,6 @@ export const sectionsList: Record<string, ReactNode> = {
   'nav.sections.utilities.create-synapse': <CreateSynapse />,
   'nav.sections.utilities.custom-plugins': <CustomPlugins />,
   'nav.sections.utilities.custom-middlewares': <CustomMiddlewares />,
-  'nav.sections.utilities.additional': undefined,
+  'nav.sections.utilities.additional': <Additional />,
   'nav.sections.changelog.changelog': <Changelog />,
 }

@@ -1,5 +1,109 @@
 # Журнал изменений
 
+## [3.0.16] - 2025-07-25
+
+### ✨ Added
+
+- Singleton Storage Support: Возможность создавать singleton экземпляры хранилищ для переиспользования между компонентами
+- Storage Factory: Новая фабрика StorageFactory для удобного создания хранилищ
+- React Hook useSynapseStorage: Новый хук для создания с хранилищ в React компонентах
+
+### 🛠 Improved
+
+- Simplified Storage Configuration: Убрано дублирование 'type' параметра в конфигурациях хранилищ
+- Enhanced TypeScript Support: Улучшенный вывод типов и автокомплит
+
+### 📖 Usage Examples
+
+#### Singleton Storage
+```typescript
+// Компонент A
+const storage1 = new MemoryStorage({
+  name: 'shared-data',
+  singleton: {
+    enabled: true,
+    mergeStrategy: ConfigMergeStrategy.DEEP_MERGE,
+    warnOnConflict: true,
+  },
+  initialState: { count: 0 }
+})
+
+// Компонент B - получит тот же экземпляр
+const storage2 = new MemoryStorage({
+  name: 'shared-data', // То же имя
+  singleton: {
+    enabled: true,
+  },
+  initialState: { count: 5 } // Будет проигнорировано
+})
+```
+
+#### Storage Factory
+```typescript
+const userStorage = StorageFactory.createMemory({
+  name: 'user',
+  singleton: { enabled: true },
+  initialState: { name: '', email: '' }
+})
+
+const settingsStorage = StorageFactory.createLocal({
+  name: 'settings',
+  initialState: { theme: 'light' }
+})
+
+// Универсальный метод (с type)
+const dynamicStorage = StorageFactory.create({
+  name: 'cache',
+  type: 'indexedDB',
+  initialState: { items: [] }
+})
+```
+
+#### React Hook `useCreateStorage`
+```tsx
+function UseSynapseStorageExample() {
+  const { storage, isReady } = useCreateStorage<{ notifications: string[] }>({
+    type: 'localStorage',
+    name: 'notifications',
+    initialState: { notifications: [] },
+  })
+
+  useEffect(() => {
+    if (!isReady || !storage) return
+
+    // Подписка на конкретное поле
+    const unsubscribe = storage.subscribe(
+      (state) => state.notifications,
+      (notifications) => {
+        console.log('Notifications updated:', notifications)
+      },
+    )
+
+    return unsubscribe
+  }, [isReady, storage])
+
+  const addNotification = async () => {
+    if (storage) {
+      await storage.update((state) => {
+        state.notifications.push(`Notification ${Date.now()}`)
+      })
+    }
+  }
+
+  return (
+    <div>
+      <button onClick={addNotification}>Add Notification</button>
+    </div>
+  )
+}
+```
+
+### 🚨 Breaking Changes
+
+- Storage Configuration: Убран 'type' параметр из MemoryStorageConfig, LocalStorageConfig, IndexedDBStorageConfig
+- Используйте специфичные методы фабрики или UniversalStorageConfig для динамического выбора типа
+
+---
 
 ## [3.0.16] - 2025-07-18
 

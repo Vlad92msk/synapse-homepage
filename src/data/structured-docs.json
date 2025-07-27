@@ -19,6 +19,247 @@
           }
         },
         {
+          "id": "3016-2025-07-25",
+          "title": "[3.0.16] - 2025-07-25",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "✨ Added",
+                "level": 3,
+                "id": "-added"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Singleton Storage Support: Ability to create singleton storage instances for reuse across components",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Storage Factory: New StorageFactory for convenient storage creation",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "React Hook useSynapseStorage`: New hook for creating storage in React components",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🛠 Improved",
+                "level": 3,
+                "id": "-improved"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Simplified Storage Configuration: Removed 'type' parameter duplication in storage configurations",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Enhanced TypeScript Support: Improved type inference and autocompletion",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "📖 Usage Examples",
+                "level": 3,
+                "id": "-usage-examples"
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Singleton Storage",
+                "level": 4,
+                "id": "singleton-storage"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// Component A\nconst storage1 = new MemoryStorage({\n  name: 'shared-data',\n  singleton: {\n    enabled: true,\n    mergeStrategy: ConfigMergeStrategy.DEEP_MERGE,\n    warnOnConflict: true,\n  },\n  initialState: { count: 0 }\n})\n\n// Component B - will get the same instance\nconst storage2 = new MemoryStorage({\n  name: 'shared-data', // Same name\n  singleton: {\n    enabled: true,\n  },\n  initialState: { count: 5 } // Will be ignored\n})",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Storage Factory",
+                "level": 4,
+                "id": "storage-factory"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "const userStorage = StorageFactory.createMemory({\n  name: 'user',\n  singleton: { enabled: true },\n  initialState: { name: '', email: '' }\n})\n\nconst settingsStorage = StorageFactory.createLocal({\n  name: 'settings',\n  initialState: { theme: 'light' }\n})\n\n// Universal method (with type)\nconst dynamicStorage = StorageFactory.create({\n  name: 'cache',\n  type: 'indexedDB',\n  initialState: { items: [] }\n})",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "React Hook useCreateStorage",
+                "level": 4,
+                "id": "react-hook-usecreatestorage"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "function UseSynapseStorageExample() {\n  const { storage, isReady } = useCreateStorage<{ notifications: string[] }>({\n    type: 'localStorage',\n    name: 'notifications',\n    initialState: { notifications: [] },\n  })\n\n  useEffect(() => {\n    if (!isReady || !storage) return\n\n    // Subscribe to a specific field\n    const unsubscribe = storage.subscribe(\n      (state) => state.notifications,\n      (notifications) => {\n        console.log('Notifications updated:', notifications)\n      },\n    )\n\n    return unsubscribe\n  }, [isReady, storage])\n\n  const addNotification = async () => {\n    if (storage) {\n      await storage.update((state) => {\n        state.notifications.push(`Notification ${Date.now()}`)\n      })\n    }\n  }\n\n  return (\n    <div>\n      <button onClick={addNotification}>Add Notification</button>\n    </div>\n  )\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🚨 Breaking Changes",
+                "level": 3,
+                "id": "-breaking-changes"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Storage Configuration: Removed type parameter from MemoryStorageConfig, LocalStorageConfig, IndexedDBStorageConfig",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Use specific factory methods or UniversalStorageConfig for dynamic type selection",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 86,
+            "codeBlocksCount": 3,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
           "id": "3016-2025-07-18",
           "title": "[3.0.16] - 2025-07-18",
           "level": 2,
@@ -746,6 +987,10 @@
         }
       ],
       "features": [
+        "Added",
+        "\udee0 Improved",
+        "\udcd6 Usage Examples",
+        "\udea8 Breaking Changes",
         "\udea8 Breaking Changes",
         "\udc1b Fixed",
         "\udcd6 Usage Examples",
@@ -760,11 +1005,11 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-07-18T07:43:25.191Z",
-        "wordCount": 546,
-        "readingTime": 3,
-        "sectionsCount": 5,
-        "codeBlocksCount": 3
+        "lastModified": "2025-07-27T08:37:43.557Z",
+        "wordCount": 851,
+        "readingTime": 5,
+        "sectionsCount": 6,
+        "codeBlocksCount": 6
       }
     },
     "README": {
@@ -2135,21 +2380,17 @@
       }
     },
     "additional": {
-      "title": "Additional",
+      "title": "🏭 Storage Factory",
       "sections": [
         {
-          "id": "additional",
-          "title": "Additional",
-          "level": 1,
+          "id": "-storage-factory",
+          "title": "🏭 Storage Factory",
+          "level": 2,
           "content": [
-            {
-              "type": "divider",
-              "data": {}
-            },
             {
               "type": "paragraph",
               "data": {
-                "text": "In progress",
+                "text": "StorageFactory provides a convenient way to create storages with improved typing and singleton pattern support.",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -2159,25 +2400,33 @@
               }
             },
             {
-              "type": "divider",
-              "data": {}
-            }
-          ],
-          "metadata": {
-            "wordCount": 2,
-            "codeBlocksCount": 0,
-            "diagramsCount": 0,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "navigation",
-          "title": "📚 Navigation",
-          "level": 2,
-          "content": [
+              "type": "heading",
+              "data": {
+                "text": "Approach Comparison",
+                "level": 3,
+                "id": "approach-comparison"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "import { StorageFactory, MemoryStorage } from 'synapse-storage/core'\n\n// Classic approach\nconst storage1 = await new MemoryStorage({ \n  name: 'test', \n  initialState: { value: 0 } \n}).initialize()\n\n// New approach through factory (recommended)\nconst storage2 = await StorageFactory.createMemory({ \n  name: 'test', \n  initialState: { value: 0 } \n}).initialize()",
+                "meta": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "StorageFactory advantages:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
             {
               "type": "list",
               "data": [
@@ -2186,19 +2435,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "🏠 Home",
+                        "text": "📦 Uniform API for all storage types",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 7,
-                              "url": "../../README.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -2211,19 +2453,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "📖 All documentation sections",
+                        "text": "🚀 Dynamic storage type selection capability",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 29,
-                              "url": "../../README.md#-documentation",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -2236,9 +2471,145 @@
             {
               "type": "heading",
               "data": {
-                "text": "All sections:",
+                "text": "Ready-to-use Templates",
                 "level": 3,
-                "id": "all-sections"
+                "id": "ready-to-use-templates"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "import { StorageFactory } from 'synapse-storage/core'\n\n// Memory Storage - data stored in memory\nconst userStorage = await StorageFactory.createMemory({\n  name: 'user',\n  singleton: { enabled: true }, // Singleton support\n  initialState: { name: '', email: '' }\n}).initialize()\n\n// Local Storage - data in browser localStorage\nconst settingsStorage = await StorageFactory.createLocal({\n  name: 'settings',\n  initialState: { theme: 'light', language: 'en' }\n}).initialize()\n\n// IndexedDB Storage - data in IndexedDB\nconst cacheStorage = await StorageFactory.createIndexedDB({\n  name: 'cache',\n  options: { // IndexedDB configuration\n    dbName: 'MyApp',\n    version: 1\n  },\n  initialState: { items: [] }\n}).initialize()\n\n// Now you can use them\nawait userStorage.set('name', 'John Doe')\nawait settingsStorage.update(state => { state.theme = 'dark' })",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Universal Creation Method",
+                "level": 3,
+                "id": "universal-creation-method"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// Dynamic creation with type specification\nconst dynamicStorage = await StorageFactory.create({\n  name: 'cache',\n  type: 'indexedDB', // 'memory' | 'localStorage' | 'indexedDB'\n  initialState: { items: [] },\n  options: { // For IndexedDB\n    dbName: 'DynamicDB',\n    version: 1\n  }\n}).initialize()\n\n// Ready to use!\nawait dynamicStorage.set('items', [{ id: 1, name: 'Item 1' }])",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Singleton Storages",
+                "level": 3,
+                "id": "singleton-storages"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Singleton allows reusing one storage instance between different components:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "import { ConfigMergeStrategy } from 'synapse-storage/core'\n\n// Component A creates singleton\nconst storage1 = await StorageFactory.createMemory({\n  name: 'shared-data',\n  singleton: {\n    enabled: true,\n    mergeStrategy: ConfigMergeStrategy.DEEP_MERGE, // Configuration merge strategy\n    warnOnConflict: true, // Warn about configuration conflicts\n  },\n  initialState: { count: 0, user: { name: 'John' } }\n}).initialize()\n\n// Component B gets the same instance\nconst storage2 = await StorageFactory.createMemory({\n  name: 'shared-data', // Same name = same instance\n  singleton: {\n    enabled: true,\n  },\n  initialState: { count: 5 } // Will be ignored or merged\n}).initialize()\n\nconsole.log(storage1 === storage2) // true",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Configuration Merge Strategies",
+                "level": 3,
+                "id": "configuration-merge-strategies"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// Available merge strategies\nenum ConfigMergeStrategy {\n  IGNORE = 'ignore',           // Ignore new configuration\n  REPLACE = 'replace',         // Replace with new configuration\n  SHALLOW_MERGE = 'shallow',   // Shallow merge\n  DEEP_MERGE = 'deep'          // Deep merge (default)\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Storage Factory Initialization",
+                "level": 3,
+                "id": "storage-factory-initialization"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// StorageFactory creates storages synchronously but requires initialization\nconst storage = StorageFactory.createMemory({\n  name: 'example',\n  initialState: { value: 0 }\n})\n\n// Initialization (asynchronous)\nawait storage.initialize()\n\n// Now you can use it\nawait storage.set('value', 100)",
+                "meta": null
+              }
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 54,
+            "codeBlocksCount": 6,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "-common-utilities",
+          "title": "🔄 Common Utilities",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "createSynapseAwaiter - Universal Readiness Awaiting",
+                "level": 3,
+                "id": "createsynapseawaiter-universal-readiness-awaiting"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Purpose: Awaiting Synapse initialization in any JavaScript environment (Node.js, browser, React Native, etc.)",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "When to use:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
               }
             },
             {
@@ -2249,19 +2620,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "🚀 Basic usage",
+                        "text": "🔧 Integration with frameworks other than React",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 14,
-                              "url": "./basic-usage.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -2274,19 +2638,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "🧮 Redux-style computed selectors",
+                        "text": "🎯 Precise control over the moment of Synapse usage",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 33,
-                              "url": "./redux-selectors.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -2299,19 +2656,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "⚙️ Middlewares",
+                        "text": "🔄 Reusing waiting logic between projects",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 14,
-                              "url": "./middlewares.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -2324,169 +2674,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "🌐 API client",
+                        "text": "📱 Development for React Native, Electron, Node.js",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 13,
-                              "url": "./api-client.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "⚡ Creating Dispatcher",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 21,
-                              "url": "./create-dispatcher.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "⚡ Creating Effects",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 18,
-                              "url": "./create-effects.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "⚡ Creating Effects Module",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 25,
-                              "url": "./create-effects-module.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "🛠️ createSynapse utility",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 25,
-                              "url": "./create-synapse.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "🔌 Creating custom plugins",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 26,
-                              "url": "./custom-plugins.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "⚙️ Creating custom middlewares",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 30,
-                              "url": "./custom-middlewares.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -2495,11 +2688,420 @@
                   "type": "unordered"
                 }
               ]
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "import { createSynapseAwaiter } from 'synapse-storage/core'\n\nconst awaiter = createSynapseAwaiter(userMediaSynapse)\n\n// In Angular, Vue, Svelte or vanilla JS\nawaiter.onReady(store => {\n  console.log('Synapse is ready!', store)\n  // Initialize UI, start application logic\n})\n\n// Waiting with error handling\ntry {\n  const store = await awaiter.waitForReady()\n  // Work with ready store\n} catch (error) {\n  console.error('Initialization error:', error)\n}\n\n// Synchronous check\nif (awaiter.isReady()) {\n  const store = awaiter.getStoreIfReady()\n  // Use store without waiting\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "divider",
+              "data": {}
             }
           ],
           "metadata": {
-            "wordCount": 41,
-            "codeBlocksCount": 0,
+            "wordCount": 50,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "react-utilities",
+          "title": "⚛️ React Utilities",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "useCreateStorage Hook (v3.0.16+)",
+                "level": 3,
+                "id": "usecreatestorage-hook-v3016"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "New hook for creating storages directly in React components:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "import { useCreateStorage } from 'synapse-storage/react'\n\nfunction NotificationsComponent() {\n  const { \n    storage, \n    isReady, \n    isLoading, \n    hasError, \n    status, \n    initialize, \n    destroy \n  } = useCreateStorage<{ notifications: string[] }>({\n    type: 'localStorage',\n    name: 'notifications',\n    initialState: { notifications: [] },\n    // Optional: singleton settings\n    singleton: {\n      enabled: true,\n      mergeStrategy: ConfigMergeStrategy.DEEP_MERGE\n    }\n  }, {\n    autoInitialize: true,    // Automatic initialization (default)\n    destroyOnUnmount: true   // Destroy on unmount (default)\n  })\n\n  useEffect(() => {\n    if (!isReady || !storage) return\n\n    // Subscribe to specific field\n    const unsubscribe = storage.subscribe(\n      (state) => state.notifications,\n      (notifications) => {\n        console.log('Notifications updated:', notifications)\n      },\n    )\n\n    return unsubscribe\n  }, [isReady, storage])\n\n  const addNotification = async () => {\n    if (storage) {\n      await storage.update((state) => {\n        state.notifications.push(`Notification ${Date.now()}`)\n      })\n    }\n  }\n\n  // Handle states\n  if (hasError) return <div>Error: {status.error?.message}</div>\n  if (isLoading) return <div>Initializing storage...</div>\n  if (!isReady || !storage) return <div>Storage not ready</div>\n\n  return (\n    <div>\n      <button onClick={addNotification}>Add Notification</button>\n      <button onClick={initialize}>Reinitialize</button>\n      <button onClick={destroy}>Destroy Storage</button>\n    </div>\n  )\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "awaitSynapse - Simple Waiting in React",
+                "level": 3,
+                "id": "awaitsynapse-simple-waiting-in-react"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Purpose: Simple waiting for Synapse readiness in React without creating context",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "When to use:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🎯 Simple cases - only need to wait for readiness",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🔄 No need for shared state between components",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "⚡ Quick solution for single components",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "import { awaitSynapse } from 'synapse-storage/react'\n\nconst userMediaReady = awaitSynapse(userMediaSynapse, {\n  loadingComponent: <Spinner />,\n  errorComponent: (error) => <ErrorBoundary error={error} />\n})\n\n// Simple usage - HOC\nconst MediaComponent = userMediaReady.withSynapseReady(() => {\n  // Synapse is guaranteed to be ready\n  return <div>Content ready to display</div>\n})\n\n// Or hook for more control\nfunction MyComponent() {\n  const { isReady, isError, isPending, store, error } = userMediaReady.useSynapseReady()\n\n  if (isPending) return <div>Loading...</div>\n  if (isError) return <div>Error: {error?.message}</div>\n  \n  return <div>Store ready: {store.storage.name}</div>\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "createSynapseCtx - React Context with Extended Capabilities",
+                "level": 3,
+                "id": "createsynapsectx-react-context-with-extended-capabilities"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Purpose: Full-featured React context for Synapse with access to all capabilities",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "When to use:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🌐 Need shared state between multiple components",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🎛️ Require access to actions, selectors, storage in different parts of the application",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "📊 Working with reactive streams (state$)",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🏗️ Complex architecture with deeply nested components",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Tip: If you're currently using 'awaitSynapse' but might need context in the future - just replace it with 'createSynapseCtx'. The API remains compatible, but React context functionality is added.",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "import { createSynapseCtx } from 'synapse-storage/react'\n\n// Create context\nconst userMediaCtx = createSynapseCtx(userMediaSynapse, {\n  loadingComponent: <div>Loading context...</div>\n})\n\n// Parent component\nconst App = userMediaCtx.contextSynapse(() => {\n  return (\n    <div>\n      <HeaderComponent />\n      <MainComponent />\n      <FooterComponent />\n    </div>\n  )\n})\n\n// Child components can use any hooks\nfunction HeaderComponent() {\n  const actions = userMediaCtx.useSynapseActions()\n  const selectors = userMediaCtx.useSynapseSelectors()\n  \n  return <header onClick={() => actions.updateUser(...)}>Header</header>\n}\n\nfunction MainComponent() {\n  const storage = userMediaCtx.useSynapseStorage()\n  const state$ = userMediaCtx.useSynapseState$() // Only for effects\n  \n  return <main>Main Content</main>\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 139,
+            "codeBlocksCount": 3,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "utility-selection-recommendations",
+          "title": "💡 Utility Selection Recommendations",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "Decision-making Flowchart:",
+                "level": 3,
+                "id": "decision-making-flowchart"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "text",
+                "code": "Do you need React? \n├─ No → createSynapseAwaiter (universal)\n└─ Yes → Do you need context?\n    ├─ No → awaitSynapse (simple waiting)\n    └─ Yes → createSynapseCtx (full functionality)",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Example Scenarios:",
+                "level": 3,
+                "id": "example-scenarios"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Node.js server, Electron: createSynapseAwaiter",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Simple React component: awaitSynapse",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "React app with shared state: createSynapseCtx",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Creating storage in component: useCreateStorage",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 23,
+            "codeBlocksCount": 1,
             "diagramsCount": 0,
             "tasksCount": 0,
             "hasTable": false,
@@ -2509,15 +3111,18 @@
         }
       ],
       "features": [
-        "\udcda Navigation"
+        "\udfed Storage Factory",
+        "\udd04 Common Utilities",
+        "️ React Utilities",
+        "\udca1 Utility Selection Recommendations"
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-08T12:12:09.578Z",
-        "wordCount": 70,
-        "readingTime": 1,
-        "sectionsCount": 2,
-        "codeBlocksCount": 0
+        "lastModified": "2025-07-27T08:58:55.695Z",
+        "wordCount": 1106,
+        "readingTime": 6,
+        "sectionsCount": 4,
+        "codeBlocksCount": 11
       }
     },
     "api-client": {
@@ -4203,7 +4808,7 @@
               "type": "code",
               "data": {
                 "language": "tsx",
-                "code": "// user-info.context.tsx\n// === CREATING React Context ===\nimport { createSynapseCtx } from 'synapse-storage/react'\nimport { userInfoSynapse } from './user-info.synapse'\n\n// Get all necessary tools for working in component\nexport const {\n  contextSynapse: useUserInfoContextSynapse,\n  useSynapseActions: useUserInfoSynapseActions,\n  useSynapseSelectors: useUserInfoSynapseSelectors,\n  useSynapseState$: useUserInfoSynapseState$,\n  useSynapseStorage: useUserInfoSynapseStorage,\n  cleanupSynapse: useUserInfoCleanupSynapse,\n} = createSynapseCtx(\n    // Pass Synapse itself\n    userInfoSynapse,\n    {\n      loadingComponent: <div>loading</div>, // Pass component that will be displayed during initialization loading\n      // mergeFn: // Function for merging passed parameters into initialState (deep copy is performed by default)\n    },\n)",
+                "code": "// user-info.context.tsx\n// === CREATING React Context ===\nimport { createSynapseCtx } from 'synapse-storage/react'\nimport { userInfoSynapse } from './user-info.synapse'\n\n// Get all necessary tools for working in component\nexport const {\n  contextSynapse: useUserInfoContextSynapse,\n  useSynapseActions: useUserInfoSynapseActions,\n  useSynapseSelectors: useUserInfoSynapseSelectors,\n  useSynapseState$: useUserInfoSynapseState$,\n  useSynapseStorage: useUserInfoSynapseStorage,\n  cleanupSynapse: useUserInfoCleanupSynapse,\n} = createSynapseCtx(\n    // Pass Synapse itself\n    userInfoSynapse,\n    {\n      loadingComponent: <div>loading</div>, // Pass component that will be displayed during initialization loading\n    },\n)",
                 "meta": null
               }
             },
@@ -5050,9 +5655,9 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-20T07:46:02.701Z",
-        "wordCount": 1604,
-        "readingTime": 9,
+        "lastModified": "2025-07-27T08:59:34.346Z",
+        "wordCount": 1588,
+        "readingTime": 8,
         "sectionsCount": 3,
         "codeBlocksCount": 10
       }
@@ -6767,6 +7372,247 @@
           }
         },
         {
+          "id": "3016-2025-07-25",
+          "title": "[3.0.16] - 2025-07-25",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "✨ Added",
+                "level": 3,
+                "id": "-added"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Singleton Storage Support: Возможность создавать singleton экземпляры хранилищ для переиспользования между компонентами",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Storage Factory: Новая фабрика StorageFactory для удобного создания хранилищ",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "React Hook useSynapseStorage: Новый хук для создания с хранилищ в React компонентах",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🛠 Improved",
+                "level": 3,
+                "id": "-improved"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Simplified Storage Configuration: Убрано дублирование 'type' параметра в конфигурациях хранилищ",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Enhanced TypeScript Support: Улучшенный вывод типов и автокомплит",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "📖 Usage Examples",
+                "level": 3,
+                "id": "-usage-examples"
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Singleton Storage",
+                "level": 4,
+                "id": "singleton-storage"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// Компонент A\nconst storage1 = new MemoryStorage({\n  name: 'shared-data',\n  singleton: {\n    enabled: true,\n    mergeStrategy: ConfigMergeStrategy.DEEP_MERGE,\n    warnOnConflict: true,\n  },\n  initialState: { count: 0 }\n})\n\n// Компонент B - получит тот же экземпляр\nconst storage2 = new MemoryStorage({\n  name: 'shared-data', // То же имя\n  singleton: {\n    enabled: true,\n  },\n  initialState: { count: 5 } // Будет проигнорировано\n})",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Storage Factory",
+                "level": 4,
+                "id": "storage-factory"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "const userStorage = StorageFactory.createMemory({\n  name: 'user',\n  singleton: { enabled: true },\n  initialState: { name: '', email: '' }\n})\n\nconst settingsStorage = StorageFactory.createLocal({\n  name: 'settings',\n  initialState: { theme: 'light' }\n})\n\n// Универсальный метод (с type)\nconst dynamicStorage = StorageFactory.create({\n  name: 'cache',\n  type: 'indexedDB',\n  initialState: { items: [] }\n})",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "React Hook useCreateStorage",
+                "level": 4,
+                "id": "react-hook-usecreatestorage"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "function UseSynapseStorageExample() {\n  const { storage, isReady } = useCreateStorage<{ notifications: string[] }>({\n    type: 'localStorage',\n    name: 'notifications',\n    initialState: { notifications: [] },\n  })\n\n  useEffect(() => {\n    if (!isReady || !storage) return\n\n    // Подписка на конкретное поле\n    const unsubscribe = storage.subscribe(\n      (state) => state.notifications,\n      (notifications) => {\n        console.log('Notifications updated:', notifications)\n      },\n    )\n\n    return unsubscribe\n  }, [isReady, storage])\n\n  const addNotification = async () => {\n    if (storage) {\n      await storage.update((state) => {\n        state.notifications.push(`Notification ${Date.now()}`)\n      })\n    }\n  }\n\n  return (\n    <div>\n      <button onClick={addNotification}>Add Notification</button>\n    </div>\n  )\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "🚨 Breaking Changes",
+                "level": 3,
+                "id": "-breaking-changes"
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Storage Configuration: Убран 'type' параметр из MemoryStorageConfig, LocalStorageConfig, IndexedDBStorageConfig",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "Используйте специфичные методы фабрики или UniversalStorageConfig для динамического выбора типа",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 87,
+            "codeBlocksCount": 3,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
           "id": "3016-2025-07-18",
           "title": "[3.0.16] - 2025-07-18",
           "level": 2,
@@ -7502,6 +8348,10 @@
         }
       ],
       "features": [
+        "Added",
+        "\udee0 Improved",
+        "\udcd6 Usage Examples",
+        "\udea8 Breaking Changes",
         "\udea8 Критические изменения",
         "\udc1b Исправлено",
         "\udcd6 Примеры использования",
@@ -7516,11 +8366,11 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-07-18T07:45:05.870Z",
-        "wordCount": 555,
-        "readingTime": 3,
-        "sectionsCount": 5,
-        "codeBlocksCount": 3
+        "lastModified": "2025-07-27T08:37:25.805Z",
+        "wordCount": 859,
+        "readingTime": 5,
+        "sectionsCount": 6,
+        "codeBlocksCount": 6
       }
     },
     "README": {
@@ -8891,21 +9741,17 @@
       }
     },
     "additional": {
-      "title": "Дополниетльно",
+      "title": "🏭 Storage Factory",
       "sections": [
         {
-          "id": "additional",
-          "title": "Дополниетльно",
-          "level": 1,
+          "id": "-storage-factory",
+          "title": "🏭 Storage Factory",
+          "level": 2,
           "content": [
-            {
-              "type": "divider",
-              "data": {}
-            },
             {
               "type": "paragraph",
               "data": {
-                "text": "В процессе",
+                "text": "StorageFactory предоставляет удобный способ создания хранилищ с улучшенной типизацией и поддержкой singleton паттерна.",
                 "formatting": {
                   "bold": [],
                   "italic": [],
@@ -8915,25 +9761,33 @@
               }
             },
             {
-              "type": "divider",
-              "data": {}
-            }
-          ],
-          "metadata": {
-            "wordCount": 2,
-            "codeBlocksCount": 0,
-            "diagramsCount": 0,
-            "tasksCount": 0,
-            "hasTable": false,
-            "hasBlockquotes": false,
-            "hasTasks": false
-          }
-        },
-        {
-          "id": "navigation",
-          "title": "📚 Навигация",
-          "level": 2,
-          "content": [
+              "type": "heading",
+              "data": {
+                "text": "Сравнение подходов",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "import { StorageFactory, MemoryStorage } from 'synapse-storage/core'\n\n// Классический подход\nconst storage1 = await new MemoryStorage({ \n  name: 'test', \n  initialState: { value: 0 } \n}).initialize()\n\n// Новый подход через фабрику (рекомендуемый)\nconst storage2 = await StorageFactory.createMemory({ \n  name: 'test', \n  initialState: { value: 0 } \n}).initialize()",
+                "meta": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Преимущества StorageFactory:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
             {
               "type": "list",
               "data": [
@@ -8942,19 +9796,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "🏠 Главная",
+                        "text": "📦 Единообразный API для всех типов хранилищ",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 10,
-                              "url": "./README.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -8967,19 +9814,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "📖 Все разделы документации",
+                        "text": "🚀 Возможность динамического выбора типа хранилища",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 27,
-                              "url": "./README.md#-документация",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -8992,7 +9832,548 @@
             {
               "type": "heading",
               "data": {
-                "text": "Все разделы:",
+                "text": "Готовые шаблоны для использования",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "import { StorageFactory } from 'synapse-storage/core'\n\n// Memory Storage - данные хранятся в памяти\nconst userStorage = await StorageFactory.createMemory({\n  name: 'user',\n  singleton: { enabled: true }, // Singleton поддержка\n  initialState: { name: '', email: '' }\n}).initialize()\n\n// Local Storage - данные в localStorage браузера\nconst settingsStorage = await StorageFactory.createLocal({\n  name: 'settings',\n  initialState: { theme: 'light', language: 'ru' }\n}).initialize()\n\n// IndexedDB Storage - данные в IndexedDB\nconst cacheStorage = await StorageFactory.createIndexedDB({\n  name: 'cache',\n  options: { // Конфигурация IndexedDB\n    dbName: 'MyApp',\n    version: 1\n  },\n  initialState: { items: [] }\n}).initialize()\n\n// Теперь можно использовать\nawait userStorage.set('name', 'John Doe')\nawait settingsStorage.update(state => { state.theme = 'dark' })",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Универсальный метод создания",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// Динамическое создание с указанием типа\nconst dynamicStorage = await StorageFactory.create({\n  name: 'cache',\n  type: 'indexedDB', // 'memory' | 'localStorage' | 'indexedDB'\n  initialState: { items: [] },\n  options: { // Для IndexedDB\n    dbName: 'DynamicDB',\n    version: 1\n  }\n}).initialize()\n\n// Готово к использованию!\nawait dynamicStorage.set('items', [{ id: 1, name: 'Item 1' }])",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Singleton хранилища",
+                "level": 3,
+                "id": "singleton-"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Singleton позволяет переиспользовать один экземпляр хранилища между разными компонентами:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "import { ConfigMergeStrategy } from 'synapse-storage/core'\n\n// Компонент A создает singleton\nconst storage1 = await StorageFactory.createMemory({\n  name: 'shared-data',\n  singleton: {\n    enabled: true,\n    mergeStrategy: ConfigMergeStrategy.DEEP_MERGE, // Стратегия слияния конфигураций\n    warnOnConflict: true, // Предупреждать о конфликтах конфигурации\n  },\n  initialState: { count: 0, user: { name: 'John' } }\n}).initialize()\n\n// Компонент B получает тот же экземпляр\nconst storage2 = await StorageFactory.createMemory({\n  name: 'shared-data', // То же имя = тот же экземпляр\n  singleton: {\n    enabled: true,\n  },\n  initialState: { count: 5 } // Будет проигнорировано или смержено\n}).initialize()\n\nconsole.log(storage1 === storage2) // true",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Стратегии слияния конфигураций",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// Доступные стратегии слияния\nenum ConfigMergeStrategy {\n  IGNORE = 'ignore',           // Игнорировать новую конфигурацию\n  REPLACE = 'replace',         // Заменить на новую конфигурацию\n  SHALLOW_MERGE = 'shallow',   // Поверхностное слияние\n  DEEP_MERGE = 'deep'          // Глубокое слияние (по умолчанию)\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Инициализация Storage Factory хранилищ",
+                "level": 3,
+                "id": "-storage-factory-"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "// StorageFactory создает хранилища синхронно, но требует инициализации\nconst storage = StorageFactory.createMemory({\n  name: 'example',\n  initialState: { value: 0 }\n})\n\n// Инициализация (асинхронная)\nawait storage.initialize()\n\n// Теперь можно использовать\nawait storage.set('value', 100)",
+                "meta": null
+              }
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 55,
+            "codeBlocksCount": 6,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "-common-utilities",
+          "title": "🔄 Общие утилиты",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "createSynapseAwaiter - Универсальное ожидание готовности",
+                "level": 3,
+                "id": "createsynapseawaiter-"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Назначение: Ожидание инициализации Synapse в любом JavaScript окружении (Node.js, браузер, React Native, etc.)",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Когда использовать:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🔧 Интеграция с фреймворками кроме React",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🎯 Точный контроль над моментом использования Synapse",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🔄 Переиспользование логики ожидания между проектами",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "📱 Разработка для React Native, Electron, Node.js",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "typescript",
+                "code": "import { createSynapseAwaiter } from 'synapse-storage/core'\n\nconst awaiter = createSynapseAwaiter(userMediaSynapse)\n\n// В Angular, Vue, Svelte или ванильном JS\nawaiter.onReady(store => {\n  console.log('Synapse готов!', store)\n  // Инициализируем UI, запускаем логику приложения\n})\n\n// Ожидание с обработкой ошибок\ntry {\n  const store = await awaiter.waitForReady()\n  // Работаем с готовым store\n} catch (error) {\n  console.error('Ошибка инициализации:', error)\n}\n\n// Синхронная проверка\nif (awaiter.isReady()) {\n  const store = awaiter.getStoreIfReady()\n  // Используем store без ожидания\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 46,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "react-utilities",
+          "title": "⚛️ React утилиты",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "useCreateStorage Hook (v3.0.16+)",
+                "level": 3,
+                "id": "usecreatestorage-hook-v3016"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Новый хук для создания хранилищ непосредственно в React компонентах:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "import { useCreateStorage } from 'synapse-storage/react'\n\nfunction NotificationsComponent() {\n  const { \n    storage, \n    isReady, \n    isLoading, \n    hasError, \n    status, \n    initialize, \n    destroy \n  } = useCreateStorage<{ notifications: string[] }>({\n    type: 'localStorage',\n    name: 'notifications',\n    initialState: { notifications: [] },\n    // Опционально: singleton настройки\n    singleton: {\n      enabled: true,\n      mergeStrategy: ConfigMergeStrategy.DEEP_MERGE\n    }\n  }, {\n    autoInitialize: true,    // Автоматическая инициализация (по умолчанию)\n    destroyOnUnmount: true   // Уничтожение при размонтировании (по умолчанию)\n  })\n\n  useEffect(() => {\n    if (!isReady || !storage) return\n\n    // Подписка на конкретное поле\n    const unsubscribe = storage.subscribe(\n      (state) => state.notifications,\n      (notifications) => {\n        console.log('Notifications updated:', notifications)\n      },\n    )\n\n    return unsubscribe\n  }, [isReady, storage])\n\n  const addNotification = async () => {\n    if (storage) {\n      await storage.update((state) => {\n        state.notifications.push(`Notification ${Date.now()}`)\n      })\n    }\n  }\n\n  // Обработка состояний\n  if (hasError) return <div>Ошибка: {status.error?.message}</div>\n  if (isLoading) return <div>Инициализация хранилища...</div>\n  if (!isReady || !storage) return <div>Хранилище не готово</div>\n\n  return (\n    <div>\n      <button onClick={addNotification}>Add Notification</button>\n      <button onClick={initialize}>Reinitialize</button>\n      <button onClick={destroy}>Destroy Storage</button>\n    </div>\n  )\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "awaitSynapse - Простое ожидание в React",
+                "level": 3,
+                "id": "awaitsynapse-react"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Назначение: Простое ожидание готовности Synapse в React без создания контекста",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Когда использовать:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🎯 Простые случаи - нужно только дождаться готовности",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🔄 Нет необходимости в shared state между компонентами",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "⚡ Быстрое решение для одиночных компонентов",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "import { awaitSynapse } from 'synapse-storage/react'\n\nconst userMediaReady = awaitSynapse(userMediaSynapse, {\n  loadingComponent: <Spinner />,\n  errorComponent: (error) => <ErrorBoundary error={error} />\n})\n\n// Простое использование - HOC\nconst MediaComponent = userMediaReady.withSynapseReady(() => {\n  // Synapse гарантированно готов\n  return <div>Контент готов к отображению</div>\n})\n\n// Или хук для большего контроля\nfunction MyComponent() {\n  const { isReady, isError, isPending, store, error } = userMediaReady.useSynapseReady()\n\n  if (isPending) return <div>Загрузка...</div>\n  if (isError) return <div>Ошибка: {error?.message}</div>\n  \n  return <div>Store готов: {store.storage.name}</div>\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "createSynapseCtx - React контекст с расширенными возможностями",
+                "level": 3,
+                "id": "createsynapsectx-react-"
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Назначение: Полнофункциональный React контекст для Synapse с доступом ко всем возможностям",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Когда использовать:",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "list",
+              "data": [
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🌐 Нужен shared state между множественными компонентами",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🎛️ Требуется доступ к actions, selectors, storage в разных частях приложения",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "📊 Работа с реактивными потоками (state$)",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                },
+                {
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "data": {
+                        "text": "🏗️ Сложная архитектура с глубоко вложенными компонентами",
+                        "formatting": {
+                          "bold": [],
+                          "italic": [],
+                          "code": [],
+                          "links": []
+                        }
+                      }
+                    }
+                  ],
+                  "level": 0,
+                  "type": "unordered"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "data": {
+                "text": "Совет: Если сейчас используете 'awaitSynapse', но в будущем понадобится контекст - просто замените на 'createSynapseCtx'. API остается совместимым, но добавляется функциональность React контекста.",
+                "formatting": {
+                  "bold": [],
+                  "italic": [],
+                  "code": [],
+                  "links": []
+                }
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "tsx",
+                "code": "import { createSynapseCtx } from 'synapse-storage/react'\n\n// Создание контекста\nconst userMediaCtx = createSynapseCtx(userMediaSynapse, {\n  loadingComponent: <div>Загрузка контекста...</div>\n})\n\n// Родительский компонент\nconst App = userMediaCtx.contextSynapse(() => {\n  return (\n    <div>\n      <HeaderComponent />\n      <MainComponent />\n      <FooterComponent />\n    </div>\n  )\n})\n\n// Дочерние компоненты могут использовать любые хуки\nfunction HeaderComponent() {\n  const actions = userMediaCtx.useSynapseActions()\n  const selectors = userMediaCtx.useSynapseSelectors()\n  \n  return <header onClick={() => actions.updateUser(...)}>Header</header>\n}\n\nfunction MainComponent() {\n  const storage = userMediaCtx.useSynapseStorage()\n  const state$ = userMediaCtx.useSynapseState$() // Только для effects\n  \n  return <main>Main Content</main>\n}",
+                "meta": null
+              }
+            },
+            {
+              "type": "divider",
+              "data": {}
+            }
+          ],
+          "metadata": {
+            "wordCount": 126,
+            "codeBlocksCount": 3,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "utility-selection-recommendations",
+          "title": "💡 Рекомендации по выбору утилит",
+          "level": 2,
+          "content": [
+            {
+              "type": "heading",
+              "data": {
+                "text": "Схема принятия решений:",
+                "level": 3,
+                "id": "-"
+              }
+            },
+            {
+              "type": "code",
+              "data": {
+                "language": "text",
+                "code": "Нужен ли React? \n├─ Нет → createSynapseAwaiter (универсальный)\n└─ Да → Нужен ли контекст?\n    ├─ Нет → awaitSynapse (простое ожидание)\n    └─ Да → createSynapseCtx (полный функционал)",
+                "meta": null
+              }
+            },
+            {
+              "type": "heading",
+              "data": {
+                "text": "Примеры сценариев:",
                 "level": 3,
                 "id": "-"
               }
@@ -9005,19 +10386,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "🚀 Базовое использование",
+                        "text": "Node.js сервер, Electron: createSynapseAwaiter",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 24,
-                              "url": "./basic-usage.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -9030,19 +10404,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "🧮 Вычисляемые селекторы в стиле Redux",
+                        "text": "Простой React компонент: awaitSynapse",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 38,
-                              "url": "./redux-selectors.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -9055,19 +10422,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "⚙️ Middlewares",
+                        "text": "React приложение с shared state: createSynapseCtx",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 14,
-                              "url": "./middlewares.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -9080,169 +10440,12 @@
                     {
                       "type": "paragraph",
                       "data": {
-                        "text": "🌐 API-клиент",
+                        "text": "Создание хранилища в компоненте: useCreateStorage",
                         "formatting": {
                           "bold": [],
                           "italic": [],
                           "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 13,
-                              "url": "./api-client.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "⚡ Создание Диспетчера",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 21,
-                              "url": "./create-dispatcher.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "⚡ Создание Эффектов",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 19,
-                              "url": "./create-effects.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "⚡ Создание Модуля эффектов",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 26,
-                              "url": "./create-effects-module.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "🛠️ Утилита createSynapse",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 25,
-                              "url": "./create-synapse.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "🔌 Создание пользовательских плагинов",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 37,
-                              "url": "./custom-plugins.md",
-                              "title": null
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "level": 0,
-                  "type": "unordered"
-                },
-                {
-                  "content": [
-                    {
-                      "type": "paragraph",
-                      "data": {
-                        "text": "⚙️ Создание пользовательских middlewares",
-                        "formatting": {
-                          "bold": [],
-                          "italic": [],
-                          "code": [],
-                          "links": [
-                            {
-                              "start": 0,
-                              "end": 40,
-                              "url": "./custom-middlewares.md",
-                              "title": null
-                            }
-                          ]
+                          "links": []
                         }
                       }
                     }
@@ -9251,11 +10454,15 @@
                   "type": "unordered"
                 }
               ]
+            },
+            {
+              "type": "divider",
+              "data": {}
             }
           ],
           "metadata": {
-            "wordCount": 42,
-            "codeBlocksCount": 0,
+            "wordCount": 24,
+            "codeBlocksCount": 1,
             "diagramsCount": 0,
             "tasksCount": 0,
             "hasTable": false,
@@ -9265,15 +10472,18 @@
         }
       ],
       "features": [
-        "\udcda Навигация"
+        "\udfed Storage Factory",
+        "\udd04 Общие утилиты",
+        "️ React утилиты",
+        "\udca1 Рекомендации по выбору утилит"
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-08T12:10:53.549Z",
-        "wordCount": 71,
-        "readingTime": 1,
-        "sectionsCount": 2,
-        "codeBlocksCount": 0
+        "lastModified": "2025-07-27T08:58:49.734Z",
+        "wordCount": 1086,
+        "readingTime": 6,
+        "sectionsCount": 4,
+        "codeBlocksCount": 11
       }
     },
     "api-client": {
@@ -10937,7 +12147,7 @@
               "type": "code",
               "data": {
                 "language": "tsx",
-                "code": "// user-info.context.tsx\n// === СОЗДАНИЕ React Context ===\nimport { createSynapseCtx } from 'synapse-storage/react'\nimport { userInfoSynapse } from './user-info.synapse'\n\n// Получаем все необходимые инструменты для работы в компонете\nexport const {\n  contextSynapse: useUserInfoContextSynapse,\n  useSynapseActions: useUserInfoSynapseActions,\n  useSynapseSelectors: useUserInfoSynapseSelectors,\n  useSynapseState$: useUserInfoSynapseState$,\n  useSynapseStorage: useUserInfoSynapseStorage,\n  cleanupSynapse: useUserInfoCleanupSynapse,\n} = createSynapseCtx(\n    // Передаем сам Synapse\n    userInfoSynapse,\n    {\n      loadingComponent: <div>loading</div>, // Передаем компонент, который будет отображаться пока идет загрузка инициализация\n      // mergeFn: // Функция слияния переданных параметров в initialState (по умолчанию выполняется глубокая копия)\n    },\n)",
+                "code": "// user-info.context.tsx\n// === СОЗДАНИЕ React Context ===\nimport { createSynapseCtx } from 'synapse-storage/react'\nimport { userInfoSynapse } from './user-info.synapse'\n\n// Получаем все необходимые инструменты для работы в компонете\nexport const {\n  contextSynapse: useUserInfoContextSynapse,\n  useSynapseActions: useUserInfoSynapseActions,\n  useSynapseSelectors: useUserInfoSynapseSelectors,\n  useSynapseState$: useUserInfoSynapseState$,\n  useSynapseStorage: useUserInfoSynapseStorage,\n  cleanupSynapse: useUserInfoCleanupSynapse,\n} = createSynapseCtx(\n    // Передаем сам Synapse\n    userInfoSynapse,\n    {\n      loadingComponent: <div>loading</div>, // Передаем компонент, который будет отображаться пока идет загрузка инициализация\n    },\n)",
                 "meta": null
               }
             },
@@ -11784,8 +12994,8 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-06-20T08:02:04.201Z",
-        "wordCount": 1550,
+        "lastModified": "2025-07-27T09:00:01.088Z",
+        "wordCount": 1536,
         "readingTime": 8,
         "sectionsCount": 3,
         "codeBlocksCount": 10
