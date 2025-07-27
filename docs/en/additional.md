@@ -1,8 +1,8 @@
-## 🏭 Storage Factory
+# 🏭 Storage Factory
 
 StorageFactory provides a convenient way to create storages with improved typing and singleton pattern support.
 
-### Approach Comparison
+## Approach Comparison
 
 ```typescript
 import { StorageFactory, MemoryStorage } from 'synapse-storage/core'
@@ -24,7 +24,7 @@ StorageFactory advantages:
 - 📦 Uniform API for all storage types
 - 🚀 Dynamic storage type selection capability
 
-### Ready-to-use Templates
+## Ready-to-use Templates
 
 ```typescript
 import { StorageFactory } from 'synapse-storage/core'
@@ -57,7 +57,7 @@ await userStorage.set('name', 'John Doe')
 await settingsStorage.update(state => { state.theme = 'dark' })
 ```
 
-### Universal Creation Method
+## Universal Creation Method
 
 ```typescript
 // Dynamic creation with type specification
@@ -75,7 +75,7 @@ const dynamicStorage = await StorageFactory.create({
 await dynamicStorage.set('items', [{ id: 1, name: 'Item 1' }])
 ```
 
-### Singleton Storages
+## Singleton Storages
 
 Singleton allows reusing one storage instance between different components:
 
@@ -105,7 +105,7 @@ const storage2 = await StorageFactory.createMemory({
 console.log(storage1 === storage2) // true
 ```
 
-### Configuration Merge Strategies
+## Configuration Merge Strategies
 
 ```typescript
 // Available merge strategies
@@ -117,7 +117,7 @@ enum ConfigMergeStrategy {
 }
 ```
 
-### Storage Factory Initialization
+## Storage Factory Initialization
 
 ```typescript
 // StorageFactory creates storages synchronously but requires initialization

@@ -2385,7 +2385,7 @@
         {
           "id": "-storage-factory",
           "title": "🏭 Storage Factory",
-          "level": 2,
+          "level": 1,
           "content": [
             {
               "type": "paragraph",
@@ -2398,15 +2398,23 @@
                   "links": []
                 }
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Approach Comparison",
-                "level": 3,
-                "id": "approach-comparison"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 15,
+            "codeBlocksCount": 0,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "approach-comparison",
+          "title": "Approach Comparison",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -2467,15 +2475,23 @@
                   "type": "unordered"
                 }
               ]
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Ready-to-use Templates",
-                "level": 3,
-                "id": "ready-to-use-templates"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 15,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "ready-to-use-templates",
+          "title": "Ready-to-use Templates",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -2483,15 +2499,23 @@
                 "code": "import { StorageFactory } from 'synapse-storage/core'\n\n// Memory Storage - data stored in memory\nconst userStorage = await StorageFactory.createMemory({\n  name: 'user',\n  singleton: { enabled: true }, // Singleton support\n  initialState: { name: '', email: '' }\n}).initialize()\n\n// Local Storage - data in browser localStorage\nconst settingsStorage = await StorageFactory.createLocal({\n  name: 'settings',\n  initialState: { theme: 'light', language: 'en' }\n}).initialize()\n\n// IndexedDB Storage - data in IndexedDB\nconst cacheStorage = await StorageFactory.createIndexedDB({\n  name: 'cache',\n  options: { // IndexedDB configuration\n    dbName: 'MyApp',\n    version: 1\n  },\n  initialState: { items: [] }\n}).initialize()\n\n// Now you can use them\nawait userStorage.set('name', 'John Doe')\nawait settingsStorage.update(state => { state.theme = 'dark' })",
                 "meta": null
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Universal Creation Method",
-                "level": 3,
-                "id": "universal-creation-method"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 0,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "universal-creation-method",
+          "title": "Universal Creation Method",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -2499,15 +2523,23 @@
                 "code": "// Dynamic creation with type specification\nconst dynamicStorage = await StorageFactory.create({\n  name: 'cache',\n  type: 'indexedDB', // 'memory' | 'localStorage' | 'indexedDB'\n  initialState: { items: [] },\n  options: { // For IndexedDB\n    dbName: 'DynamicDB',\n    version: 1\n  }\n}).initialize()\n\n// Ready to use!\nawait dynamicStorage.set('items', [{ id: 1, name: 'Item 1' }])",
                 "meta": null
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Singleton Storages",
-                "level": 3,
-                "id": "singleton-storages"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 0,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "singleton-storages",
+          "title": "Singleton Storages",
+          "level": 2,
+          "content": [
             {
               "type": "paragraph",
               "data": {
@@ -2527,15 +2559,23 @@
                 "code": "import { ConfigMergeStrategy } from 'synapse-storage/core'\n\n// Component A creates singleton\nconst storage1 = await StorageFactory.createMemory({\n  name: 'shared-data',\n  singleton: {\n    enabled: true,\n    mergeStrategy: ConfigMergeStrategy.DEEP_MERGE, // Configuration merge strategy\n    warnOnConflict: true, // Warn about configuration conflicts\n  },\n  initialState: { count: 0, user: { name: 'John' } }\n}).initialize()\n\n// Component B gets the same instance\nconst storage2 = await StorageFactory.createMemory({\n  name: 'shared-data', // Same name = same instance\n  singleton: {\n    enabled: true,\n  },\n  initialState: { count: 5 } // Will be ignored or merged\n}).initialize()\n\nconsole.log(storage1 === storage2) // true",
                 "meta": null
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Configuration Merge Strategies",
-                "level": 3,
-                "id": "configuration-merge-strategies"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 9,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "configuration-merge-strategies",
+          "title": "Configuration Merge Strategies",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -2543,15 +2583,23 @@
                 "code": "// Available merge strategies\nenum ConfigMergeStrategy {\n  IGNORE = 'ignore',           // Ignore new configuration\n  REPLACE = 'replace',         // Replace with new configuration\n  SHALLOW_MERGE = 'shallow',   // Shallow merge\n  DEEP_MERGE = 'deep'          // Deep merge (default)\n}",
                 "meta": null
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Storage Factory Initialization",
-                "level": 3,
-                "id": "storage-factory-initialization"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 0,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "storage-factory-initialization",
+          "title": "Storage Factory Initialization",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -2566,8 +2614,8 @@
             }
           ],
           "metadata": {
-            "wordCount": 54,
-            "codeBlocksCount": 6,
+            "wordCount": 0,
+            "codeBlocksCount": 1,
             "diagramsCount": 0,
             "tasksCount": 0,
             "hasTable": false,
@@ -3118,10 +3166,10 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-07-27T08:58:55.695Z",
+        "lastModified": "2025-07-27T09:37:59.637Z",
         "wordCount": 1106,
         "readingTime": 6,
-        "sectionsCount": 4,
+        "sectionsCount": 10,
         "codeBlocksCount": 11
       }
     },
@@ -9746,7 +9794,7 @@
         {
           "id": "-storage-factory",
           "title": "🏭 Storage Factory",
-          "level": 2,
+          "level": 1,
           "content": [
             {
               "type": "paragraph",
@@ -9759,15 +9807,23 @@
                   "links": []
                 }
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Сравнение подходов",
-                "level": 3,
-                "id": "-"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 13,
+            "codeBlocksCount": 0,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "approach-comparison",
+          "title": "Сравнение подходов",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -9828,15 +9884,23 @@
                   "type": "unordered"
                 }
               ]
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Готовые шаблоны для использования",
-                "level": 3,
-                "id": "-"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 15,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "ready-to-use-templates",
+          "title": "Готовые шаблоны для использования",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -9844,15 +9908,23 @@
                 "code": "import { StorageFactory } from 'synapse-storage/core'\n\n// Memory Storage - данные хранятся в памяти\nconst userStorage = await StorageFactory.createMemory({\n  name: 'user',\n  singleton: { enabled: true }, // Singleton поддержка\n  initialState: { name: '', email: '' }\n}).initialize()\n\n// Local Storage - данные в localStorage браузера\nconst settingsStorage = await StorageFactory.createLocal({\n  name: 'settings',\n  initialState: { theme: 'light', language: 'ru' }\n}).initialize()\n\n// IndexedDB Storage - данные в IndexedDB\nconst cacheStorage = await StorageFactory.createIndexedDB({\n  name: 'cache',\n  options: { // Конфигурация IndexedDB\n    dbName: 'MyApp',\n    version: 1\n  },\n  initialState: { items: [] }\n}).initialize()\n\n// Теперь можно использовать\nawait userStorage.set('name', 'John Doe')\nawait settingsStorage.update(state => { state.theme = 'dark' })",
                 "meta": null
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Универсальный метод создания",
-                "level": 3,
-                "id": "-"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 0,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "universal-creation-method",
+          "title": "Универсальный метод создания",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -9860,15 +9932,23 @@
                 "code": "// Динамическое создание с указанием типа\nconst dynamicStorage = await StorageFactory.create({\n  name: 'cache',\n  type: 'indexedDB', // 'memory' | 'localStorage' | 'indexedDB'\n  initialState: { items: [] },\n  options: { // Для IndexedDB\n    dbName: 'DynamicDB',\n    version: 1\n  }\n}).initialize()\n\n// Готово к использованию!\nawait dynamicStorage.set('items', [{ id: 1, name: 'Item 1' }])",
                 "meta": null
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Singleton хранилища",
-                "level": 3,
-                "id": "singleton-"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 0,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "singleton-storages",
+          "title": "Singleton хранилища",
+          "level": 2,
+          "content": [
             {
               "type": "paragraph",
               "data": {
@@ -9888,15 +9968,23 @@
                 "code": "import { ConfigMergeStrategy } from 'synapse-storage/core'\n\n// Компонент A создает singleton\nconst storage1 = await StorageFactory.createMemory({\n  name: 'shared-data',\n  singleton: {\n    enabled: true,\n    mergeStrategy: ConfigMergeStrategy.DEEP_MERGE, // Стратегия слияния конфигураций\n    warnOnConflict: true, // Предупреждать о конфликтах конфигурации\n  },\n  initialState: { count: 0, user: { name: 'John' } }\n}).initialize()\n\n// Компонент B получает тот же экземпляр\nconst storage2 = await StorageFactory.createMemory({\n  name: 'shared-data', // То же имя = тот же экземпляр\n  singleton: {\n    enabled: true,\n  },\n  initialState: { count: 5 } // Будет проигнорировано или смержено\n}).initialize()\n\nconsole.log(storage1 === storage2) // true",
                 "meta": null
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Стратегии слияния конфигураций",
-                "level": 3,
-                "id": "-"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 9,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "configuration-merge-strategies",
+          "title": "Стратегии слияния конфигураций",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -9904,15 +9992,23 @@
                 "code": "// Доступные стратегии слияния\nenum ConfigMergeStrategy {\n  IGNORE = 'ignore',           // Игнорировать новую конфигурацию\n  REPLACE = 'replace',         // Заменить на новую конфигурацию\n  SHALLOW_MERGE = 'shallow',   // Поверхностное слияние\n  DEEP_MERGE = 'deep'          // Глубокое слияние (по умолчанию)\n}",
                 "meta": null
               }
-            },
-            {
-              "type": "heading",
-              "data": {
-                "text": "Инициализация Storage Factory хранилищ",
-                "level": 3,
-                "id": "-storage-factory-"
-              }
-            },
+            }
+          ],
+          "metadata": {
+            "wordCount": 0,
+            "codeBlocksCount": 1,
+            "diagramsCount": 0,
+            "tasksCount": 0,
+            "hasTable": false,
+            "hasBlockquotes": false,
+            "hasTasks": false
+          }
+        },
+        {
+          "id": "storage-factory-initialization",
+          "title": "Инициализация Storage Factory хранилищ",
+          "level": 2,
+          "content": [
             {
               "type": "code",
               "data": {
@@ -9927,8 +10023,8 @@
             }
           ],
           "metadata": {
-            "wordCount": 55,
-            "codeBlocksCount": 6,
+            "wordCount": 0,
+            "codeBlocksCount": 1,
             "diagramsCount": 0,
             "tasksCount": 0,
             "hasTable": false,
@@ -10479,10 +10575,10 @@
       ],
       "frontMatter": {},
       "metadata": {
-        "lastModified": "2025-07-27T08:58:49.734Z",
+        "lastModified": "2025-07-27T09:37:16.020Z",
         "wordCount": 1086,
         "readingTime": 6,
-        "sectionsCount": 4,
+        "sectionsCount": 10,
         "codeBlocksCount": 11
       }
     },

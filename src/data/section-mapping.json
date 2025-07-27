@@ -20,9 +20,15 @@
   },
   "additional": {
     "0": "-storage-factory",
-    "1": "-common-utilities",
-    "2": "react-utilities",
-    "3": "utility-selection-recommendations"
+    "1": "approach-comparison",
+    "2": "ready-to-use-templates",
+    "3": "universal-creation-method",
+    "4": "singleton-storages",
+    "5": "configuration-merge-strategies",
+    "6": "storage-factory-initialization",
+    "7": "-common-utilities",
+    "8": "react-utilities",
+    "9": "utility-selection-recommendations"
   },
   "api-client": {
     "0": "api-client",

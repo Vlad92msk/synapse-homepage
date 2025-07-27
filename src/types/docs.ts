@@ -1,5 +1,5 @@
 // Auto-generated types for structured documentation
-// Generated at: 2025-07-27T09:01:09.598Z
+// Generated at: 2025-07-27T09:38:06.273Z
 // Master locale: en
 
 export type Locale = 'en' | 'ru'
@@ -11,7 +11,7 @@ export type DocKey = 'CHANGELOG' | 'README' | 'additional' | 'api-client' | 'bas
 export interface DocSectionIds {
   'CHANGELOG': 'changelog' | '3016-2025-07-25' | '3016-2025-07-18' | '3014-2025-06-26' | '3013-2025-06-08' | '3012-2025-06-01'
   'README': 'synapse-storage' | 'key-features' | 'author' | 'ps-not-recommended-for-production-use-yet-as-i-develop-this-in-my-free-time-the-library-works-in-general-but-i-can-provide-guarantees-only-after-full-integration-into-my-pet-project-social-network-this-wont-happen-before-changing-my-current-workplace-and-country-of-residence' | 'installation' | 'requirements' | 'documentation' | 'examples' | 'modular-usage'
-  'additional': '-storage-factory' | '-common-utilities' | 'react-utilities' | 'utility-selection-recommendations'
+  'additional': '-storage-factory' | 'approach-comparison' | 'ready-to-use-templates' | 'universal-creation-method' | 'singleton-storages' | 'configuration-merge-strategies' | 'storage-factory-initialization' | '-common-utilities' | 'react-utilities' | 'utility-selection-recommendations'
   'api-client': 'api-client' | 'navigation'
   'basic-usage': 'basic-usage' | 'creating-storage' | 'ways-to-change-values-main' | 'creating-subscriptions' | 'navigation'
   'create-dispatcher': 'creating-dispatcher' | 'navigation'
